@@ -4,7 +4,6 @@ define([
     'auth/models/User',
 
     // layout
-
     'layout/module',
     'layout/actions/minifyMenu',
     'layout/actions/toggleMenu',
@@ -31,10 +30,8 @@ define([
     'modules/widgets/directives/widgetGrid',
     'modules/widgets/directives/jarvisWidget',
 
-
     // dashboard
     'dashboard/module',
-
 
     //components
     'components/language/Language',

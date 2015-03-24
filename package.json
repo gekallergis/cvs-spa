@@ -11,7 +11,9 @@
 		"plugin": "./src/plugin/",
 		"vendor": "./src/vendor/",
 		"temp": "./src/tmp/",
-		"build": "./src/build/"
+		"build": "./src/build/",
+		"deploy": "./deploy/",
+		"node_modules": "./node_modules/"
 	},
 	"devDependencies": {
 		"karma": "^0.12.16",
@@ -33,12 +35,22 @@
 		"grunt-contrib-requirejs": "^0.4.4"
 	},
 	"scripts": {
+		"clean": "grunt --base ./ --gruntfile ./grunt/Gruntfile.js vanilla",
+		
 		"postinstall": "bower install",
 
-		"prestart": "npm install",
+		"prebuild": "npm install",
+		"build": "grunt --base ./ --gruntfile ./grunt/Gruntfile.js",
+		"full-build": "grunt --base ./ --gruntfile ./grunt/Gruntfile.js full-build",
+
+		"prepackage": "npm run build",
+		"package": "grunt --base ./ --gruntfile ./grunt/Gruntfile.js package",
+		"test-deploy": "grunt --base ./ --gruntfile ./grunt/Gruntfile.js test-deploy",
+
+		"prestart": "npm run build",
 		"start": "http-server ./src/ -a 0.0.0.0 -p 8000 -o -c-1",
 
-		"pretest": "npm install",
+		"pretest": "npm run build",
 		"test": "node node_modules/karma/bin/karma start test/karma.conf.js",
 		"test-single-run": "node node_modules/karma/bin/karma start test/karma.conf.js  --single-run",
 
@@ -46,8 +58,6 @@
 		"update-webdriver": "webdriver-manager update",
 
 		"preprotractor": "npm run update-webdriver",
-		"protractor": "protractor test/protractor-conf.js",
-
-		"build": "grunt --base ./ --gruntfile ./grunt/Gruntfile.js vtp"
+		"protractor": "protractor test/protractor-conf.js"
 	}
 }
