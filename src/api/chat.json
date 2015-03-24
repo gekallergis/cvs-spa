@@ -2,12 +2,12 @@
     "users": [
         {
             "username": "Sadi Orlaf",
-            "picture": "styles/img/avatars/5.png",
+            "picture": "assets/img/avatars/5.png",
             "status": "Online"
         },
         {
             "username": "Mary",
-            "picture": "styles/img/avatars/1.png",
+            "picture": "assets/img/avatars/1.png",
             "status": "Busy"
         }
     ],
@@ -15,7 +15,7 @@
         {
             "user": {
                 "username": "Sadi Orlaf",
-                "picture": "styles/img/avatars/5.png",
+                "picture": "assets/img/avatars/5.png",
                 "status": "Online"
             },
             "date": "2014-10-01T21:08:06.388Z",
@@ -24,7 +24,7 @@
         {
             "user": {
                 "username": "John Doe",
-                "picture": "styles/img/avatars/sunny.png",
+                "picture": "assets/img/avatars/sunny.png",
                 "status": "Online"
             },
             "date": "2014-10-01T21:09:08.388Z",
