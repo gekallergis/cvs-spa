@@ -5,13 +5,15 @@ var pkg = require('../package.json');
 var src = pkg.smartadmin.sources;
 var tmp = pkg.smartadmin.temp;
 var bld = pkg.smartadmin.build;
+var plgn = pkg.smartadmin.plugin;
+var vndr = pkg.smartadmin.vendor;
+var dpl = pkg.smartadmin.deploy;
+var node_modules = pkg.smartadmin.node_modules;
+var server = pkg.smartadmin.local_server;
 
 module.exports = function (grunt) {
-
-
     // Project configuration.
     grunt.initConfig({
-
         turnOffPotatoDeclaration: {
             tmp: {
                 expand: true,
@@ -98,15 +100,13 @@ module.exports = function (grunt) {
                 ext: '.js'
             }
         },
-
         clean: {
             pre: {
                 options: {
                     force: true
                 },
                 src: [
-                    bld,
-                    tmp
+                    bld, tmp
                 ]
             },
             post: {
@@ -115,6 +115,22 @@ module.exports = function (grunt) {
                 },
                 src: [
                     tmp
+                ]
+            },
+            package: {
+                options: {
+                    force: true
+                },
+                src: [
+                    dpl
+                ]
+            },
+            vanilla: {
+                options: {
+                    force: true
+                },
+                src: [
+                    dpl, node_modules, bld, plgn, vndr
                 ]
             }
         },
@@ -136,6 +152,21 @@ module.exports = function (grunt) {
                     '!**/*.tpl.html'
                 ],
                 dest: bld
+            },
+            package: {
+                expand: true,
+                cwd: src,
+                src: [
+                    '*.html',
+                    '*.js',
+                    'favicon.ico',
+                    'build/**',
+                    'plugin/**',
+                    'smartadmin-plugin/**',
+                    'sound/**',
+                    'styles/**'
+                ],
+                dest: dpl
             }
         },
         requirejs: {
@@ -168,6 +199,7 @@ module.exports = function (grunt) {
     grunt.loadTasks('./grunt/tasks');
 
     grunt.registerTask('default', [
+        'vendor-to-plugin',
         'clean:pre',
         'copy:pre',
         'turnOffPotatoDeclaration',
@@ -182,8 +214,18 @@ module.exports = function (grunt) {
         'clean:post'
     ]);
 
-    grunt.registerTask('vtp', [
-        'vendor-to-plugin',
-        'default'
+    grunt.registerTask('package', [
+        'clean:package',
+        'copy:package'
     ]);
+
+    grunt.registerTask('full-build', [
+        'default',
+        'package',
+        'test-deploy'
+    ]);
+
+    grunt.registerTask('vanilla', [
+        'clean:vanilla'
+    ]);    
 };

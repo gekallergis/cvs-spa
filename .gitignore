@@ -1,5 +1,9 @@
 node_modules/*
+log/*
+deploy/*
+
 src/build/*
 src/vendor/*
 src/plugin/*
+
 *.log
