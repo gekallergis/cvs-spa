@@ -122,7 +122,7 @@ define(['layout/module', 'lodash', 'notification'], function (module, _) {
                     }, function (ButtonPressed) {
                         if (ButtonPressed == "Yes" && localStorage) {
                             localStorage.clear();
-                            location.reload()
+                            location.reload();
                         }
                     });
                 }

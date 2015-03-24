@@ -5,5 +5,6 @@ deploy/*
 src/build/*
 src/vendor/*
 src/plugin/*
+src/tmp/*
 
 *.log

@@ -91,7 +91,6 @@ define([
 
     // smartAdmin
     'modules/smart-admin/module'
-
 ], function () {
     'use strict';
 });
