@@ -26,6 +26,7 @@ define([
         'ngAnimate',
         'ui.router',
         'ui.bootstrap',
+        
         // App
         'app.auth',
         'app.layout',
