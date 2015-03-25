@@ -4,7 +4,7 @@ deploy/*
 
 src/build/*
 src/vendor/*
-src/plugin/*
+src/assets/plugins/*
 src/tmp/*
 
 *.log

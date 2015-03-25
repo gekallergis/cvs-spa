@@ -29,7 +29,7 @@ define(['angular',
                         templateUrl: 'app/modules/maps/views/maps-demo.html',
                         resolve: {
                             deps: $couchPotatoProvider.resolveDependencies([
-                                'layout/directives/smartFitAppView',
+                                'core/layout/directives/smartFitAppView',
                                 'modules/maps/controllers/MapsDemoCtrl',
                                 'modules/maps/directives/smartMapInstance',
                                 'modules/maps/models/SmartMapInstances',

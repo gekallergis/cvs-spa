@@ -8,7 +8,7 @@
 	"license": "proprietary",
 	"smartadmin": {
 		"sources": "./src/",
-		"plugin": "./src/plugin/",
+		"plugin": "./src/assets/plugins/",
 		"vendor": "./src/vendor/",
 		"temp": "./src/tmp/",
 		"build": "./src/build/",

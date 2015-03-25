@@ -241,7 +241,7 @@ if (appConfig.voice_command) {
         },
         'help' : function() {
 
-            $('#voiceModal').removeData('modal').modal( { remote: "app/layout/partials/voice-commands.tpl.html", show: true } );
+            $('#voiceModal').removeData('modal').modal( { remote: "app/core/layout/partials/voice-commands.tpl.html", show: true } );
             if ($('#speech-btn .popover').is(':visible')) {
                 $('#speech-btn .popover').fadeOut(250);
             }

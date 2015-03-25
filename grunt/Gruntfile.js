@@ -161,10 +161,7 @@ module.exports = function (grunt) {
                     '*.js',
                     'favicon.ico',
                     'build/**',
-                    'plugin/**',
-                    'smartadmin-plugin/**',
-                    'sound/**',
-                    'styles/**'
+                    'assets/**'
                 ],
                 dest: dpl
             }
