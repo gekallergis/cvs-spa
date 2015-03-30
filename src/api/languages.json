@@ -1,52 +1,22 @@
 [
-    {
-        "key": "us",
-        "alt": "United States",
-        "title": "English (US)"
+	{
+		"key": "us",
+		"alt": "United States",
+		"title": "English (US)"
+	},
+	{
+		"key": "se",
+		"alt": "Sweden",
+		"title": "Swedish"
+	},
+	{
+        "key": "gr",
+        "alt": "Greece",
+        "title": "Greek"
     },
     {
-        "key": "fr",
-        "alt": "France",
-        "title": "Français"
-    },
-    {
-        "key": "es",
-        "alt": "Spanish",
-        "title": "Español"
-    },
-    {
-        "key": "de",
-        "alt": "German",
-        "title": "Deutsch"
-    },
-    {
-        "key": "jp",
-        "alt": "Japan",
-        "title": "日本語"
-    },
-    {
-        "key": "cn",
-        "alt": "China",
-        "title": "中文"
-    },
-    {
-        "key": "it",
-        "alt": "Italy",
-        "title": "Italiano"
-    },
-    {
-        "key": "pt",
-        "alt": "Portugal",
-        "title": "Portugal"
-    },
-    {
-        "key": "ru",
-        "alt": "Russia",
-        "title": "Русский язык"
-    },
-    {
-        "key": "kr",
-        "alt": "Korea",
-        "title": "한국어"
+        "key": "ir",
+        "alt": "Iran",
+        "title": "Persian"
     }
 ]

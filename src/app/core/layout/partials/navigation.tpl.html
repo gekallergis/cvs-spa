@@ -11,293 +11,117 @@
         -->
 
         <ul data-smart-menu>
-            <li data-ui-sref-active="active">
-                <a data-ui-sref="app.dashboard" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span
-                        class="menu-item-parent">{{getTranslation('Dashboard')}}</span></a>
+			<!-- Profile -->
+			<li data-ui-sref-active="active" class="top-menu-invisible">
+                <a data-ui-sref="app.dashboard">
+                    <i class="fa fa-lg fa-fw fa-user"></i>
+                    <span class="menu-item-parent">{{getTranslation('Profile')}}</span>
+                    <span class="badge pull-right inbox-badge bg-color-green">UD</span>
+                </a>
             </li>
-            <li data-ui-sref-active="active">
-                <a data-ui-sref="app.inbox.folder" title="Inbox">
-                    <i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">{{getTranslation('Inbox')}}</span><span
-                        unread-messages-count class="badge pull-right inbox-badge"></span></a>
+
+            <!-- Inbox -->
+			<li data-ui-sref-active="active">
+                <a data-ui-sref="app.inbox.folder">
+                    <i class="fa fa-lg fa-fw fa-envelope"></i>
+                    <span class="menu-item-parent">{{getTranslation('Inbox')}}</span>
+                    <!-- <span unread-messages-count class="badge pull-right inbox-badge"></span> -->
+                    <span class="badge pull-right inbox-badge bg-color-green">UD</span>
+                </a>
             </li>
-            <li data-menu-collapse>
-                <a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">{{getTranslation('Graphs')}}</span></a>
+
+			<!-- Reporting -->
+			<li data-menu-collapse>
+                <a  href="#">
+                    <i class="fa fa-lg fa-fw fa-book"></i> <span class="menu-item-parent">{{getTranslation('Reporting')}}</span></a>
                 <ul>
                     <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.graphs.flot">{{getTranslation('Flot Chart')}}</a>
+                        <a data-ui-sref="app.appViews.blogDemo">
+                        	<i class="fa fa-database"></i> {{getTranslation('Sales Data')}}
+                        	<span class="badge pull-right inbox-badge bg-color-green">UD</span>
+                        </a>
+
                     </li>
                     <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.graphs.morris">{{getTranslation('Morris Charts')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.graphs.inline">{{getTranslation('Inline Charts')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.graphs.dygraphs">{{getTranslation('Dygraphs')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.graphs.chartjs">Chart.js <span
-                                class="badge pull-right inbox-badge bg-color-yellow">new</span></a>
+                        <a data-ui-sref="app.appViews.galleryDemo">
+                        	<i class="fa fa-file-text"></i> {{getTranslation('Reports')}}
+                        	<span class="badge pull-right inbox-badge bg-color-green">UD</span>
+                        </a>
                     </li>
                 </ul>
             </li>
 
-            <li data-menu-collapse>
-                <a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">{{getTranslation('Tables')}}</span></a>
+			<!-- Accounts -->
+			<li data-ui-sref-active="active">
+                <a data-ui-sref="app.inbox.folder">
+                    <i class="fa fa-lg fa-fw fa-users"></i>
+                    <span class="menu-item-parent">{{getTranslation('Accounts')}}</span>
+                    <span class="badge pull-right inbox-badge bg-color-green">UD</span>
+                </a>
+            </li>
+			
+
+			<!-- Business Intel -->
+			<li data-menu-collapse>
+                <a href="#"><i class="fa fa-lg fa-fw fa-info"></i><span class="menu-item-parent">{{getTranslation('Business Intel')}}</span></a>
                 <ul>
                     <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.tables.normal">{{getTranslation('Normal Tables')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.tables.datatables">{{getTranslation('Data Tables')}} <span
-                                class="badge inbox-badge bg-color-greenLight">v1.10</span></a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.tables.jqgrid">{{getTranslation('Jquery Grid')}}</a>
+                        <a data-ui-sref="app.form.elements">
+                        	<i class="fa fa-pencil-square-o"></i> {{getTranslation('System Logs')}}
+                        	<span class="badge pull-right inbox-badge bg-color-green">UD</span>
+                        </a>
                     </li>
                 </ul>
             </li>
 
-            <li data-menu-collapse>
-                <a href="#"><i class="fa fa-lg fa-fw fa-pencil-square-o"></i> <span class="menu-item-parent">{{getTranslation('Forms')}}</span></a>
-                <ul>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.form.elements">{{getTranslation('Smart Form Elements')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.form.layouts">{{getTranslation('Smart Form Layouts')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.form.validation">{{getTranslation('Smart Form Validation')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.form.bootstrapForms">{{getTranslation('Bootstrap Form Elements')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.form.bootstrapValidation">{{getTranslation('Bootstrap Form Validation')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.form.plugins">{{getTranslation('Form Plugins')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.form.wizards">{{getTranslation('Wizards')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.form.editors">{{getTranslation('Bootstrap Editors')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.form.dropzone">{{getTranslation('Dropzone')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.form.imageEditor">{{getTranslation('Image Cropping')}} <span class="badge pull-right inbox-badge bg-color-yellow">new</span></a>
-                    </li>
-                </ul>
-            </li>
-            <li data-menu-collapse>
-                <a href="#"><i class="fa fa-lg fa-fw fa-desktop"></i> <span class="menu-item-parent">{{getTranslation('UI Elements')}}</span></a>
-                <ul>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.ui.general">{{getTranslation('General Elements')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.ui.buttons">{{getTranslation('Buttons')}}</a>
-                    </li>
-                    <li data-menu-collapse>
-                        <a href="#">{{getTranslation('Icons')}}</a>
-                        <ul>
-                            <li data-ui-sref-active="active">
-                                <a data-ui-sref="app.ui.iconsFa"><i class="fa fa-plane"></i> {{getTranslation('Font Awesome')}}</a>
-                            </li>
-                            <li data-ui-sref-active="active">
-                                <a data-ui-sref="app.ui.iconsGlyph" ><i class="glyphicon glyphicon-plane"></i> {{getTranslation('Glyph Icons')}}</a>
-                            </li>
-                            <li data-ui-sref-active="active">
-                                <a data-ui-sref="app.ui.iconsFlags" ><i class="fa fa-flag"></i> {{getTranslation('Flags')}}</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.ui.grid" >{{getTranslation('Grid')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.ui.treeView">{{getTranslation('Tree View')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.ui.nestableLists">{{getTranslation('Nestable Lists')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.ui.jqueryUi">{{getTranslation('JQuery UI')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.ui.typography">{{getTranslation('Typography')}}</a>
-                    </li>
-                    <li data-menu-collapse>
-                        <a href="#">{{getTranslation('Six Level Menu')}}</a>
-                        <ul>
-                            <li data-menu-collapse>
-                                <a href="#"><i class="fa fa-fw fa-folder-open"></i> {{getTranslation('Item #2')}}</a>
-                                <ul>
-                                    <li data-menu-collapse>
-                                        <a href="#"><i class="fa fa-fw fa-folder-open"></i> {{getTranslation('Sub #2.1')}} </a>
-                                        <ul>
-                                            <li>
-                                                <a href="#"><i class="fa fa-fw fa-file-text"></i> {{getTranslation('Item #2.1.1')}}</a>
-                                            </li>
-                                            <li data-menu-collapse>
-                                                <a href="#"><i class="fa fa-fw fa-plus"></i>{{getTranslation('Expand')}}</a>
-                                                <ul>
-                                                    <li>
-                                                        <a href="#"><i class="fa fa-fw fa-file-text"></i> {{getTranslation('File')}}</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#"><i class="fa fa-fw fa-trash-o"></i> {{getTranslation('Delete')}}</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li data-menu-collapse>
-                                <a href="#"><i class="fa fa-fw fa-folder-open"></i> {{getTranslation('Item #3')}}</a>
-
-                                <ul>
-                                    <li data-menu-collapse>
-                                        <a href="#"><i class="fa fa-fw fa-folder-open"></i> {{getTranslation('3ed Level')}} </a>
-                                        <ul>
-                                            <li>
-                                                <a href="#"><i class="fa fa-fw fa-file-text"></i> {{getTranslation('File')}}</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fa fa-fw fa-file-text"></i> {{getTranslation('File')}}</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+			<!-- Products -->
+			<li data-ui-sref-active="active">
+                <a data-ui-sref="app.inbox.folder">
+                    <i class="fa fa-lg fa-fw fa-file-text"></i>
+                    <span class="menu-item-parent">{{getTranslation('Products')}}</span>
+                    <span class="badge pull-right inbox-badge bg-color-green">UD</span>
+                </a>
             </li>
 
-            <li data-ui-sref-active="active">
-                <a data-ui-sref="app.calendar" title="Calendar"><i class="fa fa-lg fa-fw fa-calendar"><em>3</em></i> <span
-                        class="menu-item-parent">{{getTranslation('Calendar')}}</span></a>
-            </li>
-            <li data-ui-sref-active="active">
-                <a data-ui-sref="app.widgets" title="Widgets"><i class="fa fa-lg fa-fw fa-list-alt"></i><span
-                        class="menu-item-parent">{{getTranslation('Widgets')}}</span></a>
-            </li>
-
-            <li data-menu-collapse>
-                <a  href="#" >
-                    <i class="fa fa-lg fa-fw fa-puzzle-piece"></i> <span class="menu-item-parent">{{getTranslation('App Views')}}</span></a>
-                <ul>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.appViews.projects"><i class="fa fa-file-text-o"></i> {{getTranslation('Projects')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.appViews.blogDemo"><i class="fa fa-paragraph"></i> {{getTranslation('Blog')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.appViews.galleryDemo"><i class="fa fa-picture-o"></i> {{getTranslation('Gallery')}}</a>
-                    </li>
-
-                    <li data-menu-collapse>
-                        <a href="#"><i class="fa fa-comments"></i> {{getTranslation('Forum Layout')}}</a>
-                        <ul>
-                            <li data-ui-sref-active="active">
-                                <a data-ui-sref="app.appViews.forumDemo"><i class="fa fa-picture-o"></i> {{getTranslation('General View')}}</a>
-                            </li>
-                            <li data-ui-sref-active="active">
-                                <a data-ui-sref="app.appViews.forumTopicDemo"><i class="fa fa-picture-o"></i> {{getTranslation('Topic View')}}</a>
-                            </li>
-                            <li data-ui-sref-active="active">
-                                <a data-ui-sref="app.appViews.forumPostDemo"><i class="fa fa-picture-o"></i> {{getTranslation('Post View')}}</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.appViews.profileDemo"><i class="fa fa-group"></i> {{getTranslation('Profile')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.appViews.timelineDemo"><i class="fa fa-clock-o"></i> {{getTranslation('Timeline')}}</a>
-                    </li>
-                </ul>
+			<!-- Basket -->
+			<li data-ui-sref-active="active">
+                <a data-ui-sref="app.inbox.folder">
+                    <i class="fa fa-lg fa-fw fa-shopping-cart"></i>
+                    <span class="menu-item-parent">{{getTranslation('Basket')}}</span>
+                    <span class="badge pull-right inbox-badge bg-color-green">UD</span>
+                </a>
             </li>
 
-            <li data-ui-sref-active="active">
-                <a data-ui-sref="app.maps"><i class="fa fa-lg fa-fw fa-map-marker"></i> <span class="menu-item-parent">{{getTranslation('GMap Skins')}}</span><span class="badge bg-color-greenLight pull-right inbox-badge">9</span></a>
+			<!-- Invoices -->
+			<li data-ui-sref-active="active">
+                <a data-ui-sref="app.inbox.folder">
+                    <i class="fa fa-lg fa-fw fa-list-alt"></i>
+                    <span class="menu-item-parent">{{getTranslation('Invoices')}}</span>
+                    <span class="badge pull-right inbox-badge bg-color-green">UD</span>
+                </a>
             </li>
 
-            <li data-menu-collapse>
-                <a href="#"><i class="fa fa-lg fa-fw fa-windows"></i> <span class="menu-item-parent">{{getTranslation('Miscellaneous')}}</span></a>
-                <ul >
-                    <li>
-                        <a href="http://bootstraphunter.com/smartadmin-landing/" target="_blank">{{getTranslation('Landing Page')}} <i class="fa fa-external-link"></i></a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.misc.pricingTable">{{getTranslation('Pricing Tables')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.misc.invoice">{{getTranslation('Invoice')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="login">{{getTranslation('Login')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="register">{{getTranslation('Register')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="lock">{{getTranslation('Locked Screen')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.misc.error404">{{getTranslation('Error 404')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.misc.error500">{{getTranslation('Error 500')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.misc.blank">{{getTranslation('Blank Page')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.misc.emailTemplate">{{getTranslation('Email Template')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.misc.search">{{getTranslation('Search Page')}}</a>
-                    </li>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.misc.ckeditor">{{getTranslation('CK Editor')}}</a>
-                    </li>
-                </ul>
+			<!-- Orders -->
+			<li data-ui-sref-active="active">
+                <a data-ui-sref="app.inbox.folder">
+                    <i class="fa fa-lg fa-fw fa-bars"></i>
+                    <span class="menu-item-parent">{{getTranslation('Orders')}}</span>
+                    <span class="badge pull-right inbox-badge bg-color-green">UD</span>
+                </a>
             </li>
-
-          <li data-menu-collapse class="top-menu-invisible">
-                <a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">{{getTranslation('SmartAdmin Intel')}}</span></a>
-                <ul>
-                    <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.smartAdmin.diffVer"><i class="fa fa-stack-overflow"></i> {{getTranslation('Different Versions')}}</a>
-                    </li>
-                    <!--<li data-ui-sref-active="active">
-                        <a data-ui-sref="app.smartAdmin.appLayout"><i class="fa fa-cube"></i> {{getTranslation('App Settings')}}</a>
-                    </li>-->
-                    <li>
-                        <a href="http://bootstraphunter.com/smartadmin/BUGTRACK/track_/documentation/index.html" target="_blank"><i class="fa fa-book"></i> {{getTranslation('Documentation')}}</a>
-                    </li>
-                    <li>
-                        <a href="http://bootstraphunter.com/smartadmin/BUGTRACK/track_/" target="_blank"><i class="fa fa-bug"></i> {{getTranslation('Bug Tracker')}}</a>
-                    </li>
-                </ul>
-            </li>
-            <li data-menu-collapse class="chat-users top-menu-invisible">
-                <a href="#"><i class="fa fa-lg fa-fw fa-comment-o"><em class="bg-color-pink flash animated">!</em></i> <span class="menu-item-parent">{{getTranslation('Smart Chat API')}} <sup>{{getTranslation('beta')}}</sup></span></a>
-                <div aside-chat-widget></div>
+			
+			<!-- Companies -->
+			<li data-ui-sref-active="active">
+                <a data-ui-sref="app.inbox.folder">
+                    <i class="fa fa-lg fa-fw fa-building"></i>
+                    <span class="menu-item-parent">{{getTranslation('Companies')}}</span>
+                    <span class="badge pull-right inbox-badge bg-color-green">UD</span>
+                </a>
             </li>
         </ul>
     </nav>
 
-  <span class="minifyme" data-action="minifyMenu" minify-menu>
-    <i class="fa fa-arrow-circle-left hit"></i>
-  </span>
-
+	<span class="minifyme" data-action="minifyMenu" minify-menu>
+		<i class="fa fa-arrow-circle-left hit"></i>
+	</span>
 </aside>
