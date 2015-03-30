@@ -11,7 +11,7 @@ define(['core/layout/module'], function (module) {
                 var defaultTitle = attributes.smartPageTitle;
                 var listener = function(event, toState, toParams, fromState, fromParams) {
                     var title = defaultTitle;
-                    if (toState.data && toState.data.title) title = toState.data.title + ' | ' + title;
+                    if (toState.data && toState.data.title) title = title + ' | ' + toState.data.title;
                     // Set asynchronously so page changes before title does
                     $timeout(function() {
                         $('html head title').text(title);

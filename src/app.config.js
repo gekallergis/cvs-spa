@@ -13,13 +13,13 @@ appConfig.skins = [
         logo: "assets/img/logo.png",
         class: "btn btn-block btn-xs txt-color-white margin-right-5",
         style: "background-color:#4E463F;",
-        label: "Smart Default"},
+        label: "Default"},
 
     {name: "smart-style-1",
         logo: "assets/img/logo-white.png",
         class: "btn btn-block btn-xs txt-color-white",
         style: "background:#3A4558;",
-        label: "Dark Elegance"},
+        label: "Dark"},
 
     {name: "smart-style-2",
         logo: "assets/img/logo-blue.png",
@@ -31,13 +31,13 @@ appConfig.skins = [
         logo: "assets/img/logo-pale.png",
         class: "btn btn-xs btn-block txt-color-white margin-top-5",
         style: "background:#f78c40",
-        label: "Google Skin"},
+        label: "Orange"},
 
     {name: "smart-style-4",
         logo: "assets/img/logo-pale.png",
         class: "btn btn-xs btn-block txt-color-white margin-top-5",
         style: "background: #bbc0cf; border: 1px solid #59779E; color: #17273D !important;",
-        label: "PixelSmash"},
+        label: "Pixel Smash"},
 
     {name: "smart-style-5",
         logo: "assets/img/logo-pale.png",
@@ -47,9 +47,8 @@ appConfig.skins = [
 ];
 
 
-
 appConfig.sound_path = "assets/audio/";
-appConfig.sound_on = true; 
+appConfig.sound_on = true;
 
 
 /*

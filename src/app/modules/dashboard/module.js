@@ -18,10 +18,10 @@ define([
                 views: {
                     "content@app": {
                         controller: 'DashboardCtrl',
-                        templateUrl: 'app/core/dashboard/dashboard.html',
+                        templateUrl: 'app/modules/dashboard/dashboard.html',
                         resolve: {
                             deps: $couchPotatoProvider.resolveDependencies([
-                                'core/dashboard/DashboardCtrl',
+                                'modules/dashboard/DashboardCtrl',
                                 'modules/graphs/directives/inline/sparklineContainer',
                                 'modules/graphs/directives/inline/easyPieChartContainer',
                                 'modules/chat/directives/chatWidget',

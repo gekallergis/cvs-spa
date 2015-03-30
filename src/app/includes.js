@@ -11,7 +11,7 @@ define([
     'core/layout/actions/resetWidgets',
     'core/layout/actions/resetWidgets',
     'core/layout/actions/searchMobile',
-    'core/layout/directives/demo/demoStates',
+    'core/layout/directives/layout-configuration/layout-configuration',
     'core/layout/directives/smartInclude',
     'core/layout/directives/smartDeviceDetect',
     'core/layout/directives/smartFastClick',
@@ -26,14 +26,24 @@ define([
     'core/layout/directives/stateBreadcrumbs',
     'core/layout/directives/smartPageTitle',
     'core/layout/directives/hrefVoid',
-    'core/layout/directives/cvsLoadingAnimation/cvsLoadingAnimation',
+    'core/layout/directives/loading-animation/loading-animation',
     'core/layout/service/SmartCss',
+
+    // Seed Panel Page
+    'components/seed-panel-page/module',
+    'components/seed-panel-page/controllers/seed-controller',
 
     // Authentication/Registration
     'components/account/module',
     'components/account/directives/account-info/account-info',
+    'components/account/directives/shortcut-menu/shortcut-menu',
+    'components/account/directives/shortcut-menu/toggle-shortcut-menu',
 
-
+    // Multilingual Content
+    'shared/language/module',
+    'shared/language/controllers/language-controller',
+    'shared/language/directives/language-selector',
+    'shared/language/services/language-service',
 
 
 
@@ -48,21 +58,21 @@ define([
     'modules/widgets/directives/jarvisWidget',
 
     // dashboard
-    'core/dashboard/module',
+    'modules/dashboard/module',
 
     //components
-    'modules/language/Language',
-    'modules/language/languageSelector',
-    'modules/language/language-controller',
+    //'modules/language/Language',
+    //'modules/language/languageSelector',
+    //'modules/language/language-controller',
 
-    'modules/projects/Project',
-    'modules/projects/recentProjects',
+    //'modules/projects/Project',
+    //'modules/projects/recentProjects',
 
-    'modules/activities/activities-controller',
-    'modules/activities/activities-dropdown-toggle-directive',
-    'modules/activities/activities-service',
+    //'modules/activities/activities-controller',
+    //'modules/activities/activities-dropdown-toggle-directive',
+    //'modules/activities/activities-service',
 
-    'modules/shortcut/shortcut-directive',
+    //'modules/shortcut/shortcut-directive',
 
     'modules/calendar/module',
     'modules/calendar/models/CalendarEvent',

@@ -27,9 +27,6 @@ var require = {
 
         'angular-couch-potato': '../assets/plugins/angular-couch-potato/dist/angular-couch-potato',
 
-        'angular-easyfb': '../assets/plugins/angular-easyfb/angular-easyfb.min',
-        'angular-google-plus': '../assets/plugins/angular-google-plus/dist/angular-google-plus.min',
-
         'pace':'../assets/plugins/pace/pace.min',
 
         'fastclick': '../assets/plugins/fastclick/lib/fastclick',

@@ -5,8 +5,8 @@ define(['app'], function(module){
         return {
             restrict: "EA",
             replace: true,
-            templateUrl: "app/modules/language/language-selector.tpl.html",
             scope: true,
+            templateUrl: "app/modules/language/language-selector.tpl.html"
         }
     })
 });

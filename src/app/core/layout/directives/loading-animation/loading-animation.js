@@ -6,7 +6,7 @@ define(['core/layout/module'], function (module) {
 		return {
 			restrict: 'A',
 			replace: true,
-			templateUrl: 'app/core/layout/directives/cvsLoadingAnimation/cvs-loading-animation.tpl.html'
+			templateUrl: 'app/core/layout/directives/loading-animation/loading-animation.tpl.html'
 		};
 	});
 });

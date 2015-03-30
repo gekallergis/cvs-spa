@@ -9,15 +9,7 @@
  * Main module of the application.
  */
 
-define([
-    'angular',
-    'angular-couch-potato',
-    'angular-ui-router',
-    'angular-animate',
-    'angular-bootstrap',
-    'smartwidgets',
-    'notification'
-], function (ng, couchPotato) {
+define(['angular', 'angular-couch-potato', 'angular-ui-router', 'angular-animate', 'angular-bootstrap', 'smartwidgets', 'notification'], function (ng, couchPotato) {
 
     var app = ng.module('app', [
         'ngSanitize',
@@ -29,8 +21,10 @@ define([
         
         // App
         'app.layout',
-        'app.dashboard',
         'app.account',
+        'app.seed',
+        'app.language',
+        //'app.dashboard',
         //'app.auth',
         //'app.chat',
         //'app.calendar',
@@ -96,7 +90,7 @@ define([
         $rootScope.$stateParams = $stateParams;
         // editableOptions.theme = 'bs3';
 
-        // Intercept stateChangeError event to redirect in case of a faild promis in a state resolve block.
+        // Intercept stateChangeError event to redirect in case of a faild promise in a state resolve block.
         $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error){
             //$state.go('app.inbox.folder', {folder: "sent"});
         });

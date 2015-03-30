@@ -1,4 +1,4 @@
-define(['core/dashboard/module', 'lodash'], function (module, _) {
+define(['modules/dashboard/module', 'lodash'], function (module, _) {
 
     'use strict';
 

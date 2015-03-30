@@ -2,12 +2,12 @@ define(['core/layout/module', 'lodash', 'notification'], function (module, _) {
 
     'use strict';
 
-    module.registerDirective('demoStates', function ($rootScope) {
+    module.registerDirective('cvsLayoutConfiguration', function ($rootScope) {
         return {
-            restrict: 'E',
+            restrict: 'A',
             replace: true,
-            templateUrl: 'app/core/layout/directives/demo/demo-states.tpl.html',
             scope: true,
+            templateUrl: 'app/core/layout/directives/layout-configuration/layout-configuration.tpl.html',
             link: function (scope, element, attributes) {
                 element.parent().css({
                     position: 'relative'
@@ -57,14 +57,14 @@ define(['core/layout/module', 'lodash', 'notification'], function (module, _) {
                     $root.toggleClass('fixed-page-footer', fixedPageFooter);
                 });
 
-                $scope.$watch('insideContainer', function (insideContainer) {
-                    localStorage.setItem('sm-inside-container', insideContainer);
-                    $root.toggleClass('container', insideContainer);
-                    if (insideContainer) {
-                        $scope.fixedRibbon = false;
-                        $scope.fixedNavigation = false;
-                    }
-                });
+                //$scope.$watch('insideContainer', function (insideContainer) {
+                //    localStorage.setItem('sm-inside-container', insideContainer);
+                //    $root.toggleClass('container', insideContainer);
+                //    if (insideContainer) {
+                //        $scope.fixedRibbon = false;
+                //        $scope.fixedNavigation = false;
+                //    }
+                //});
 
                 $scope.$watch('rtl', function (rtl) {
                     localStorage.setItem('sm-rtl', rtl);

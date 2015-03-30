@@ -1,4 +1,4 @@
-define(['angular', 'angular-couch-potato', 'angular-ui-router', 'angular-google-plus', 'angular-easyfb'], function (ng, couchPotato) {
+define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, couchPotato) {
 
     "use strict";
     var module = ng.module('app.account', ['ui.router']);
@@ -21,6 +21,15 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router', 'angular-google-
                 deps: $couchPotatoProvider.resolveDependencies([
                     'modules/forms/directives/validate/smartValidateForm'
                 ])
+                //delay: function($q, $timeout) {
+                //    var def = $q.defer();
+                //    
+                //    $timeout(function(){
+                //        def.resolve();
+                //    }, 5000);
+                //    
+                //    return def.promise;
+                //}
             }
         })
 
@@ -50,7 +59,7 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router', 'angular-google-
                 }
             },
             data: {
-                title: 'Forgot Password',
+                title: 'Password Recovery',
                 htmlId: 'extr-page'
             },
             resolve: {
@@ -68,11 +77,11 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router', 'angular-google-
                 }
             },
             data: {
-                title: 'Locked Screen',
+                title: 'Locked',
                 htmlId: 'lock-page'
             }
         })
-    })
+    });
 
     module.run(function($couchPotato){
         module.lazy = $couchPotato;
