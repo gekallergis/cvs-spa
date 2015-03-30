@@ -3,7 +3,7 @@
 	<head>
 	
 		<meta charset="utf-8">
-		<title> SmartAdmin (AngularJS)</title>
+		<title>CVS | Customer Value System</title>
 		<meta name="description" content="">
 		<meta name="author" content="">
 
@@ -25,12 +25,15 @@
 		<!-- SmartAdmin RTL Support (Not using RTL? Disable the CSS below to save bandwidth) -->
 		<link rel="stylesheet" type="text/css" media="screen" href="assets/css/smartadmin-rtl.min.css">
 
-		<!-- We recommend you use "your_style.css" to override SmartAdmin
-		specific styles this will also ensure you retrain your customization with each SmartAdmin update.
-		<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
+		<!-- Loading Animation CSS -->
+		<link rel="stylesheet" type="text/css" media="screen" href="assets/css/cvs-loading-animation.css">
 
 		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
 		<link rel="stylesheet" type="text/css" media="screen" href="assets/css/demo.min.css">
+
+		<!-- We recommend you use "your_style.css" to override SmartAdmin
+		specific styles this will also ensure you retrain your customization with each SmartAdmin update. -->
+		<link rel="stylesheet" type="text/css" media="screen" href="assets/css/cvs.css">
 
 		<!-- #FAVICONS -->
 		<link rel="shortcut icon" href="assets/img/favicon/favicon.ico" type="image/x-icon">
@@ -101,11 +104,13 @@
 	<body data-smart-device-detect
 		data-smart-fast-click
 		data-smart-layout
-		data-smart-page-title="SmartAdmin AngularJS">
+		data-smart-page-title="CVS">
 
 		<!-- ui-view container -->
 
-		<div data-ui-view="root" data-autoscroll="false"></div>
+		<div data-ui-view="root" data-autoscroll="false">
+			<div cvs-loading-animation></div>
+		</div>
 
 		<!--[if lt IE 7]>
 			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>

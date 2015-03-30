@@ -10,10 +10,8 @@
  * unique to you with each update of SmartAdmin.
  */
 
-/*
- * INDEX
- * 
- * - HTML
- * - BODY
- * - CUSTOM STYLES
- */
+.txt-color-green {
+  color: #1c734c !important;
+}
+
+

@@ -47,7 +47,6 @@
 		"package": "grunt --base ./ --gruntfile ./grunt/Gruntfile.js package",
 		"test-deploy": "grunt --base ./ --gruntfile ./grunt/Gruntfile.js test-deploy",
 
-		"prestart": "npm run build",
 		"start": "http-server ./src/ -a 0.0.0.0 -p 8000 -o -c-1",
 
 		"pretest": "npm run build",

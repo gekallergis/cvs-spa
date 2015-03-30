@@ -1,9 +1,9 @@
 define([
-    // account
-    'modules/auth/module',
-    'modules/auth/models/User',
+    //=====//
+    // CVS //
+    //=====//
 
-    // layout
+    // Layout
     'core/layout/module',
     'core/layout/actions/minifyMenu',
     'core/layout/actions/toggleMenu',
@@ -26,7 +26,24 @@ define([
     'core/layout/directives/stateBreadcrumbs',
     'core/layout/directives/smartPageTitle',
     'core/layout/directives/hrefVoid',
+    'core/layout/directives/cvsLoadingAnimation/cvsLoadingAnimation',
     'core/layout/service/SmartCss',
+
+    // Authentication/Registration
+    'components/account/module',
+    'components/account/directives/account-info/account-info',
+
+
+
+
+
+
+
+    // account
+    //'modules/auth/module',
+    //'modules/auth/models/User',
+
+    // layout
     'modules/widgets/directives/widgetGrid',
     'modules/widgets/directives/jarvisWidget',
 

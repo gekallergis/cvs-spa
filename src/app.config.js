@@ -6,7 +6,6 @@ var appConfig = {};
 
 appConfig.menu_speed = 200;
 
-
 appConfig.smartSkin = "smart-style-0";
 
 appConfig.skins = [

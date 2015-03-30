@@ -1,4 +1,4 @@
-define(['core/layout/module', 'jquery'], function (module) {
+define(['core/layout/module', 'components/account/module', 'jquery'], function (module) {
 
     "use strict";
 
@@ -38,7 +38,7 @@ define(['core/layout/module', 'jquery'], function (module) {
         };
     })(jQuery);
 
-    module.registerDirective('smartMenu', function ($state, $rootScope) {
+    module.registerDirective('smartMenu', function ($state, $rootScope, $timeout) {
         return {
             restrict: 'A',
             link: function (scope, element, attrs) {

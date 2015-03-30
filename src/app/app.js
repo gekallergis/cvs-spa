@@ -28,28 +28,27 @@ define([
         'ui.bootstrap',
         
         // App
-        'app.auth',
         'app.layout',
-        'app.chat',
         'app.dashboard',
-        'app.calendar',
-        'app.inbox',
-        'app.graphs',
-        'app.tables',
-        'app.forms',
-        'app.ui',
-        'app.widgets',
-        'app.maps',
-        'app.appViews',
-        'app.misc',
-        'app.smartAdmin'
+        'app.account',
+        //'app.auth',
+        //'app.chat',
+        //'app.calendar',
+        //'app.inbox',
+        //'app.graphs',
+        //'app.tables',
+        //'app.forms',
+        //'app.ui',
+        //'app.widgets',
+        //'app.maps',
+        //'app.appViews',
+        //'app.misc',
+        //'app.smartAdmin'
     ]);
 
     couchPotato.configureApp(app);
 
     app.config(function ($provide, $httpProvider) {
-
-
 
         // Intercept http calls.
         $provide.factory('ErrorHttpInterceptor', function ($q) {
@@ -96,6 +95,11 @@ define([
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
         // editableOptions.theme = 'bs3';
+
+        // Intercept stateChangeError event to redirect in case of a faild promis in a state resolve block.
+        $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error){
+            //$state.go('app.inbox.folder', {folder: "sent"});
+        });
     });
 
     return app;
