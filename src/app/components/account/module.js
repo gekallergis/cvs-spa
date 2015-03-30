@@ -20,7 +20,7 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
             resolve: {
                 deps: $couchPotatoProvider.resolveDependencies([
                     'modules/forms/directives/validate/smartValidateForm'
-                ])
+                ]),
                 //delay: function($q, $timeout) {
                 //    var def = $q.defer();
                 //    

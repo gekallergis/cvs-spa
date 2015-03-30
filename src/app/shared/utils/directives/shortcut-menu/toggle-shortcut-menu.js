@@ -1,4 +1,4 @@
-define(['components/account/module'], function(module){
+define(['shared/utils/module'], function(module){
     "use strict";
 
     return module.registerDirective('cvsToggleShortcutMenu', function($log, $timeout){

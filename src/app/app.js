@@ -21,9 +21,10 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router', 'angular-animate
         
         // App
         'app.layout',
+        'app.utils',
         'app.account',
-        'app.seed',
         'app.language',
+        'app.seed',
         //'app.dashboard',
         //'app.auth',
         //'app.chat',

@@ -26,8 +26,13 @@ define([
     'core/layout/directives/stateBreadcrumbs',
     'core/layout/directives/smartPageTitle',
     'core/layout/directives/hrefVoid',
-    'core/layout/directives/loading-animation/loading-animation',
     'core/layout/service/SmartCss',
+
+    // Shared Utils
+    'shared/utils/module',
+    'shared/utils/directives/loading-animation/loading-animation',
+    'shared/utils/directives/shortcut-menu/shortcut-menu',
+    'shared/utils/directives/shortcut-menu/toggle-shortcut-menu',
 
     // Seed Panel Page
     'components/seed-panel-page/module',
@@ -36,8 +41,6 @@ define([
     // Authentication/Registration
     'components/account/module',
     'components/account/directives/account-info/account-info',
-    'components/account/directives/shortcut-menu/shortcut-menu',
-    'components/account/directives/shortcut-menu/toggle-shortcut-menu',
 
     // Multilingual Content
     'shared/language/module',
