@@ -11,7 +11,6 @@ define(['core/layout/module'], function (module) {
                 element.prepend(closer);
                 element.on('click', '>button.close', function(){
                     element.fadeOut('fast',function(){ $(this).remove(); });
-
                 })
             }
         }

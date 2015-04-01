@@ -1,6 +1,6 @@
-define(['modules/widgets/module', 'lodash'], function (module, _) {
-    "use strict";
+define(['shared/widgets/module', 'lodash'], function (module, _) {
 
+    "use strict";
     module.directive('widgetGrid', function ($rootScope, $compile, $q, $state, $timeout) {
 
         var jarvisWidgetsDefaults = {
@@ -66,39 +66,25 @@ define(['modules/widgets/module', 'lodash'], function (module, _) {
             labelUpdated: 'Last Update:',
             labelRefresh: 'Refresh',
             labelDelete: 'Delete widget:',
-            afterLoad: function () {
-            },
-            rtl: false, // best not to toggle this!
-            onChange: function () {
-
-            },
-            onSave: function () {
-
-            },
+            afterLoad: function () {},
+            rtl: false, // - Best not to toggle this!  - OK, then! :D
+            onChange: function () {},
+            onSave: function () {},
             ajaxnav: true
-
         }
 
         var dispatchedWidgetIds = [];
         var setupWaiting = false;
-
         var debug = 1;
 
         var setupWidgets = function (element, widgetIds) {
-
             if (!setupWaiting) {
-
                 if(_.intersection(widgetIds, dispatchedWidgetIds).length != widgetIds.length){
-
                     dispatchedWidgetIds = _.union(widgetIds, dispatchedWidgetIds);
-
-//                    console.log('setupWidgets', debug++);
-
                     element.data('jarvisWidgets') && element.data('jarvisWidgets').destroy();
                     element.jarvisWidgets(jarvisWidgetsDefaults);
                     initDropdowns(widgetIds);
                 }
-
             } else {
                 if (!setupWaiting) {
                     setupWaiting = true;
@@ -108,7 +94,6 @@ define(['modules/widgets/module', 'lodash'], function (module, _) {
                     }, 200);
                 }
             }
-
         };
 
         var destroyWidgets = function(element, widgetIds){
@@ -127,20 +112,16 @@ define(['modules/widgets/module', 'lodash'], function (module, _) {
                         var compiled = $compile($parent)($parent.scope())
                         $parent.replaceWith(compiled);
                     }
-                })
+                });
             });
         };
 
-        var jarvisWidgetAddedOff,
-            $viewContentLoadedOff,
-            $stateChangeStartOff;
+        var jarvisWidgetAddedOff, $viewContentLoadedOff, $stateChangeStartOff;
 
         return {
             restrict: 'A',
             compile: function(element){
-
                 element.removeAttr('widget-grid data-widget-grid');
-
                 var widgetIds = [];
 
                 $viewContentLoadedOff = $rootScope.$on('$viewContentLoaded', function (event, data) {
@@ -148,7 +129,6 @@ define(['modules/widgets/module', 'lodash'], function (module, _) {
                         setupWidgets(element, widgetIds)
                     }, 100);
                 });
-
 
                 $stateChangeStartOff = $rootScope.$on('$stateChangeStart',
                     function(event, toState, toParams, fromState, fromParams){
@@ -165,12 +145,8 @@ define(['modules/widgets/module', 'lodash'], function (module, _) {
                             setupWidgets(element, widgetIds)
                         }, 100);
                     }
-//                    console.log('jarvisWidgetAdded', widget.attr('id'));
                 });
-
             }
         }
     })
-
-
 });

@@ -1,4 +1,4 @@
-define(['modules/inbox/module', 'lodash'], function(module, _){
+define(['components/inbox/module', 'lodash'], function(module, _){
 
     "use strict";
 
@@ -11,5 +11,5 @@ define(['modules/inbox/module', 'lodash'], function(module, _){
                 })
             }
         }
-    })
+    });
 });

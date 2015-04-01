@@ -32,11 +32,10 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                 //}
             }
         })
-
         .state('register', {
             url: '/register',
             views: {
-                root: {
+                'root': {
                     templateUrl: 'app/components/account/partials/register.html'
                 }
             },
@@ -50,11 +49,10 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                 ])
             }
         })
-
         .state('forgotPassword', {
             url: '/forgot-password',
             views: {
-                root: {
+                'root': {
                     templateUrl: 'app/components/account/partials/forgot-password.html'
                 }
             },
@@ -68,11 +66,10 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                 ])
             }
         })
-
         .state('lock', {
             url: '/lock',
             views: {
-                root: {
+                'root': {
                     templateUrl: 'app/components/account/partials/lock.html'
                 }
             },
@@ -81,6 +78,60 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                 htmlId: 'lock-page'
             }
         })
+        .state('app.profile', {
+            url: '/profile',
+            views: {
+                "content": {
+                    templateUrl: 'app/components/account/partials/user-list.html',
+                    resolve: {
+                        deps: $couchPotatoProvider.resolveDependencies([
+                            'shared/utils/directives/table-tools/datatable-basic'
+                        ])
+                    }
+                }
+            },
+            data: {
+                title: 'Profiles'
+            }
+        })
+        .state('app.profile.details', {
+            url: '/:profileId',
+            views: {
+                "content@app": {
+                    templateUrl: 'app/components/account/partials/user-profile.html'
+                }
+            },
+            data: {
+                title: 'Profile'
+            }
+        })
+        .state('app.company', {
+            url: '/company',
+            views: {
+                "content": {
+                    templateUrl: 'app/components/account/partials/company-list.html',
+                    resolve: {
+                        deps: $couchPotatoProvider.resolveDependencies([
+                            'shared/utils/directives/table-tools/datatable-basic'
+                        ])
+                    }
+                }
+            },
+            data: {
+                title: 'Companies'
+            }
+        })
+        .state('app.company.details', {
+            url: '/:companyId',
+            views: {
+                "content@app": {
+                    templateUrl: 'app/components/account/partials/company-profile.html'
+                }
+            },
+            data: {
+                title: 'Company Profile'
+            }
+        });
     });
 
     module.run(function($couchPotato){

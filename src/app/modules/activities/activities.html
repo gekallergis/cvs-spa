@@ -1,29 +1,37 @@
 <div class="ajax-dropdown" ng-controller="ActivitiesCtrl as activitiesDropdown" >
 
-   <!-- the ID links are fetched via AJAX to the ajax container "ajax-notifications" -->
-   <div class="btn-group btn-group-justified" data-toggle="buttons">
-      <label class="btn btn-default" ng-class="{active : isActive(type.name)}" \
-               ng-repeat="(key, type) in activities.types" ng-click="setTab(type.name)">
-         <input type="radio" name="activity">
-         {{type.title}} ({{type.length}}) 
-      </label>
-   </div>
+	<!-- the ID links are fetched via AJAX to the ajax container "ajax-notifications" -->
+	<div class="btn-group btn-group-justified" data-toggle="buttons">
+		My Shopping Cart
+	</div>
 
-   <!-- notification content -->
-   <div class="ajax-notifications custom-scroll" ng-switch="activeTab">
-         <div smart-include="app/modules/activities/tabs/tab-msgs.html" ng-switch-when="msgs"></div>
-         <div smart-include="app/modules/activities/tabs/tab-notify.html" ng-switch-when="notify"></div>
-         <div smart-include="app/modules/activities/tabs/tab-tasks.html" ng-switch-when="tasks"></div>
-         <div smart-include="app/modules/activities/tabs/tab-default.html" ng-switch-when="default"></div>
-   </div>
-   <!-- end notification content -->
+	<!-- notification content -->
+	<div class="ajax-notifications custom-scroll" ng-switch="activeTab">
+		<div>
+			<div class="alert alert-transparent">
+				<h4>Your Shopping Cart is Empty</h4>
+				Navigate to the products section and add one or more products to your basket!
+			</div>
 
-   <!-- footer: refresh area -->
-   <span> Last updated on: {{activities.last_update}}
-      <button type="button" data-loading-text="<i class='fa fa-refresh fa-spin'></i> Loading..." class="btn btn-xs btn-default pull-right">
-         <i class="fa fa-refresh"></i>
-      </button> 
-      </span>
-   <!-- end footer -->
+			<i class="fa fa-shopping-cart fa-4x fa-border"></i>
+		</div>
+	</div>
+	<!-- end notification content -->
 
+	<!-- footer: refresh area -->
+	<span>
+		<button type="button" class="btn btn-labeled btn-success" ui-sref="app.products" ng-click="closeBasket()">
+			<span class="btn-label">
+				<i class="fa fa-plus"></i>
+			</span>
+			Add Products
+		</button>
+		<button type="button" class="btn btn-labeled btn-success pull-right">
+			<span class="btn-label">
+				<i class="fa fa-credit-card"></i>
+			</span>
+			Checkout
+		</button>
+	</span>
+	<!-- end footer -->
 </div>

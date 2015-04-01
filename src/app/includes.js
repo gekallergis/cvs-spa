@@ -33,6 +33,13 @@ define([
     'shared/utils/directives/loading-animation/loading-animation',
     'shared/utils/directives/shortcut-menu/shortcut-menu',
     'shared/utils/directives/shortcut-menu/toggle-shortcut-menu',
+    'shared/utils/directives/table-tools/datatable-basic',
+    'shared/utils/directives/file-upload/smart-dropzone',
+
+    // Shared Widgets
+    'shared/widgets/module',
+    'shared/widgets/directives/widget-grid',
+    'shared/widgets/directives/jarvis-widget',
 
     // Seed Panel Page
     'components/seed-panel-page/module',
@@ -48,6 +55,30 @@ define([
     'shared/language/directives/language-selector',
     'shared/language/services/language-service',
 
+    // Inbox
+    'components/inbox/module',
+    'components/inbox/directives/message-labels',
+    'components/inbox/directives/unread-messages-count',
+    'components/inbox/services/inbox-config',
+    'components/inbox/services/inbox-message',
+
+    // Products
+    'components/products/module',
+
+    // Reporting
+    'components/reporting/module',
+
+    // Intel
+    'components/intel/module',
+
+
+
+
+
+
+
+
+
 
 
 
@@ -57,8 +88,8 @@ define([
     //'modules/auth/models/User',
 
     // layout
-    'modules/widgets/directives/widgetGrid',
-    'modules/widgets/directives/jarvisWidget',
+    //'modules/widgets/directives/widgetGrid',
+    //'modules/widgets/directives/jarvisWidget',
 
     // dashboard
     'modules/dashboard/module',
@@ -71,9 +102,9 @@ define([
     //'modules/projects/Project',
     //'modules/projects/recentProjects',
 
-    //'modules/activities/activities-controller',
-    //'modules/activities/activities-dropdown-toggle-directive',
-    //'modules/activities/activities-service',
+    'modules/activities/activities-controller',
+    'modules/activities/activities-dropdown-toggle-directive',
+    'modules/activities/activities-service',
 
     //'modules/shortcut/shortcut-directive',
 
@@ -83,9 +114,9 @@ define([
     'modules/calendar/directives/dragableEvent',
     'modules/calendar/controllers/CalendarCtrl',
 
-    'modules/inbox/module',
-    'modules/inbox/models/InboxConfig',
-    'modules/inbox/models/InboxMessage',
+    //'modules/inbox/module',
+    //'modules/inbox/models/InboxConfig',
+    //'modules/inbox/models/InboxMessage',
 
     'modules/todo/TodoCtrl',
     'modules/todo/models/Todo',
@@ -108,7 +139,7 @@ define([
     'modules/ui/module',
 
     // widgets
-    'modules/widgets/module',
+    //'modules/widgets/module',
 
     // widgets
     'modules/maps/module',

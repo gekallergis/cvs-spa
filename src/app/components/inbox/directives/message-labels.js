@@ -1,8 +1,6 @@
-define(['modules/inbox/module', 'lodash'], function (module, _) {
+define(['components/inbox/module', 'lodash'], function (module, _) {
 
     "use strict";
-
-
     return module.registerDirective('messageLabels', function (InboxConfig) {
         return {
             replace: true,
@@ -22,5 +20,5 @@ define(['modules/inbox/module', 'lodash'], function (module, _) {
                 }
             }
         }
-    })
-})
+    });
+});

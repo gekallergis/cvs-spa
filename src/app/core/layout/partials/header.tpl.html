@@ -3,6 +3,14 @@
         <!-- PLACE YOUR LOGO HERE -->
         <span id="logo"> <img src="assets/img/logo.png" alt="SmartAdmin"> </span>
         <!-- END LOGO PLACEHOLDER -->
+
+        <!-- Note: The activity badge color changes when clicked and resets the number to 0
+        Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
+        <span id="activity" class="activity-dropdown" activities-dropdown-toggle> 
+            <i class="fa fa-shopping-cart"></i> 
+            <b class="badge bg-color-red">2</b>
+        </span>
+        <div data-smart-include="app/modules/activities/activities.html"></div>
     </div>
 
     <!-- pulled right: nav area -->
@@ -24,7 +32,7 @@
                 </a>
                 <ul class="dropdown-menu pull-right">
                     <li>
-                        <a ui-sref="app.appViews.profileDemo" class="padding-10 padding-top-5 padding-bottom-5"> <i class="fa fa-user"></i>
+                        <a ui-sref="app.profile.details({profileId: 1})" class="padding-10 padding-top-5 padding-bottom-5"> <i class="fa fa-user"></i>
                             <u>P</u>rofile</a>
                     </li>
                     <li class="divider"></li>
@@ -38,9 +46,11 @@
 
         <!-- logout button -->
         <div id="logout" class="btn-header transparent pull-right">
-            <span> <a ui-sref="login" title="Sign Out" data-action="userLogout"
-                      data-logout-msg="You can improve your security further after logging out by closing this opened browser"><i
-                    class="fa fa-sign-out"></i></a> </span>
+            <span>
+                <a ui-sref="login" title="Sign Out" data-action="userLogout" data-logout-msg="You can improve your security further after logging out by closing this opened browser">
+                    <i class="fa fa-sign-out"></i>
+                </a>
+            </span>
         </div>
         <!-- end logout button -->
 
