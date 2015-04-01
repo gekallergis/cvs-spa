@@ -4,13 +4,8 @@
         <span id="logo"> <img src="assets/img/logo.png" alt="SmartAdmin"> </span>
         <!-- END LOGO PLACEHOLDER -->
 
-        <!-- Note: The activity badge color changes when clicked and resets the number to 0
-        Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
-        <span id="activity" class="activity-dropdown" activities-dropdown-toggle> 
-            <i class="fa fa-shopping-cart"></i> 
-            <b class="badge bg-color-red">2</b>
-        </span>
-        <div data-smart-include="app/modules/activities/activities.html"></div>
+        <!-- Basket -->
+        <cvs-basket></cvs-basket>
     </div>
 
     <!-- pulled right: nav area -->
@@ -53,6 +48,16 @@
             </span>
         </div>
         <!-- end logout button -->
+
+        <!-- lock button -->
+        <div id="lock" class="btn-header transparent pull-right">
+            <span>
+                <a ui-sref="lock" title="Lock" data-action="lock">
+                    <i class="fa fa-lock"></i>
+                </a>
+            </span>
+        </div>
+        <!-- end lock button -->
 
         <!-- fullscreen button -->
         <div id="fullscreen" class="btn-header transparent pull-right">

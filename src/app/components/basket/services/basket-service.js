@@ -1,36 +1,27 @@
-define(['app'], function(app){
-    "use strict";
+define(['components/basket/module'], function(module){
 
-	    return app.factory('activityService', function($http,$log) {
+    "use strict";
+	return module.registerFactory('BasketService', function($http,$log) {
 
 		function getActivities(callback){
-
-			$http.get('api/activities/activity.json').success(function(data){
-
+			$http.get('api/activities/activity.json')
+			.success(function(data){
 				callback(data);
-					
-			}).error(function(){
-
+			})
+			.error(function(){
 				$log.log('Error');
 				callback([]);
-
 			});
-
 		}
 
 		function getActivitiesByType(type, callback){
-
-			$http.get('api/activities/activity-' + type + '.json').success(function(data){
-
+			$http.get('api/activities/activity-' + type + '.json')
+			.success(function(data){
 				callback(data);
-					
 			}).error(function(){
-
 				$log.log('Error');
 				callback([]);
-
 			});
-
 		}
 		
 		return{
@@ -41,5 +32,5 @@ define(['app'], function(app){
 				getActivitiesByType(type, callback);
 			}
 		}
-	})
-})
+	});
+});

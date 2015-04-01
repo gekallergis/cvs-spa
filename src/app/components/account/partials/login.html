@@ -47,35 +47,34 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
                 <div class="well no-padding">
-                    <form action="#/profile" id="login-form" class="smart-form client-form" data-smart-validate-form>
+                    <form action="#/profile/1" id="login-form" class="smart-form client-form" data-smart-validate-form>
                         <header>
                             Sign In
                         </header>
                         <fieldset>
                             <section>
-                                <label class="label">E-mail</label>
                                 <label class="input"> <i class="icon-append fa fa-user"></i>
                                     <input type="email" name="email"
                                            data-smart-validate-input
                                            data-required
                                            data-email
                                            data-message-required="Please enter your email address"
-                                           data-message-email="Please enter a VALID email address">
-                                    <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i>
-                                        Please enter email address/username</b></label>
+                                           data-message-email="Please enter a VALID email address"
+                                           placeholder="E-mail">
+                                    <b class="tooltip tooltip-bottom-right">Please enter email address/username</b>
+                                </label>
                             </section>
                             <section>
-                                <label class="label">Password</label>
                                 <label class="input"> <i class="icon-append fa fa-lock"></i>
                                    <input type="password" name="password"
                                           data-smart-validate-input
                                           data-required
                                           data-minlength="3"
                                           data-maxnlength="20"
-                                          data-message="Please enter your email password">
-                                    <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Enter
-                                        your password</b> </label>
-
+                                          data-message="Please enter your email password"
+                                          placeholder="Password">
+                                    <b class="tooltip tooltip-bottom-right">Enter your password</b>
+                                </label>
                                 <div class="note">
                                     <a ui-sref="forgotPassword">Forgot password?</a>
                                 </div>

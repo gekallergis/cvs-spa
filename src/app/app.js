@@ -30,6 +30,7 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router', 'angular-animate
         'app.reporting',
         'app.widgets',
         'app.intel',
+        'app.basket',
         //'app.dashboard',
         //'app.auth',
         //'app.chat',

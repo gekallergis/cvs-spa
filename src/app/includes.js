@@ -71,6 +71,13 @@ define([
     // Intel
     'components/intel/module',
 
+    // Basket
+    'components/basket/module',
+    'components/basket/controllers/basket-controller',
+    'components/basket/directives/basket-dropdown-toggle',
+    'components/basket/directives/basket/basket',
+    'components/basket/services/basket-service',
+
 
 
 
@@ -102,9 +109,9 @@ define([
     //'modules/projects/Project',
     //'modules/projects/recentProjects',
 
-    'modules/activities/activities-controller',
-    'modules/activities/activities-dropdown-toggle-directive',
-    'modules/activities/activities-service',
+    //'modules/activities/activities-controller',
+    //'modules/activities/activities-dropdown-toggle-directive',
+    //'modules/activities/activities-service',
 
     //'modules/shortcut/shortcut-directive',
 

@@ -32,6 +32,9 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
                     }
                 }
             },
+            data: {
+                title: 'Owned Products'
+            }
         })
         .state('app.invoice', {
             url: '/invoice',
@@ -45,6 +48,9 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
                     }
                 }
             },
+            data: {
+                title: 'Invoices'
+            }
         })
         .state('app.invoice.details', {
             url: '/:invoiceId',
@@ -54,7 +60,7 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
                 }
             },
             data: {
-                title: 'Company Profile'
+                title: 'Invoice'
             }
         })
         .state('app.orders', {
@@ -69,6 +75,9 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
                     }
                 }
             },
+            data: {
+                title: 'Orders'
+            }
         });
     });
 
