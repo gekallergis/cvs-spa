@@ -16,8 +16,6 @@
 	"/angular-google-maps/dist/angular-google-maps.min.js",
 	"/angular-bootstrap/ui-bootstrap-tpls.min.js",
 	"/angular-couch-potato/dist/angular-couch-potato.js",
-	"/angular-easyfb/angular-easyfb.min.js",
-	"/angular-google-plus/dist/angular-google-plus.min.js",
 	"/fastclick/lib/fastclick.js",
 	"/jquery-color/jquery.color.js",
 	"/select2/select2.min.js",
