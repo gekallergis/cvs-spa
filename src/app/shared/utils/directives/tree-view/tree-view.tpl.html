@@ -1,0 +1,4 @@
+<li ng-class="{parent_li: item.children.length}" ng-repeat="item in items" role="treeitem">
+	<smart-treeview-content></smart-treeview-content>
+	<ul ng-if="item.children.length" smart-treeview ng-show="item.expanded"  items="item.children" role="group" class="smart-treeview-group" ></ul>
+</li>

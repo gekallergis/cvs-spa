@@ -6,7 +6,7 @@
             <article class="col-sm-12">
                 <div jarvis-widget id="standard-datatable-widget" data-widget-color="darken" data-widget-editbutton="false">
                     <header>
-                        <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                        <span class="widget-icon"> <i class="fa fa-database"></i> </span>
                         <h2>Sales Data</h2>
                     </header>
                     <div>
@@ -1021,44 +1021,31 @@
             <article class="col-sm-12">
                 <!-- Widget ID (each widget will need unique ID)-->
                 <div jarvis-widget data-widget-color="green" id="wid-id-0" data-widget-editbutton="false">
-                    <!-- widget options:
-                    usage: <div jarvis-widget id="wid-id-0" data-widget-editbutton="false">
-
-                    data-widget-colorbutton="false"
-                    data-widget-editbutton="false"
-                    data-widget-togglebutton="false"
-                    data-widget-deletebutton="false"
-                    data-widget-fullscreenbutton="false"
-                    data-widget-custombutton="false"
-                    data-widget-collapsed="true"
-                    data-widget-sortable="false"
-
-                    -->
                     <header>
                         <span class="widget-icon"> <i class="fa fa-cloud"></i> </span>
                         <h2>Upload Sales Data!</h2>
                     </header>
-
                     <!-- widget div-->
                     <div>
-
-
                         <!-- widget content -->
                         <div class="widget-body">
-
+                            <div class="row">
+                                <div class="col-xs-24 col-sm-12">
+                                    <label><strong>Upload sales data for: </strong>
+                                        <select name="uploadfor" class="">
+                                            <option value="10">Microsoft</option>
+                                            <option value="25">Scania</option>
+                                            <option value="50">Saab</option>
+                                            <option value="100">Volvo</option>
+                                        </select>
+                                    </label>
+                                </div>
+                            </div>
                             <form action="/api/plug" class="dropzone" data-smart-dropzone></form>
-
-                        </div>
-                        <!-- end widget content -->
-
-                    </div>
-                    <!-- end widget div -->
-                </div>
-                <!-- end widget -->
-            </article>
-            <!-- WIDGET END -->
-        </div>
-        <!-- end row -->
-    </section>
-    <!-- end widget grid -->
+                        </div><!-- end widget content -->
+                    </div><!-- end widget div -->
+                </div><!-- end widget -->
+            </article><!-- WIDGET END -->
+        </div><!-- end row -->
+    </section><!-- end widget grid -->
 </div>

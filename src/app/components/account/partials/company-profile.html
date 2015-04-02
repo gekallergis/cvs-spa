@@ -22,6 +22,9 @@
                                             <a href-void>Edit Information</a>
                                         </li>
                                         <li>
+                                            <a href-void>Attach Managing Account</a>
+                                        </li>
+                                        <li>
                                             <a href-void>Attach to Company</a>
                                         </li>
                                         <li class="divider"></li>
@@ -52,7 +55,9 @@
                                 <img src="assets/img/avatars/george-big.png" alt="demo user">
                             </div>
                             <div class="col-sm-6">
-                                <h1>Microsoft
+                                <h1>Microsoft Sweden
+                                    <br>
+                                    <small> Parent Company: <a href-void>Microsoft</a></small>
                                     <br>
                                     <small> Managing Account: <a ui-sref="app.profile.details({profileId: 1})">George Kallergis</a></small>
                                 </h1>
@@ -126,7 +131,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
-                        <hr>
+                        <hr />
                         <div class="padding-10">
                             <ul class="nav nav-tabs tabs-pull-right">
                                 <li class="active">
@@ -135,13 +140,21 @@
                                 <li>
                                     <a href="#a2" data-toggle="tab">Headers Mapping</a>
                                 </li>
+                                <li>
+                                    <a href="#a3" data-toggle="tab">Company Hierarchy</a>
+                                </li>
                             </ul>
                             <div class="tab-content padding-top-10">
                                 <div class="tab-pane fade in active" id="a1">
                                     Company statistics can go here!
                                 </div>
-                                <div class="tab-pane fade in active" id="a2">
+                                <div class="tab-pane fade in" id="a2">
                                     Headers mapping setting go here!
+                                </div>
+                                <div class="tab-pane fade in" id="a3">
+                                    <div class="tree">
+                                        <ul data-smart-treeview data-items="company_hierarchy" role="tree"></ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -159,7 +172,7 @@
                                 </button>
                                 <h1><span class="semi-bold slideInRight fast animated"><i class="fa fa-lg fa-fw fa-user"></i>Company Profile Page</span></h1>
                                 <p>
-                                    Company details UI to show company details. In addition the following actions can be carried out:
+									Company details UI to show company details. In addition the following actions can be carried out:
                                     <ol>
                                         <li>Set bespoke currency for the company.</li>
                                         <li>View company statistics.</li>
@@ -167,6 +180,8 @@
                                         <li>Edit company information.</li>
                                         <li>Delete company.</li>
                                         <li>Attach a parent company.</li>
+										<li>View the hierarchy the company belongs to.</li>
+										<li>Attach managing account.</li>
                                     </ol>
                                     An additional "Employees" section was added (out of our scope) just to show the linking possibilities when dealing with accounts.
                                 </p>

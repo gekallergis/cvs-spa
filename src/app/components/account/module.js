@@ -125,6 +125,7 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
             url: '/:companyId',
             views: {
                 "content@app": {
+                    controller: 'TreeViewController',
                     templateUrl: 'app/components/account/partials/company-profile.html'
                 }
             },

@@ -35,6 +35,8 @@ define([
     'shared/utils/directives/shortcut-menu/toggle-shortcut-menu',
     'shared/utils/directives/table-tools/datatable-basic',
     'shared/utils/directives/file-upload/smart-dropzone',
+    'shared/utils/directives/tree-view/tree-view',
+    'shared/utils/controllers/tree-view-controller',
 
     // Shared Widgets
     'shared/widgets/module',

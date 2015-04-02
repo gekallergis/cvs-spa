@@ -6,8 +6,11 @@
             <article class="col-sm-12">
                 <div jarvis-widget id="standard-datatable-widget" data-widget-color="darken" data-widget-editbutton="false">
                     <header>
-                        <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                        <span class="widget-icon"> <i class="fa fa-users"></i> </span>
                         <h2>System Accounts</h2>
+                        <div class="widget-toolbar">
+                            <a href-void class="btn btn-success"><i class="fa fa-plus"></i> Add Account</a>
+                        </div>
                     </header>
                     <div>
                         <div class="widget-body no-padding">
@@ -20,7 +23,9 @@
                             <th data-hide="phone"><i class="fa fa-fw fa-phone text-muted hidden-md hidden-sm hidden-xs"></i> Company Phone</th>
                             <th data-hide="phone,tablet"><i class="fa fa-fw fa-globe text-muted hidden-md hidden-sm hidden-xs"></i> City</th>
                             <th data-hide="phone,tablet"><i class="fa fa-fw fa-map-marker text-muted hidden-md hidden-sm hidden-xs"></i> Zip</th>
+                            <th data-hide="phone,tablet"><i class="fa fa-fw fa-cogs text-muted hidden-md hidden-sm hidden-xs"></i> Status</th>
                             <th data-hide="phone,tablet"><i class="fa fa-fw fa-info text-muted hidden-md hidden-sm hidden-xs"></i> Details</th>
+                            <th data-hide="phone,tablet"><i class="fa fa-fw fa-times text-muted hidden-md hidden-sm hidden-xs"></i> Delete</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -31,8 +36,12 @@
                             <td>1-342-463-8341</td>
                             <td>Fogo</td>
                             <td>35728</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -42,8 +51,12 @@
                             <td>1-516-859-1120</td>
                             <td>Machelen</td>
                             <td>7162</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -53,8 +66,12 @@
                             <td>1-724-406-2487</td>
                             <td>Norman</td>
                             <td>98611</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -64,8 +81,12 @@
                             <td>1-412-485-9725</td>
                             <td>Sautin</td>
                             <td>10312</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -75,8 +96,12 @@
                             <td>1-849-642-8777</td>
                             <td>Glovertown</td>
                             <td>29131</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -86,8 +111,12 @@
                             <td>1-470-329-9627</td>
                             <td>Kapolei</td>
                             <td>1883</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -97,8 +126,12 @@
                             <td>1-188-191-2346</td>
                             <td>Modena</td>
                             <td>2211BM</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -108,8 +141,12 @@
                             <td>1-663-655-8904</td>
                             <td>Hondelange</td>
                             <td>75286</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -119,8 +156,12 @@
                             <td>1-598-234-7837</td>
                             <td>Monte San Pietrangeli</td>
                             <td>2324</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -130,8 +171,12 @@
                             <td>1-212-965-8381</td>
                             <td>Huntly</td>
                             <td>5898</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -141,8 +186,12 @@
                             <td>1-541-654-9030</td>
                             <td>Carson City</td>
                             <td>6464JN</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -152,8 +201,12 @@
                             <td>1-153-708-6027</td>
                             <td>Redruth</td>
                             <td>8565</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -163,8 +216,12 @@
                             <td>1-987-452-6038</td>
                             <td>Carapicuíba</td>
                             <td>4031</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -174,8 +231,12 @@
                             <td>1-281-147-5085</td>
                             <td>Yellowknife</td>
                             <td>53067</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -185,8 +246,12 @@
                             <td>1-940-231-1787</td>
                             <td>Guarapuava</td>
                             <td>26530-046</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -196,8 +261,12 @@
                             <td>1-314-209-1223</td>
                             <td>Bienne-lez-Happart</td>
                             <td>KX3W 1OI</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -207,8 +276,12 @@
                             <td>1-348-582-4041</td>
                             <td>Nîmes</td>
                             <td>2128</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -218,8 +291,12 @@
                             <td>1-570-428-6681</td>
                             <td>Meeuwen</td>
                             <td>70483</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -229,8 +306,12 @@
                             <td>1-216-787-0056</td>
                             <td>Mombaruzzo</td>
                             <td>19913</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -240,8 +321,12 @@
                             <td>1-997-154-9340</td>
                             <td>Edmundston</td>
                             <td>3092FI</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -251,8 +336,12 @@
                             <td>1-394-459-3833</td>
                             <td>Ravenstein</td>
                             <td>27337</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -262,8 +351,12 @@
                             <td>1-162-467-7160</td>
                             <td>Witney</td>
                             <td>30305</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -273,8 +366,12 @@
                             <td>1-806-556-1897</td>
                             <td>Abbotsford</td>
                             <td>84972</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -284,8 +381,12 @@
                             <td>1-850-940-6176</td>
                             <td>Rio Grande</td>
                             <td>54983</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -295,8 +396,12 @@
                             <td>1-168-544-4394</td>
                             <td>Pinkafeld</td>
                             <td>12167</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -306,8 +411,12 @@
                             <td>1-153-221-5650</td>
                             <td>Saint-G?ry</td>
                             <td>M9N 0N6</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -317,8 +426,12 @@
                             <td>1-894-944-5767</td>
                             <td>Jauche</td>
                             <td>74552-602</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -328,8 +441,12 @@
                             <td>1-783-562-8563</td>
                             <td>Llandrindod Wells</td>
                             <td>15632</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -339,8 +456,12 @@
                             <td>1-482-317-8464</td>
                             <td>Codó</td>
                             <td>P8L 2V5</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -350,8 +471,12 @@
                             <td>1-275-839-6518</td>
                             <td>Lummen</td>
                             <td>V8L 7Y0</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -361,8 +486,12 @@
                             <td>1-339-661-4197</td>
                             <td>South Burlington</td>
                             <td>47931</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -372,8 +501,12 @@
                             <td>1-236-575-1365</td>
                             <td>Baranello</td>
                             <td>78685</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -383,8 +516,12 @@
                             <td>1-955-717-0835</td>
                             <td>Ichtegem</td>
                             <td>7424</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -394,8 +531,12 @@
                             <td>1-368-137-6285</td>
                             <td>Portobuffolè</td>
                             <td>01318</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -405,8 +546,12 @@
                             <td>1-315-684-6122</td>
                             <td>Keswick</td>
                             <td>4438PF</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -416,8 +561,12 @@
                             <td>1-586-261-7830</td>
                             <td>Bacabal</td>
                             <td>6044</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -427,8 +576,12 @@
                             <td>1-782-168-2387</td>
                             <td>Papasidero</td>
                             <td>33000</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -438,8 +591,12 @@
                             <td>1-161-390-1140</td>
                             <td>Moliterno</td>
                             <td>5652</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -449,8 +606,12 @@
                             <td>1-989-320-2205</td>
                             <td>Saint-Pierre</td>
                             <td>X31 1HZ</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -460,8 +621,12 @@
                             <td>1-218-513-8714</td>
                             <td>Fresno</td>
                             <td>1356</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -471,8 +636,12 @@
                             <td>1-869-972-9871</td>
                             <td>Roxboro</td>
                             <td>V3Y 0P0</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -482,8 +651,12 @@
                             <td>1-462-220-8205</td>
                             <td>Mold</td>
                             <td>4765</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -493,8 +666,12 @@
                             <td>1-478-769-3709</td>
                             <td>Norfolk</td>
                             <td>7354AC</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -504,8 +681,12 @@
                             <td>1-589-358-5285</td>
                             <td>Montbliart</td>
                             <td>33244</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -515,8 +696,12 @@
                             <td>1-422-907-2926</td>
                             <td>Évreux</td>
                             <td>88531</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -526,8 +711,12 @@
                             <td>1-476-548-4758</td>
                             <td>Burlington</td>
                             <td>T5Z 4YS</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -537,8 +726,12 @@
                             <td>1-397-946-7346</td>
                             <td>Savona</td>
                             <td>2307HU</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -548,8 +741,12 @@
                             <td>1-984-931-7753</td>
                             <td>Nadrin</td>
                             <td>4718</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -559,8 +756,12 @@
                             <td>1-739-146-3150</td>
                             <td>Veere</td>
                             <td>UX95 5JM</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -570,8 +771,12 @@
                             <td>1-299-790-1428</td>
                             <td>Montaldo Bormida</td>
                             <td>41708</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -581,8 +786,12 @@
                             <td>1-413-195-0820</td>
                             <td>Doetinchem</td>
                             <td>83468</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -592,8 +801,12 @@
                             <td>1-855-937-9214</td>
                             <td>Bad Oldesloe</td>
                             <td>1757</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -603,8 +816,12 @@
                             <td>1-846-339-0222</td>
                             <td>Caerphilly</td>
                             <td>51510</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -614,8 +831,12 @@
                             <td>1-828-436-8902</td>
                             <td>Holyhead</td>
                             <td>4289GW</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -625,8 +846,12 @@
                             <td>1-782-119-9191</td>
                             <td>Águas Lindas de Goiás</td>
                             <td>14531</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -636,8 +861,12 @@
                             <td>1-255-275-2769</td>
                             <td>Montaldo Bormida</td>
                             <td>41706</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -647,8 +876,12 @@
                             <td>1-215-687-1488</td>
                             <td>Lorient</td>
                             <td>42010</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -658,8 +891,12 @@
                             <td>1-309-181-4794</td>
                             <td>Valleyview</td>
                             <td>ZD4H 3NF</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -669,8 +906,12 @@
                             <td>1-380-339-9492</td>
                             <td>Blois</td>
                             <td>01154</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -680,8 +921,12 @@
                             <td>1-794-184-3132</td>
                             <td>Foligno</td>
                             <td>91908</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -691,8 +936,12 @@
                             <td>1-979-292-4559</td>
                             <td>Bertogne</td>
                             <td>2724</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -702,8 +951,12 @@
                             <td>1-900-819-9083</td>
                             <td>Scandriglia</td>
                             <td>E6R 8N1</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -713,8 +966,12 @@
                             <td>1-911-370-2794</td>
                             <td>Frauenkirchen</td>
                             <td>37293</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -724,8 +981,12 @@
                             <td>1-501-422-6929</td>
                             <td>Nossegem</td>
                             <td>9024</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -735,8 +996,12 @@
                             <td>1-188-451-3938</td>
                             <td>College</td>
                             <td>12283</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -746,8 +1011,12 @@
                             <td>1-769-162-9068</td>
                             <td>Villata</td>
                             <td>6843</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -757,8 +1026,12 @@
                             <td>1-263-395-0268</td>
                             <td>Rodengo/Rodeneck</td>
                             <td>1979</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -768,8 +1041,12 @@
                             <td>1-121-616-0992</td>
                             <td>Queanbeyan</td>
                             <td>07095</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -779,8 +1056,12 @@
                             <td>1-736-996-8984</td>
                             <td>Fauglia</td>
                             <td>7587LK</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -790,8 +1071,12 @@
                             <td>1-210-117-9053</td>
                             <td>Dortmund</td>
                             <td>9053</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -801,8 +1086,12 @@
                             <td>1-525-409-7849</td>
                             <td>Qualicum Beach</td>
                             <td>20125</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -812,8 +1101,12 @@
                             <td>1-947-731-6466</td>
                             <td>Llandrindod Wells</td>
                             <td>3260</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -823,8 +1116,12 @@
                             <td>1-725-747-2841</td>
                             <td>Manchester</td>
                             <td>01688-439</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -834,8 +1131,12 @@
                             <td>1-672-945-4291</td>
                             <td>Hillsboro</td>
                             <td>73231</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -845,8 +1146,12 @@
                             <td>1-504-162-2567</td>
                             <td>Kimberly</td>
                             <td>Xxxx</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -856,8 +1161,12 @@
                             <td>1-716-663-9703</td>
                             <td>Legal</td>
                             <td>2707</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -867,8 +1176,12 @@
                             <td>1-361-358-3030</td>
                             <td>Crieff</td>
                             <td>4995</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -878,8 +1191,12 @@
                             <td>1-806-922-8622</td>
                             <td>Rudiano</td>
                             <td>1850UC</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -889,8 +1206,12 @@
                             <td>1-983-915-7779</td>
                             <td>Siddi</td>
                             <td>L2M 1L6</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -900,8 +1221,12 @@
                             <td>1-771-540-3805</td>
                             <td>Lincoln</td>
                             <td>2116</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -911,8 +1236,12 @@
                             <td>1-749-804-8328</td>
                             <td>Haverfordwest</td>
                             <td>14470-440</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -922,8 +1251,12 @@
                             <td>1-333-507-3878</td>
                             <td>Croydon</td>
                             <td>W3C 3PM</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -933,8 +1266,12 @@
                             <td>1-544-422-1437</td>
                             <td>Plymouth</td>
                             <td>Xxxx</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -944,8 +1281,12 @@
                             <td>1-530-583-8669</td>
                             <td>College</td>
                             <td>63260</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -955,8 +1296,12 @@
                             <td>1-415-254-8139</td>
                             <td>Jonqui?re</td>
                             <td>L3M 4R6</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -966,8 +1311,12 @@
                             <td>1-979-983-1456</td>
                             <td>Angleur</td>
                             <td>09703-746</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -977,8 +1326,12 @@
                             <td>1-380-277-2755</td>
                             <td>Toronto</td>
                             <td>60019</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -988,8 +1341,12 @@
                             <td>1-756-948-8416</td>
                             <td>Stene</td>
                             <td>B7T 5X7</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -999,8 +1356,12 @@
                             <td>1-800-808-3688</td>
                             <td>Uppingham. Cottesmore</td>
                             <td>83932-949</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -1010,8 +1371,12 @@
                             <td>1-843-923-0038</td>
                             <td>Feira de Santana</td>
                             <td>47936</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -1021,8 +1386,12 @@
                             <td>1-550-664-4050</td>
                             <td>Corby</td>
                             <td>28842</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -1032,8 +1401,12 @@
                             <td>1-637-483-4408</td>
                             <td>Cleveland</td>
                             <td>49338</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -1043,8 +1416,12 @@
                             <td>1-512-896-6301</td>
                             <td>Quinte West</td>
                             <td>74123</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -1054,8 +1431,12 @@
                             <td>1-222-745-5312</td>
                             <td>Assiniboia</td>
                             <td>3531</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -1065,8 +1446,12 @@
                             <td>1-392-134-2788</td>
                             <td>Pagazzano</td>
                             <td>I27 5OS</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -1076,8 +1461,12 @@
                             <td>1-128-816-7274</td>
                             <td>Mazzano Romano</td>
                             <td>11386</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -1087,8 +1476,12 @@
                             <td>1-546-735-8920</td>
                             <td>Ferlach</td>
                             <td>64629</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -1098,8 +1491,12 @@
                             <td>1-744-647-6144</td>
                             <td>Memphis</td>
                             <td>Xxxx</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -1109,8 +1506,12 @@
                             <td>1-841-489-1665</td>
                             <td>Olivola</td>
                             <td>27504-649</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         <tr>
@@ -1120,8 +1521,12 @@
                             <td>1-883-567-6065</td>
                             <td>Rotheux-Rimi?re</td>
                             <td>4286</td>
+                            <td align="center"><span class="label label-success">Active</span></td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: 1})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                            </td>
+                            <td align="center">
+                                <a href-void class="btn btn-danger btn-xs"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                         </tbody>
