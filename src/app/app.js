@@ -86,7 +86,6 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router', 'angular-animate
 
         // Add the interceptor to the $httpProvider.
         $httpProvider.interceptors.push('ErrorHttpInterceptor');
-
     });
 
     app.run(function ($couchPotato, $rootScope, $state, $stateParams) {
@@ -100,6 +99,8 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router', 'angular-animate
             //$state.go('app.inbox.folder', {folder: "sent"});
         });
     });
+
+    app.constant('SERVICE_ENDPOINT', {url: 'http://127.0.0.1:8000/api/'});
 
     return app;
 });

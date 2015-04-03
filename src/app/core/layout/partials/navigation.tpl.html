@@ -15,7 +15,7 @@
 			<li data-ui-sref-active="active" class="top-menu-invisible">
                 <a data-ui-sref="app.profile.details({profileId: 1})">
                     <i class="fa fa-lg fa-fw fa-user"></i>
-                    <span class="menu-item-parent">{{getTranslation('Profile')}}</span>
+                    <span class="menu-item-parent">{{i18n.getTranslation('Profile')}}</span>
                     <span class="badge pull-right inbox-badge bg-color-green">UD</span>
                 </a>
             </li>
@@ -24,7 +24,7 @@
 			<li data-ui-sref-active="active">
                 <a data-ui-sref="app.inbox.folder">
                     <i class="fa fa-lg fa-fw fa-envelope"></i>
-                    <span class="menu-item-parent">{{getTranslation('Inbox')}}</span>
+                    <span class="menu-item-parent">{{i18n.getTranslation('Inbox')}}</span>
                     <!-- <span unread-messages-count class="badge pull-right inbox-badge"></span> -->
                     <span class="badge pull-right inbox-badge bg-color-green">UD</span>
                 </a>
@@ -34,7 +34,7 @@
             <li data-ui-sref-active="active">
                 <a data-ui-sref="app.products">
                     <i class="fa fa-lg fa-fw fa-archive"></i>
-                    <span class="menu-item-parent">{{getTranslation('Products')}}</span>
+                    <span class="menu-item-parent">{{i18n.getTranslation('Products')}}</span>
                     <span class="badge pull-right inbox-badge bg-color-green">UD</span>
                 </a>
             </li>
@@ -42,26 +42,26 @@
 			<!-- Reporting -->
 			<li data-menu-collapse>
                 <a  href="#">
-                    <i class="fa fa-lg fa-fw fa-book"></i> <span class="menu-item-parent">{{getTranslation('Reporting')}}</span></a>
+                    <i class="fa fa-lg fa-fw fa-book"></i> <span class="menu-item-parent">{{i18n.getTranslation('Reporting')}}</span></a>
                 <ul>
                     <li data-ui-sref-active="active">
                         <a data-ui-sref="app.salesdata">
                         	<i class="fa fa-database"></i>
-                            <span class="menu-item-parent">{{getTranslation('Sales Data')}}</span>
+                            <span class="menu-item-parent">{{i18n.getTranslation('Sales Data')}}</span>
                         	<span class="badge pull-right inbox-badge bg-color-green">UD</span>
                         </a>
                     </li>
                     <li data-ui-sref-active="active">
                         <a data-ui-sref="app.ownedproducts">
                             <i class="fa fa-files-o"></i>
-                            <span class="menu-item-parent">{{getTranslation('Owned Products')}}</span>
+                            <span class="menu-item-parent">{{i18n.getTranslation('Owned Products')}}</span>
                             <span class="badge pull-right inbox-badge bg-color-green">UD</span>
                         </a>
                     </li>
                     <li data-ui-sref-active="active">
                         <a data-ui-sref="app.reports">
                         	<i class="fa fa-file-text"></i>
-                            <span class="menu-item-parent">{{getTranslation('Reports')}}</span>
+                            <span class="menu-item-parent">{{i18n.getTranslation('Reports')}}</span>
                         	<span class="badge pull-right inbox-badge bg-color-green">UD</span>
                         </a>
                     </li>
@@ -73,7 +73,7 @@
     			<li data-ui-sref-active="active">
                     <a data-ui-sref="app.profile">
                         <i class="fa fa-lg fa-fw fa-shopping-cart"></i>
-                        <span class="menu-item-parent">{{getTranslation('Basket')}}</span>
+                        <span class="menu-item-parent">{{i18n.getTranslation('Basket')}}</span>
                         <span class="badge pull-right inbox-badge bg-color-green">UD</span>
                     </a>
                 </li>
@@ -82,19 +82,19 @@
             <!-- Purchases -->
             <li data-menu-collapse>
                 <a  href="#">
-                    <i class="fa fa-lg fa-fw fa-credit-card"></i> <span class="menu-item-parent">{{getTranslation('Purchases')}}</span></a>
+                    <i class="fa fa-lg fa-fw fa-credit-card"></i> <span class="menu-item-parent">{{i18n.getTranslation('Purchases')}}</span></a>
                 <ul>
                     <li data-ui-sref-active="active">
                         <a data-ui-sref="app.orders">
                             <i class="fa fa-lg fa-fw fa-bars"></i>
-                            <span class="menu-item-parent">{{getTranslation('Orders')}}</span>
+                            <span class="menu-item-parent">{{i18n.getTranslation('Orders')}}</span>
                             <span class="badge pull-right inbox-badge bg-color-green">UD</span>
                         </a>
                     </li>
                     <li data-ui-sref-active="active">
                         <a data-ui-sref="app.invoice">
                             <i class="fa fa-lg fa-fw fa-list-alt"></i>
-                            <span class="menu-item-parent">{{getTranslation('Invoices')}}</span>
+                            <span class="menu-item-parent">{{i18n.getTranslation('Invoices')}}</span>
                             <span class="badge pull-right inbox-badge bg-color-green">UD</span>
                         </a>
                     </li>
@@ -105,7 +105,7 @@
             <li data-ui-sref-active="active">
                 <a data-ui-sref="app.profile">
                     <i class="fa fa-lg fa-fw fa-users"></i>
-                    <span class="menu-item-parent">{{getTranslation('Accounts')}}</span>
+                    <span class="menu-item-parent">{{i18n.getTranslation('Accounts')}}</span>
                     <span class="badge pull-right inbox-badge bg-color-green">UD</span>
                 </a>
             </li>
@@ -114,19 +114,19 @@
 			<li data-ui-sref-active="active">
                 <a data-ui-sref="app.company">
                     <i class="fa fa-lg fa-fw fa-building"></i>
-                    <span class="menu-item-parent">{{getTranslation('Companies')}}</span></span>
+                    <span class="menu-item-parent">{{i18n.getTranslation('Companies')}}</span></span>
                     <span class="badge pull-right inbox-badge bg-color-green">UD</span>
                 </a>
             </li>
 
             <!-- Business Intel -->
             <li data-menu-collapse>
-                <a href="#"><i class="fa fa-lg fa-fw fa-info"></i><span class="menu-item-parent">{{getTranslation('Business Intel')}}</span></a>
+                <a href="#"><i class="fa fa-lg fa-fw fa-info"></i><span class="menu-item-parent">{{i18n.getTranslation('Business Intel')}}</span></a>
                 <ul>
                     <li data-ui-sref-active="active">
                         <a data-ui-sref="app.intel.log">
                             <i class="fa fa-pencil-square-o"></i>
-                            <span class="menu-item-parent">{{getTranslation('System Logs')}}</span>
+                            <span class="menu-item-parent">{{i18n.getTranslation('System Logs')}}</span>
                             <span class="badge pull-right inbox-badge bg-color-green">UD</span>
                         </a>
                     </li>

@@ -5,7 +5,7 @@ define(['app'], function(app){
 
 		function getLanguage(key, callback) {
 
-			$http.get('api/langs/' + key + '.json').success(function(data){
+			$http.get('api/i18n/langs/' + key + '.json').success(function(data){
 
 				callback(data);
 				
@@ -20,7 +20,7 @@ define(['app'], function(app){
 
 		function getLanguages(callback) {
 
-			$http.get('api/languages.json').success(function(data){
+			$http.get('api/i18n/languages.json').success(function(data){
 
 				callback(data);
 				

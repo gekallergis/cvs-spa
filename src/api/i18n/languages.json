@@ -2,21 +2,25 @@
 	{
 		"key": "us",
 		"alt": "United States",
-		"title": "English (US)"
+		"title": "English (US)",
+		"default": true
 	},
 	{
 		"key": "se",
 		"alt": "Sweden",
-		"title": "Swedish"
+		"title": "Swedish",
+		"default": false
 	},
 	{
         "key": "gr",
         "alt": "Greece",
-        "title": "Greek"
+        "title": "Greek",
+        "default": false
     },
     {
         "key": "ir",
         "alt": "Iran",
-        "title": "Farsi"
+        "title": "Farsi",
+        "default": false
     }
 ]
