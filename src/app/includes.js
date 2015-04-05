@@ -72,6 +72,10 @@ define([
 
     // Intel
     'components/intel/module',
+    'components/intel/controllers/system-log',
+    'components/intel/directives/system-log',
+    'components/intel/filters/system-log',
+    'components/intel/services/system-log',
 
     // Basket
     'components/basket/module',

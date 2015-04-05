@@ -25,7 +25,7 @@ define(['shared/language/module', 'lodash'], function (module, _) {
 			$http.get(SERVICE_ENDPOINT.url + 'i18n/languages.json')
 			.success(function(data){
 				deferred.resolve(data);
-				$log.info('[LANGUAGE_SERVICE] Retrieved alllanguages.');
+				$log.info('[LANGUAGE_SERVICE] Retrieved all languages.');
 			}).error(function(response){
 				deferred.reject(response);
 				$log.error('[LANGUAGE_SERVICE] Failed to retrieve all languages.');

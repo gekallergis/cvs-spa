@@ -1,0 +1,44 @@
+[
+	{
+		"id": "6",
+		"type": "finance",
+		"timestamp": "1428236640",
+		"title": "Invoice Issued",
+		"text": "A new invoice was issued for Microsoft at 4000SEK."
+	},
+	{
+		"id": "1",
+		"type": "company",
+		"timestamp": "1428115120",
+		"title": "Added New Company",
+		"text": "Saab added a new company named 'Saab Norway'"
+	},
+	{
+		"id": "2",
+		"type": "report",
+		"timestamp": "1428104271",
+		"title": "Report Generation",
+		"text": "Microsoft successfully generated a report."
+	},
+	{
+		"id": "3",
+		"type": "report",
+		"timestamp": "1428177600",
+		"title": "Began generation of graphs for Microsoft NewBiz report",
+		"text": ""
+	},
+	{
+		"id": "4",
+		"type": "account",
+		"timestamp": "1428098400",
+		"title": "Updated user information",
+		"text": "Updated account information for user George Kallergis (ID: 1345)."
+	},
+	{
+		"id": "5",
+		"type": "misc",
+		"timestamp": "1410329600",
+		"title": "Old Stuff",
+		"text": "Waaaaaay old! :D"
+	}
+]

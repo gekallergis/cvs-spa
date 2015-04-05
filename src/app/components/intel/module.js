@@ -19,9 +19,14 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
             url: '/log',
             views: {
                 "content@app": {
-                    templateUrl: 'app/components/intel/partials/log.html',
+                    templateUrl: 'app/components/intel/partials/system-log.html',
                     resolve: {
-                        deps: $couchPotatoProvider.resolveDependencies([])
+                        deps: $couchPotatoProvider.resolveDependencies([
+                            'components/intel/controllers/system-log',
+                            'components/intel/directives/system-log',
+                            'components/intel/filters/system-log',
+                            'components/intel/services/system-log',
+                        ])
                     }
                 }
             },
