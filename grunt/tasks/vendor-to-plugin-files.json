@@ -63,7 +63,7 @@
 	"/jcrop/js/jquery.Jcrop.min.js",
 	"/bootstrap-progressbar/bootstrap-progressbar.min.js",
 	"/jquery-nestable/jquery.nestable.js",
-	"/lodash/dist/lodash.min.js",
+	"/lodash/lodash.min.js",
 
 	"/bower-jvectormap/jquery-jvectormap-1.2.2.min.js",
 	"/bower-jvectormap/jquery-jvectormap-1.2.2.css",
