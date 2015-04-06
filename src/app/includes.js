@@ -3,6 +3,17 @@ define([
     // CVS //
     //=====//
 
+    // CVS Model
+    'shared/cvs-model/module',
+    'shared/cvs-model/services/cvs-api',
+    'shared/cvs-model/models/account-model',
+    'shared/cvs-model/models/inbox-model',
+    'shared/cvs-model/models/product-model',
+    'shared/cvs-model/models/sales-data-model',
+    'shared/cvs-model/models/order-model',
+    'shared/cvs-model/models/invoice-model',
+    'shared/cvs-model/models/intel-model',
+
     // Layout
     'core/layout/module',
     'core/layout/actions/minifyMenu',
@@ -75,7 +86,6 @@ define([
     'components/intel/controllers/system-log',
     'components/intel/directives/system-log',
     'components/intel/filters/system-log',
-    'components/intel/services/system-log',
 
     // Basket
     'components/basket/module',

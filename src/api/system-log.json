@@ -7,13 +7,6 @@
 		"text": "A new invoice was issued for Microsoft at 4000SEK."
 	},
 	{
-		"id": "1",
-		"type": "company",
-		"timestamp": "1428115120",
-		"title": "Added New Company",
-		"text": "Saab added a new company named 'Saab Norway'"
-	},
-	{
 		"id": "2",
 		"type": "report",
 		"timestamp": "1428104271",
@@ -26,6 +19,13 @@
 		"timestamp": "1428177600",
 		"title": "Began generation of graphs for Microsoft NewBiz report",
 		"text": ""
+	},
+	{
+		"id": "1",
+		"type": "company",
+		"timestamp": "1428115120",
+		"title": "Added New Company",
+		"text": "Saab added a new company named 'Saab Norway'"
 	},
 	{
 		"id": "4",

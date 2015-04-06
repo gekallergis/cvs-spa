@@ -1,14 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name app [smartadminApp]
- * @description
- * # app [smartadminApp]
- *
- * Main module of the application.
- */
-
 define(['angular', 'angular-couch-potato', 'angular-ui-router', 'angular-animate', 'angular-bootstrap', 'smartwidgets', 'notification'], function (ng, couchPotato) {
 
     var app = ng.module('app', [
@@ -21,6 +12,7 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router', 'angular-animate
         
         // App
         'app.seed',
+        'app.cvs-model',
         'app.layout',
         'app.utils',
         'app.language',
@@ -99,8 +91,6 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router', 'angular-animate
             //$state.go('app.inbox.folder', {folder: "sent"});
         });
     });
-
-    app.constant('SERVICE_ENDPOINT', {url: 'http://127.0.0.1:8000/api/'});
 
     return app;
 });

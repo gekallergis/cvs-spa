@@ -14,7 +14,7 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
                     controller: function ($scope, config) {
                         $scope.config = config.data;
                         $scope.deleteSelected = function(){
-                            $scope.$broadcast('$inboxDeleteMessages')
+                            $scope.$broadcast('$inboxDeleteMessages');
                         }
                     },
                     controllerAs: 'InboxController',
@@ -40,7 +40,7 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
                     controller: function ($scope, messages, $stateParams) {
                         $scope.$parent.selectedFolder = _.find($scope.$parent.config.folders, {key: $stateParams.folder});
                         $scope.messages = messages;
-
+                        
                         $scope.$on('$inboxDeleteMessages', function(event){
                             angular.forEach($scope.messages, function(message, idx){
                                 if(message.selected){

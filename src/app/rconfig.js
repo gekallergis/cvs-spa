@@ -111,7 +111,7 @@ var require = {
         'jquery-jvectormap': '../assets/plugins/bower-jvectormap/jquery-jvectormap-1.2.2.min',
         'jquery-jvectormap-world-mill-en': '../assets/plugins/bower-jvectormap/jquery-jvectormap-world-mill-en',
 
-        'lodash': '../assets/plugins/lodash/dist/lodash.min',
+        'lodash': '../assets/plugins/lodash/lodash.min',
 
 
         'magnific-popup': '../assets/plugins/magnific-popup/dist/jquery.magnific-popup',

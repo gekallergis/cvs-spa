@@ -22,11 +22,14 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                     templateUrl: 'app/components/intel/partials/system-log.html',
                     resolve: {
                         deps: $couchPotatoProvider.resolveDependencies([
+							'shared/cvs-model/models/intel-model',
                             'components/intel/controllers/system-log',
                             'components/intel/directives/system-log',
-                            'components/intel/filters/system-log',
-                            'components/intel/services/system-log',
-                        ])
+                            'components/intel/filters/system-log'
+                        ]),
+                        sys_log: function(IntelModel) {
+                        	return IntelModel.getSystemLog('ASC');
+                        }
                     }
                 }
             },
