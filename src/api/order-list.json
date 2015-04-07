@@ -1,0 +1,92 @@
+[
+	{
+		"id": "1",
+		"invoice_id": "1",
+		"buyer_full_name": "George Kallergis",
+		"purchased_for": "Microsoft",
+		"purchased_on": "13/04/2014",
+		"status": "unpaid",
+		"items": [
+			{
+				"name": "NewBiz Report",
+				"qty": 5,
+				"unit_price": 500
+			},
+			{
+				"name": "Predictive Report",
+				"qty": 6,
+				"unit_price": 500
+			}
+		]
+	},
+	{
+		"id": "2",
+		"invoice_id": "2",
+		"buyer_full_name": "George Kallergis",
+		"purchased_for": "Microsoft",
+		"purchased_on": "13/04/2014",
+		"status": "refund",
+		"items": [
+			{
+				"name": "NewBiz Report",
+				"qty": 8,
+				"unit_price": 500
+			},
+			{
+				"name": "Predictive Report",
+				"qty": 4,
+				"unit_price": 500
+			}
+		]
+	},
+	{
+		"id": "3",
+		"invoice_id": "3",
+		"buyer_full_name": "George Kallergis",
+		"purchased_for": "Microsoft",
+		"purchased_on": "13/04/2014",
+		"status": "paid",
+		"items": [
+			{
+				"name": "NewBiz Report",
+				"qty": 9,
+				"unit_price": 500
+			},
+			{
+				"name": "Predictive Report",
+				"qty": 8,
+				"unit_price": 100
+			}
+		]
+	},
+	{
+		"id": "4",
+		"invoice_id": "4",
+		"buyer_full_name": "George Kallergis",
+		"purchased_for": "Microsoft",
+		"purchased_on": "13/04/2014",
+		"status": "paid",
+		"items": [
+			{
+				"name": "NewBiz Report",
+				"qty": 10,
+				"unit_price": 500
+			}
+		]
+	},
+	{
+		"id": "5",
+		"invoice_id": "5",
+		"buyer_full_name": "George Kallergis",
+		"purchased_for": "Microsoft",
+		"purchased_on": "13/04/2014",
+		"status": "unpaid",
+		"items": [
+			{
+				"name": "Predictive Report",
+				"qty": 2,
+				"unit_price": 5000
+			}
+		]
+	}
+]

@@ -1,0 +1,46 @@
+[
+	{
+		"id": "1",
+		"reg_number": "1-342-463-8341",
+		"name": "Customer Value",
+		"phone": "(123) 456-7890",
+		"primary_address": "Nortullsgatan 34",
+		"secondary_address": "Sveavegen 23",
+		"postcode": "737813",
+		"city": "Stockholm",
+		"country": "Sweden"
+	},
+	{
+		"id": "2",
+		"reg_number": "1-342-463-1234",
+		"name": "Microsoft",
+		"phone": "(123) 456-7890",
+		"primary_address": "Nortullsgatan 34",
+		"secondary_address": "Sveavegen 23",
+		"postcode": "364256",
+		"city": "Copenhagen",
+		"country": "Denmark"
+	},
+	{
+		"id": "3",
+		"reg_number": "1-342-463-9867",
+		"name": "Scania",
+		"phone": "(123) 456-7890",
+		"primary_address": "Nortullsgatan 34",
+		"secondary_address": "Sveavegen 23",
+		"postcode": "2467",
+		"city": "Oslo",
+		"country": "Norway"
+	},
+	{
+		"id": "4",
+		"reg_number": "1-342-463-4367",
+		"name": "Saab",
+		"phone": "(123) 456-7890",
+		"primary_address": "Nortullsgatan 34",
+		"secondary_address": "Sveavegen 23",
+		"postcode": "53634",
+		"city": "Helsinki",
+		"country": "Finland"
+	}
+]

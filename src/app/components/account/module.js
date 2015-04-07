@@ -82,11 +82,17 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
             url: '/profile',
             views: {
                 "content": {
-                    templateUrl: 'app/components/account/partials/user-list.html',
+                    templateUrl: 'app/components/account/partials/profile-list.html',
                     resolve: {
                         deps: $couchPotatoProvider.resolveDependencies([
-                            'shared/utils/directives/table-tools/datatable-basic'
-                        ])
+                            'shared/cvs-model/models/account-model',
+                            'shared/utils/directives/table-tools/datatable-basic',
+                            'components/account/directives/profile-list/profile-list',
+                            'components/account/controllers/profile-list'
+                        ]),
+                        profiles: function(AccountModel) {
+                            return AccountModel.getProfiles();
+                        }
                     }
                 }
             },
@@ -112,8 +118,14 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                     templateUrl: 'app/components/account/partials/company-list.html',
                     resolve: {
                         deps: $couchPotatoProvider.resolveDependencies([
-                            'shared/utils/directives/table-tools/datatable-basic'
-                        ])
+                            'shared/cvs-model/models/account-model',
+                            'shared/utils/directives/table-tools/datatable-basic',
+                            'components/account/directives/company-list/company-list',
+                            'components/account/controllers/company-list'
+                        ]),
+                        companies: function(AccountModel) {
+                            return AccountModel.getCompanies();
+                        }
                     }
                 }
             },

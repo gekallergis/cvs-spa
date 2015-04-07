@@ -15,7 +15,7 @@
 			<li data-ui-sref-active="active" class="top-menu-invisible">
                 <a data-ui-sref="app.profile.details({profileId: 1})">
                     <i class="fa fa-lg fa-fw fa-user"></i>
-                    <span class="menu-item-parent">{{i18n.getTranslation('Profile')}}</span>
+                    <span class="menu-item-parent">{{i18n.getTranslation('My Profile')}}</span>
                     <span class="badge pull-right inbox-badge bg-color-green">UD</span>
                 </a>
             </li>
@@ -85,27 +85,27 @@
                     <i class="fa fa-lg fa-fw fa-credit-card"></i> <span class="menu-item-parent">{{i18n.getTranslation('Purchases')}}</span></a>
                 <ul>
                     <li data-ui-sref-active="active">
-                        <a data-ui-sref="app.orders">
+                        <a data-ui-sref="app.order">
                             <i class="fa fa-lg fa-fw fa-bars"></i>
                             <span class="menu-item-parent">{{i18n.getTranslation('Orders')}}</span>
-                            <span class="badge pull-right inbox-badge bg-color-green">UD</span>
+                            <span class="badge pull-right inbox-badge bg-color-orange">BE</span>
                         </a>
                     </li>
                     <li data-ui-sref-active="active">
                         <a data-ui-sref="app.invoice">
                             <i class="fa fa-lg fa-fw fa-list-alt"></i>
                             <span class="menu-item-parent">{{i18n.getTranslation('Invoices')}}</span>
-                            <span class="badge pull-right inbox-badge bg-color-green">UD</span>
+                            <span class="badge pull-right inbox-badge bg-color-orange">BE</span>
                         </a>
                     </li>
                 </ul>
             </li>
 
-            <!-- Accounts -->
+            <!-- Profiles -->
             <li data-ui-sref-active="active">
                 <a data-ui-sref="app.profile">
                     <i class="fa fa-lg fa-fw fa-users"></i>
-                    <span class="menu-item-parent">{{i18n.getTranslation('Accounts')}}</span>
+                    <span class="menu-item-parent">{{i18n.getTranslation('Profiles')}}</span>
                     <span class="badge pull-right inbox-badge bg-color-green">UD</span>
                 </a>
             </li>
@@ -127,7 +127,7 @@
                         <a data-ui-sref="app.intel.log">
                             <i class="fa fa-pencil-square-o"></i>
                             <span class="menu-item-parent">{{i18n.getTranslation('System Logs')}}</span>
-                            <span class="badge pull-right inbox-badge bg-color-green">UD</span>
+                            <span class="badge pull-right inbox-badge bg-color-orange">BE</span>
                         </a>
                     </li>
                 </ul>

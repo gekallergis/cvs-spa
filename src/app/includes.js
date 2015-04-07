@@ -58,9 +58,13 @@ define([
     'components/seed-panel-page/module',
     'components/seed-panel-page/controllers/seed-controller',
 
-    // Authentication/Registration
+    // Accounts (companies, users)
     'components/account/module',
     'components/account/directives/account-info/account-info',
+    'components/account/directives/company-list/company-list',
+    'components/account/directives/profile-list/profile-list',
+    'components/account/controllers/company-list',
+    'components/account/controllers/profile-list',
 
     // Multilingual Content
     'shared/language/module',
@@ -77,6 +81,10 @@ define([
 
     // Products
     'components/products/module',
+    'components/products/directives/order-list/order-list',
+    'components/products/controllers/order-list',
+    'components/products/directives/invoice-list/invoice-list',
+    'components/products/controllers/invoice-list',
 
     // Reporting
     'components/reporting/module',

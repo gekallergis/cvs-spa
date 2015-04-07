@@ -1,0 +1,66 @@
+[
+	{
+		"id": "1",
+		"first_name": "Jennifer",
+		"last_name": "Aniston",
+		"company": {},
+		"isActive": false
+	},
+	{
+		"id": "2",
+		"first_name": "Jennifer",
+		"last_name": "Aniston",
+		"company": {
+			"id": "2",
+			"reg_number": "1-342-463-1234",
+			"name": "Microsoft",
+			"phone": "(123) 456-7890",
+			"primary_address": "Nortullsgatan 34",
+			"secondary_address": "Sveavegen 23",
+			"postcode": "364256",
+			"city": "Copenhagen",
+			"country": "Denmark"
+		},
+		"isActive": true
+	},
+	{
+		"id": "3",
+		"first_name": "Jennifer",
+		"last_name": "Aniston",
+		"company": {
+			"id": "3",
+			"reg_number": "1-342-463-9867",
+			"name": "Scania",
+			"phone": "(123) 456-7890",
+			"primary_address": "Nortullsgatan 34",
+			"secondary_address": "Sveavegen 23",
+			"postcode": "2467",
+			"city": "Oslo",
+			"country": "Norway"
+		},
+		"isActive": false
+	},
+	{
+		"id": "4",
+		"first_name": "Jennifer",
+		"last_name": "Aniston",
+		"company": {
+			"reg_number": "1-342-463-4367",
+			"name": "Saab",
+			"phone": "(123) 456-7890",
+			"primary_address": "Nortullsgatan 34",
+			"secondary_address": "Sveavegen 23",
+			"postcode": "53634",
+			"city": "Helsinki",
+			"country": "Finland"
+		},
+		"isActive": true
+	},
+	{
+		"id": "5",
+		"first_name": "Jennifer",
+		"last_name": "Aniston",
+		"company": {},
+		"isActive": true
+	}
+]

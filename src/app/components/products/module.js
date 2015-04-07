@@ -43,8 +43,14 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
                     templateUrl: 'app/components/products/partials/invoice-list.html',
                     resolve: {
                         deps: $couchPotatoProvider.resolveDependencies([
-                            'shared/utils/directives/table-tools/datatable-basic'
-                        ])
+                            'shared/cvs-model/models/invoice-model',
+                            'shared/utils/directives/table-tools/datatable-basic',
+                            'components/products/directives/invoice-list/invoice-list',
+                            'components/products/controllers/invoice-list'
+                        ]),
+                        invoices: function(InvoiceModel) {
+                            return InvoiceModel.getInvoices();
+                        }
                     }
                 }
             },
@@ -63,15 +69,21 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
                 title: 'Invoice'
             }
         })
-        .state('app.orders', {
-            url: '/orders',
+        .state('app.order', {
+            url: '/order',
             views: {
                 'content@app': {
                     templateUrl: 'app/components/products/partials/orders.html',
                     resolve: {
                         deps: $couchPotatoProvider.resolveDependencies([
-                            'shared/utils/directives/table-tools/datatable-basic'
-                        ])
+                            'shared/cvs-model/models/order-model',
+                            'shared/utils/directives/table-tools/datatable-basic',
+                            'components/products/directives/order-list/order-list',
+                            'components/products/controllers/order-list'
+                        ]),
+                        orders: function(OrderModel) {
+                            return OrderModel.getOrders();
+                        }
                     }
                 }
             },

@@ -1,4 +1,4 @@
-	define(['components/intel/module', 'lodash'], function (module, _) {
+define(['components/intel/module', 'lodash'], function (module, _) {
 
 	'use strict';
 	module.registerController('SystemLogController', function ($scope, IntelModel) {
