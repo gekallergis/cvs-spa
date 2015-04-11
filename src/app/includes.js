@@ -9,6 +9,7 @@ define([
     'shared/cvs-model/models/account-model',
     'shared/cvs-model/models/inbox-model',
     'shared/cvs-model/models/product-model',
+    'shared/cvs-model/models/report-model',
     'shared/cvs-model/models/sales-data-model',
     'shared/cvs-model/models/order-model',
     'shared/cvs-model/models/invoice-model',
@@ -48,6 +49,7 @@ define([
     'shared/utils/directives/file-upload/smart-dropzone',
     'shared/utils/directives/tree-view/tree-view',
     'shared/utils/controllers/tree-view-controller',
+    'shared/utils/filters/capitalize',
 
     // Shared Widgets
     'shared/widgets/module',
@@ -81,13 +83,25 @@ define([
 
     // Products
     'components/products/module',
-    'components/products/directives/order-list/order-list',
     'components/products/controllers/order-list',
-    'components/products/directives/invoice-list/invoice-list',
     'components/products/controllers/invoice-list',
+    'components/products/controllers/owned-product-list',
+    'components/products/controllers/product-list',
+    'components/products/controllers/invoice-details',
+    'components/products/directives/order-list/order-list',
+    'components/products/directives/invoice-list/invoice-list',
+    'components/products/directives/owned-product-list/owned-product-list',
+    'components/products/directives/product-list/product-list',
+    'components/products/directives/invoice-details/invoice-details',
 
     // Reporting
     'components/reporting/module',
+    'components/reporting/controllers/sales-data-list',
+    'components/reporting/controllers/sales-data-upload',
+    'components/reporting/controllers/report-generation',
+    'components/reporting/directives/sales-data-list/sales-data-list',
+    'components/reporting/directives/sales-data-upload/sales-data-upload',
+    'components/reporting/directives/report-generation/report-generation',
 
     // Intel
     'components/intel/module',

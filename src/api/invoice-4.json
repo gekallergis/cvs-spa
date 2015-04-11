@@ -1,0 +1,30 @@
+{
+	"id": "4",
+	"number": "AA-454-4113-00",
+	"due_date": "15/05/15",
+	"payer": {
+		"name": "Saab",
+		"purchaser": "Bill Gates",
+		"postcode": "1065",
+		"address": "La Avenida St",
+		"city": "California",
+		"country": "United States",
+		"phone": "(123) 456-7890"
+	},
+	"items": [
+		{
+			"name": "NewBiz Report",
+			"description": "Generation of NewBiz report products through CVS.",
+			"qty": 6,
+			"unit_price": 5000
+		},
+		{
+			"name": "Predictive Report",
+			"description": "Generation of Predictive report products through CVS.",
+			"qty": 10,
+			"unit_price": 50000
+		}
+	],
+	"VAT": 15,
+	"status": "unpaid"
+}

@@ -19,9 +19,9 @@ define(['components/account/module', 'lodash'], function (module, _) {
 				"postcode": $scope.nc.postcode,
 				"city": $scope.nc.city,
 				"country": $scope.nc.country
+			}).then(function() {
+				$scope.refreshList();
 			});
-			
-			$scope.refreshList();
 		};
 	});
 });

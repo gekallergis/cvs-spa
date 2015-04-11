@@ -1,0 +1,16 @@
+[
+	{
+		"id": "1",
+		"name": "NewBiz Report",
+		"price": 5000,
+		"info": "Analyze your sales data!Generate your reports online!Blah blah blah!Lalalalala!Blah blah blah!Lalalalala!Blah blah blah!",
+		"isPopular": false
+	},
+	{
+		"id": "2",
+		"name": "Predictive Report",
+		"price": 50000,
+		"info": "Analyze your sales data!Generate your reports online!Blah blah blah!Lalalalala!Blah blah blah!Lalalalala!Blah blah blah!",
+		"isPopular": true
+	}
+]

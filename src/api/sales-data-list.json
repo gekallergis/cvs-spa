@@ -1,0 +1,47 @@
+[
+	{
+		"id": "1",
+		"sales_period": "March 2014",
+		"uploaded_on": "03/04/14 11:46",
+		"uploaded_by": "Ove Sveneke",
+		"uploaded_for": "Customer Value",
+		"file_location": "api/sales_data/test_sales_data.txt",
+		"status": "checked"
+	},
+	{
+		"id": "2",
+		"sales_period": "April 2014",
+		"uploaded_on": "03/04/14 11:46",
+		"uploaded_by": "George Kallergis",
+		"uploaded_for": "Microsoft",
+		"file_location": "api/sales_data/test_sales_data.txt",
+		"status": "error"
+	},
+	{
+		"id": "3",
+		"sales_period": "May 2014",
+		"uploaded_on": "03/04/14 11:46",
+		"uploaded_by": "Ove Sveneke",
+		"uploaded_for": "Customer Value",
+		"file_location": "api/sales_data/test_sales_data.txt",
+		"status": "processing"
+	},
+	{
+		"id": "4",
+		"sales_period": "January 2015",
+		"uploaded_on": "03/04/14 11:46",
+		"uploaded_by": "Ove Sveneke",
+		"uploaded_for": "Customer Value",
+		"file_location": "api/sales_data/test_sales_data.txt",
+		"status": "received"
+	},
+	{
+		"id": "5",
+		"sales_period": "March 2014",
+		"uploaded_on": "03/04/14 11:46",
+		"uploaded_by": "Ove Sveneke",
+		"uploaded_for": "Customer Value",
+		"file_location": "api/sales_data/test_sales_data.txt",
+		"status": "checked"
+	}
+]

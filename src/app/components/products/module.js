@@ -12,7 +12,15 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
                 'content@app': {
                     templateUrl: 'app/components/products/partials/product-list.html',
                     resolve: {
-                        deps: $couchPotatoProvider.resolveDependencies([])
+                        deps: $couchPotatoProvider.resolveDependencies([
+                            'shared/cvs-model/models/product-model',
+                            'components/products/directives/product-list/product-list',
+                            'components/products/controllers/product-list',
+                            'components/products/filters/string-split',
+                        ]),
+                        products: function(ProductModel) {
+                            return ProductModel.getProducts();
+                        }
                     }
                 }
             },
@@ -27,8 +35,14 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
                     templateUrl: 'app/components/products/partials/owned-product-list.html',
                     resolve: {
                         deps: $couchPotatoProvider.resolveDependencies([
-                            'shared/utils/directives/table-tools/datatable-basic'
-                        ])
+                            'shared/cvs-model/models/product-model',
+                            'shared/utils/directives/table-tools/datatable-basic',
+                            'components/products/directives/owned-product-list/owned-product-list',
+                            'components/products/controllers/owned-product-list'
+                        ]),
+                        owned_products: function(ProductModel) {
+                            return ProductModel.getOwnedProducts();
+                        }
                     }
                 }
             },
@@ -45,8 +59,10 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
                         deps: $couchPotatoProvider.resolveDependencies([
                             'shared/cvs-model/models/invoice-model',
                             'shared/utils/directives/table-tools/datatable-basic',
+                            'shared/utils/filters/capitalize',
                             'components/products/directives/invoice-list/invoice-list',
-                            'components/products/controllers/invoice-list'
+                            'components/products/controllers/invoice-list',
+
                         ]),
                         invoices: function(InvoiceModel) {
                             return InvoiceModel.getInvoices();
@@ -62,7 +78,17 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
             url: '/:invoiceId',
             views: {
                 "content@app": {
-                    templateUrl: 'app/components/products/partials/invoice.html'
+                    templateUrl: 'app/components/products/partials/invoice.html',
+                    resolve: {
+                        deps: $couchPotatoProvider.resolveDependencies([
+                            'shared/cvs-model/models/invoice-model',
+                            'components/products/directives/invoice-details/invoice-details',
+                            'components/products/controllers/invoice-details'
+                        ]),
+                        invoice: function(InvoiceModel, $stateParams) {
+                            return InvoiceModel.getInvoice($stateParams.invoiceId);
+                        }
+                    }
                 }
             },
             data: {

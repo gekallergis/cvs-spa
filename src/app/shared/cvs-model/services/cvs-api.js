@@ -38,7 +38,22 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			},
 			getInvoices: function() {
 				return _makeGETRequest('invoice-list.json');	
-			}
+			},
+			getInvoice: function(id) {
+				return _makeGETRequest('invoice-' + id + '.json');
+			},
+			getSalesData: function() {
+				return _makeGETRequest('sales-data-list.json');	
+			},
+			getProducts: function() {
+				return _makeGETRequest('product-list.json');	
+			},
+			getOwnedProducts: function() {
+				return _makeGETRequest('owned-products-list.json');	
+			},
+			getReports: function() {
+				return _makeGETRequest('report-list.json');
+			},
 		};
     });
 });

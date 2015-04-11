@@ -17,8 +17,7 @@ define(['components/account/module', 'lodash'], function (module, _) {
 				"company_phone": $scope.np.company_phone,
 				"company_city": $scope.np.company_city,
 				"company_zip": $scope.np.company_zip
-			})
-			.thne(function(){
+			}).then(function(){
 				$scope.refreshList();
 			});
 		};

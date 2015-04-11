@@ -13,9 +13,17 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                     templateUrl: 'app/components/reporting/partials/sales-data.html',
                     resolve: {
                         deps: $couchPotatoProvider.resolveDependencies([
+                            'shared/cvs-model/models/sales-data-model',
                             'shared/utils/directives/file-upload/smart-dropzone',
                             'shared/utils/directives/table-tools/datatable-basic',
-                        ])
+                            'components/reporting/directives/sales-data-list/sales-data-list',
+                            'components/reporting/controllers/sales-data-list',
+                            'components/reporting/directives/sales-data-upload/sales-data-upload',
+                            'components/reporting/controllers/sales-data-upload'
+                        ]),
+                        sales_data: function(SalesDataModel) {
+                            return SalesDataModel.getSalesData();
+                        }
                     }
                 }
             },
@@ -27,16 +35,22 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
             url: '/reports',
             views: {
                 "content@app": {
-                    templateUrl: 'app/components/reporting/partials/reports.html',
+                    templateUrl: 'app/components/reporting/partials/report.html',
                     resolve: {
                         deps: $couchPotatoProvider.resolveDependencies([
+                            'shared/cvs-model/models/report-model',
                             'shared/utils/directives/table-tools/datatable-basic',
-                        ])
+                            'components/reporting/controllers/report-generation',
+                            'components/reporting/directives/report-generation/report-generation'
+                        ]),
+                        reports: function(ReportModel) {
+                            return ReportModel.getReports();
+                        }
                     }
                 }
             },
             data: {
-                title: 'Sales Data'
+                title: 'Reports'
             },
         })
     });

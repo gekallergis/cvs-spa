@@ -1,0 +1,42 @@
+[
+	{
+		"id": "1",
+		"product_name": "Predictive Report",
+		"sales_period": "June 2014",
+		"generated_by": "George Kallergis",
+		"generated_for": "Saab",
+		"generated_on": "13/04/2015",
+		"file_location": "api/reports/NewBiz_Report.pdf",
+		"status": "generating"
+	},
+	{
+		"id": "2",
+		"product_name": "Predictive Report",
+		"sales_period": "June 2014",
+		"generated_by": "George Kallergis",
+		"generated_for": "Saab",
+		"generated_on": "13/04/2015",
+		"file_location": "api/reports/NewBiz_Report.pdf",
+		"status": "ready"
+	},
+	{
+		"id": "3",
+		"product_name": "Predictive Report",
+		"sales_period": "June 2014",
+		"generated_by": "George Kallergis",
+		"generated_for": "Saab",
+		"generated_on": "13/04/2015",
+		"file_location": "api/reports/NewBiz_Report.pdf",
+		"status": "ready"
+	},
+	{
+		"id": "4",
+		"product_name": "Predictive Report",
+		"sales_period": "June 2014",
+		"generated_by": "George Kallergis",
+		"generated_for": "Saab",
+		"generated_on": "13/04/2015",
+		"file_location": "api/reports/NewBiz_Report.pdf",
+		"status": "error"
+	}
+]
