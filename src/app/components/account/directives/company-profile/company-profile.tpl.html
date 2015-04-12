@@ -1,0 +1,150 @@
+<div class="well well-light well-sm no-margin no-padding">
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="myCarousel" class="carousel fade profile-carousel">
+                <div class="air air-bottom-right padding-10">
+                    <div class="air air-bottom-right padding-10">
+                    <div data-dropdown>
+                        <a id="dLabel" role="button" class="btn btn-lg btn-success dropdown-toggle" href-void><i class="fa fa-cogs"></i> Actions <span class="caret"></span> </a>
+                        <ul class="dropdown-menu multi-level" role="menu">
+                            <li>
+                                <a href-void>Set Bespoke Currency</a>
+                            </li>
+                            <li>
+                                <a href-void>Edit Information</a>
+                            </li>
+                            <li>
+                                <a href-void>Attach Managing Account</a>
+                            </li>
+                            <li>
+                                <a href-void>Attach to Company</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href-void><i class="fa fa-trash-o"></i> Delete Company</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+                <div class="air air-top-left padding-10">
+                    <h4 class="txt-color-black font-md"><strong>Jan 1, 2014</strong></h4>
+                </div>
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <!-- Slide 1 -->
+                    <div class="item active">
+                        <img src="assets/img/demo/m3.jpg" alt="demo user">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-3 profile-pic">
+                    <img ng-src="{{company.managing_account.image}}">
+                </div>
+                <div class="col-sm-6">
+                    <h1>{{company.name}}
+                        <span ng-show="company.parent_company">
+                            <br />
+                            <small> Parent Company: <a href-void>{{company.parent_company.name}}</a></small>
+                        </span>
+                        <br />
+                        <small> Managing Account: <a ui-sref="app.profile.details({profileId: 1})">{{company.managing_account.first_name}} {{company.managing_account.last_name}}</a></small>
+                    </h1>
+                    <ul class="list-unstyled">
+                        <li>
+                            <p class="text-muted">
+                                <i class="fa fa-pencil"></i>&#xA0;&#xA0;{{company.reg_number}}
+                            </p>
+                        </li>
+                        <li>
+                            <p class="text-muted">
+                                <i class="fa fa-map-marker"></i>&#xA0;&#xA0;{{company.primary_address}}
+                            </p>
+                        </li>
+                        <li>
+                            <p class="text-muted">
+                                <i class="fa fa-map-marker"></i>&#xA0;&#xA0;{{company.secondary_address}}
+                            </p>
+                        </li>
+                        <li>
+                            <p class="text-muted">
+                                <i class="fa fa-map-marker"></i>&#xA0;&#xA0;{{company.postcode}}
+                            </p>
+                        </li>
+                        <li>
+                            <p class="text-muted">
+                                <i class="fa fa-globe"></i>&#xA0;&#xA0;{{company.city}}, {{company.country}}
+                            </p>
+                        </li>
+                        <li>
+                            <p class="text-muted">
+                                <i class="fa fa-phone"></i>&#xA0;&#xA0;{{company.phone}}
+                            </p>
+                        </li>
+                        <li>
+                            <p class="text-muted">
+                                <i class="fa fa-envelope"></i>&#xA0;&#xA0;<a href="mailto:{{company.managing_account.email}}">{{company.managing_account.email}}</a>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h1>
+                        <small>Employees</small>
+                    </h1>
+                    <ul class="list-inline friends-list">
+                        <li>
+                            <img src="assets/img/avatars/1.png" alt="friend-1">
+                        </li>
+                        <li>
+                            <img src="assets/img/avatars/2.png" alt="friend-2">
+                        </li>
+                        <li>
+                            <img src="assets/img/avatars/3.png" alt="friend-3">
+                        </li>
+                        <li>
+                            <img src="assets/img/avatars/4.png" alt="friend-4">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <hr />
+            <div class="padding-10">
+                <ul class="nav nav-tabs tabs-pull-right">
+                    <li class="active">
+                        <a href="#a1" data-toggle="tab">Company Statistics</a>
+                    </li>
+                    <li>
+                        <a href="#a2" data-toggle="tab">Headers Mapping</a>
+                    </li>
+                    <li>
+                        <a href="#a3" data-toggle="tab">Company Hierarchy</a>
+                    </li>
+                </ul>
+                <div class="tab-content padding-top-10">
+                    <div class="tab-pane fade in active" id="a1">
+                        Company statistics can go here!
+                    </div>
+                    <div class="tab-pane fade in" id="a2">
+                        Headers mapping setting go here!
+                    </div>
+                    <div class="tab-pane fade in" id="a3">
+                        <div class="tree">
+                            <ul data-smart-treeview data-items="company.hierarchy" role="tree"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
+</div>

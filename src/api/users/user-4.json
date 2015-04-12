@@ -1,0 +1,73 @@
+{
+	"id": "4",
+	"first_name": "George",
+	"last_name": "Kallergis",
+	"email": "kallergis.george@saab.com",
+	"image": "assets/img/avatars/george-big.png",
+	"status": "active",
+	"employer": {
+		"id": "1",
+		"reg_number": "1-342-463-4367",
+		"name": "Saab Norway",
+		"phone": "(123) 456-7890",
+		"primary_address": "Nortullsgatan 34",
+		"secondary_address": "Sveavegen 23",
+		"postcode": "53634",
+		"city": "Helsinki",
+		"country": "Finland",
+		"parent_company": {
+			"id": "43",
+			"reg_number": "1-342-463-4367",
+			"name": "Saab UK",
+			"phone": "(123) 456-7890",
+			"primary_address": "Nortullsgatan 34",
+			"secondary_address": "Sveavegen 23",
+			"postcode": "53634",
+			"city": "Helsinki",
+			"country": "Finland",
+			"parent_company": {},
+			"managing_account" : {
+				"first_name": "Bill",
+				"last_name": "Gates",
+				"email": "billy@saab.com",
+				"image": "assets/img/avatars/george-big.png"
+			}
+		},
+		"managing_account" : {
+			"first_name": "George",
+			"last_name": "Kallergis",
+			"email": "kallergis.george@saab.com",
+			"image": "assets/img/avatars/george-big.png"
+		},
+		"hierarchy": {
+			"name": "Microsoft",
+			"managing_account": "Bill Gates",
+			"children" : [
+				{
+					"name": "Microsoft Sweden",
+					"managing_account": "George Kallergis",
+					"employees": [
+						{"full_name": "John Doe"},
+						{"full_name": "Jane Doe"}
+					]
+				},
+				{
+					"name": "Microsoft Germany",
+					"managing_account": "Bill Gates",
+					"employees": [
+						{"full_name": "Jake Doe"},
+						{"full_name": "Jack Doe"}
+					]
+				},
+				{
+					"name": "Microsoft Italy",
+					"managing_account": "Steve Jobs",
+					"employees": [
+						{"full_name": "Mark Doe"},
+						{"full_name": "Flint Doe"}
+					]
+				}
+			]
+		}
+	}
+}

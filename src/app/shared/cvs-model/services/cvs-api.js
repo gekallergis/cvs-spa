@@ -30,8 +30,14 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			getCompanies: function() {
 				return _makeGETRequest('company-list.json');
 			},
+			getCompanyProfile: function(id) {
+				return _makeGETRequest('companies/company-' + id + '.json');
+			},
 			getProfiles: function() {
 				return _makeGETRequest('profile-list.json');
+			},
+			getUserProfile: function(id) {
+				return _makeGETRequest('users/user-' + id + '.json');
 			},
 			getOrders: function() {
 				return _makeGETRequest('order-list.json');
@@ -40,7 +46,7 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 				return _makeGETRequest('invoice-list.json');	
 			},
 			getInvoice: function(id) {
-				return _makeGETRequest('invoice-' + id + '.json');
+				return _makeGETRequest('invoices/invoice-' + id + '.json');
 			},
 			getSalesData: function() {
 				return _makeGETRequest('sales-data-list.json');	

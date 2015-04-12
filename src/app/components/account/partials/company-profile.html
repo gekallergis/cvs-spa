@@ -1,194 +1,39 @@
 <div id="content">
-    
     <!-- row -->
     <div class="row">
         <div class="col-sm-12">
             <div class="well well-sm">
                 <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-6">
-                <div class="well well-light well-sm no-margin no-padding">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div id="myCarousel" class="carousel fade profile-carousel">
-                            <div class="air air-bottom-right padding-10">
-                                <div class="air air-bottom-right padding-10">
-                                <div data-dropdown>
-                                    <a id="dLabel" role="button" class="btn btn-lg btn-success dropdown-toggle" href-void><i class="fa fa-cogs"></i> Actions <span class="caret"></span> </a>
-                                    <ul class="dropdown-menu multi-level" role="menu">
-                                        <li>
-                                            <a href-void>Set Bespoke Currency</a>
-                                        </li>
-                                        <li>
-                                            <a href-void>Edit Information</a>
-                                        </li>
-                                        <li>
-                                            <a href-void>Attach Managing Account</a>
-                                        </li>
-                                        <li>
-                                            <a href-void>Attach to Company</a>
-                                        </li>
-                                        <li class="divider"></li>
-                                        <li>
-                                            <a href-void><i class="fa fa-trash-o"></i> Delete Company</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            </div>
-                            <div class="air air-top-left padding-10">
-                                <h4 class="txt-color-white font-md">Jan 1, 2014</h4>
-                            </div>
-                            <ol class="carousel-indicators">
-                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                            </ol>
-                            <div class="carousel-inner">
-                                <!-- Slide 1 -->
-                                <div class="item active">
-                                    <img src="assets/img/demo/m3.jpg" alt="demo user">
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <div cvs-company-profile></div>
+                    </div>
+                    <!-- UI Information -->
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                       <div class="row">
+                            <div class="col-sm-12">
+                                <div class="alert well fade in">
+                                    <button class="close" data-dismiss="alert">
+                                        &#xD7;
+                                    </button>
+                                    <h1><span class="semi-bold slideInRight fast animated"><i class="fa fa-lg fa-fw fa-user"></i>Company Profile Page</span></h1>
+                                    <p>
+    									Company details UI to show company details. In addition the following actions can be carried out:
+                                        <ol>
+                                            <li>Set bespoke currency for the company.</li>
+                                            <li>View company statistics.</li>
+                                            <li>Define headers mapping.</li>
+                                            <li>Edit company information.</li>
+                                            <li>Delete company.</li>
+                                            <li>Attach a parent company.</li>
+    										<li>View the hierarchy the company belongs to.</li>
+    										<li>Attach managing account.</li>
+                                        </ol>
+                                        An additional "Employees" section was added (out of our scope) just to show the linking possibilities when dealing with accounts.
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12">
-                        <div class="row">
-                            <div class="col-sm-3 profile-pic">
-                                <img src="assets/img/avatars/george-big.png" alt="demo user">
-                            </div>
-                            <div class="col-sm-6">
-                                <h1>Microsoft Sweden
-                                    <br>
-                                    <small> Parent Company: <a href-void>Microsoft</a></small>
-                                    <br>
-                                    <small> Managing Account: <a ui-sref="app.profile.details({profileId: 1})">George Kallergis</a></small>
-                                </h1>
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <p class="text-muted">
-                                            <i class="fa fa-pencil"></i>&#xA0;&#xA0;1-342-463-8341
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p class="text-muted">
-                                            <i class="fa fa-map-marker"></i>&#xA0;&#xA0;Nortullsgatan 34
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p class="text-muted">
-                                            <i class="fa fa-map-marker"></i>&#xA0;&#xA0;Sveavegen 23
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p class="text-muted">
-                                            <i class="fa fa-map-marker"></i>&#xA0;&#xA0;737813
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p class="text-muted">
-                                            <i class="fa fa-globe"></i>&#xA0;&#xA0;Stockholm, Sweden
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p class="text-muted">
-                                            <i class="fa fa-phone"></i>&#xA0;&#xA0;(<span class="txt-color-darken">313</span>) <span
-                                                class="txt-color-darken">464</span> - <span class="txt-color-darken">6473</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p class="text-muted">
-                                            <i class="fa fa-envelope"></i>&#xA0;&#xA0;<a href="mailto:kallergis.george@microsoft.com">kallergis.george@microsoft.com</a>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p class="text-muted">
-                                            <i class="fa fa-calendar"></i>&#xA0;&#xA0;<span class="txt-color-darken">Free after <a
-                                                href-void rel="tooltip" title data-placement="top"
-                                                data-original-title="Create an Appointment">4:30 PM</a></span>
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-sm-3">
-                                <h1>
-                                    <small>Employees</small>
-                                </h1>
-                                <ul class="list-inline friends-list">
-                                    <li>
-                                        <img src="assets/img/avatars/1.png" alt="friend-1">
-                                    </li>
-                                    <li>
-                                        <img src="assets/img/avatars/2.png" alt="friend-2">
-                                    </li>
-                                    <li>
-                                        <img src="assets/img/avatars/3.png" alt="friend-3">
-                                    </li>
-                                    <li>
-                                        <img src="assets/img/avatars/4.png" alt="friend-4">
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <hr />
-                        <div class="padding-10">
-                            <ul class="nav nav-tabs tabs-pull-right">
-                                <li class="active">
-                                    <a href="#a1" data-toggle="tab">Company Statistics</a>
-                                </li>
-                                <li>
-                                    <a href="#a2" data-toggle="tab">Headers Mapping</a>
-                                </li>
-                                <li>
-                                    <a href="#a3" data-toggle="tab">Company Hierarchy</a>
-                                </li>
-                            </ul>
-                            <div class="tab-content padding-top-10">
-                                <div class="tab-pane fade in active" id="a1">
-                                    Company statistics can go here!
-                                </div>
-                                <div class="tab-pane fade in" id="a2">
-                                    Headers mapping setting go here!
-                                </div>
-                                <div class="tab-pane fade in" id="a3">
-                                    <div class="tree">
-                                        <ul data-smart-treeview data-items="company_hierarchy" role="tree"></ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- end row -->
-                </div>
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-6">
-                   <div class="row">
-                        <div class="col-sm-12">
-                            <div class="alert well fade in">
-                                <button class="close" data-dismiss="alert">
-                                    &#xD7;
-                                </button>
-                                <h1><span class="semi-bold slideInRight fast animated"><i class="fa fa-lg fa-fw fa-user"></i>Company Profile Page</span></h1>
-                                <p>
-									Company details UI to show company details. In addition the following actions can be carried out:
-                                    <ol>
-                                        <li>Set bespoke currency for the company.</li>
-                                        <li>View company statistics.</li>
-                                        <li>Define headers mapping.</li>
-                                        <li>Edit company information.</li>
-                                        <li>Delete company.</li>
-                                        <li>Attach a parent company.</li>
-										<li>View the hierarchy the company belongs to.</li>
-										<li>Attach managing account.</li>
-                                    </ol>
-                                    An additional "Employees" section was added (out of our scope) just to show the linking possibilities when dealing with accounts.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 </div>
             </div>
         </div>

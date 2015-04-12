@@ -104,7 +104,17 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
             url: '/:profileId',
             views: {
                 "content@app": {
-                    templateUrl: 'app/components/account/partials/user-profile.html'
+                    templateUrl: 'app/components/account/partials/user-profile.html',
+                    resolve: {
+                        deps: $couchPotatoProvider.resolveDependencies([
+                            'shared/cvs-model/models/account-model',
+                            'components/account/directives/user-profile/user-profile',
+                            'components/account/controllers/user-profile'
+                        ]),
+                        user_profile: function(AccountModel, $stateParams) {
+                            return AccountModel.getUserProfile($stateParams.profileId);
+                        }
+                    }
                 }
             },
             data: {
@@ -137,8 +147,17 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
             url: '/:companyId',
             views: {
                 "content@app": {
-                    controller: 'TreeViewController',
-                    templateUrl: 'app/components/account/partials/company-profile.html'
+                    templateUrl: 'app/components/account/partials/company-profile.html',
+                    resolve: {
+                        deps: $couchPotatoProvider.resolveDependencies([
+                            'shared/cvs-model/models/account-model',
+                            'components/account/directives/company-profile/company-profile',
+                            'components/account/controllers/company-profile'
+                        ]),
+                        company_profile: function(AccountModel, $stateParams) {
+                            return AccountModel.getCompanyProfile($stateParams.companyId);
+                        }
+                    }
                 }
             },
             data: {

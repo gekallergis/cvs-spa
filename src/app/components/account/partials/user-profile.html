@@ -4,139 +4,33 @@
         <div class="col-sm-12">
             <div class="well well-sm">
                 <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-6">
-                <div class="well well-light well-sm no-margin no-padding">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div id="myCarousel" class="carousel fade profile-carousel">
-                            <div class="air air-bottom-right padding-10">
-                                <div data-dropdown>
-                                    <a id="dLabel" role="button" class="btn btn-lg btn-success dropdown-toggle" href-void><i class="fa fa-cogs"></i> Actions <span class="caret"></span> </a>
-                                    <ul class="dropdown-menu multi-level" role="menu">
-                                        <li>
-                                            <a href-void>Edit Info</a>
-                                        </li>
-                                        <li>
-                                            <a href-void>Toggle Status</a>
-                                        </li>
-                                        <li>
-                                            <a href-void>Attach to Company</a>
-                                        </li>
-                                        <li>
-                                            <a href-void>Add Free Products</a>
-                                        </li>
-                                        <li class="divider"></li>
-                                        <li>
-                                            <a href-void><i class="fa fa-trash-o"></i> Delete Account</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="air air-top-left padding-10">
-                                <h4 class="txt-color-white font-md">Jan 1, 2014</h4>
-                            </div>
-                            <ol class="carousel-indicators">
-                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                            </ol>
-                            <div class="carousel-inner">
-                                <!-- Slide 1 -->
-                                <div class="item active">
-                                    <img src="assets/img/demo/s1.jpg" alt="demo user">
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <div cvs-user-profile></div>
                     </div>
-                    <div class="col-sm-12">
+                    <div class="col-sm-12 col-md-12 col-lg-6">
                         <div class="row">
-                            <div class="col-sm-3 profile-pic">
-                                <img src="assets/img/avatars/george-big.png" alt="demo user">
-                            </div>
-                            <div class="col-sm-6">
-                                <h1>George <span class="semi-bold">Kallergis</span></h1>
-                                <span class="label label-success">Active</span>
-                                <span class="label label-danger">Inactive</span>
-                                <h1><small>Customer Value</small></h1>
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <p class="text-muted">
-                                            <i class="fa fa-phone"></i>&#xA0;&#xA0;(<span class="txt-color-darken">313</span>) <span
-                                                class="txt-color-darken">464</span> - <span class="txt-color-darken">6473</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p class="text-muted">
-                                            <i class="fa fa-envelope"></i>&#xA0;&#xA0;<a href="mailto:kallergis.george@customervalue.se">kallergis.george@customervalue.se</a>
-                                        </p>
-                                    </li>
-                                </ul>
-                                <br>
-                            </div>
-                            <div class="col-sm-3">
-                                <h1>
-                                    <small>Colleagues</small>
-                                </h1>
-                                <ul class="list-inline friends-list">
-                                    <li>
-                                        <img src="assets/img/avatars/1.png" alt="friend-1">
-                                    </li>
-                                    <li>
-                                        <img src="assets/img/avatars/2.png" alt="friend-2">
-                                    </li>
-                                    <li>
-                                        <img src="assets/img/avatars/3.png" alt="friend-3">
-                                    </li>
-                                    <li>
-                                        <img src="assets/img/avatars/4.png" alt="friend-4">
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <hr />
-                        <div class="padding-10">
-                            <ul class="nav nav-tabs tabs-pull-right">
-                                <li class="active">
-                                    <a href="#a1" data-toggle="tab">Usage Statistics</a>
-                                </li>
-                            </ul>
-                            <div class="tab-content padding-top-10">
-                                <div class="tab-pane fade in active" id="a1">
-                                    Usage statistics can be added here!
+                            <div class="col-sm-12">
+                                <div class="alert well fade in">
+                                    <button class="close" data-dismiss="alert">
+                                        &#xD7;
+                                    </button>
+                                    <h1><span class="semi-bold slideInRight fast animated"><i class="fa fa-lg fa-fw fa-user"></i>Profile Page</span></h1>
+                                    <p>
+                                        Account details UI to show a specific account in detail. The user info is shown and the following actions can be performed:
+                                        <ol>
+                                            <li>Deletion of the account</li>
+                                            <li>Activation/deactivation of the account.</li>
+                                            <li>Attach account to an existing company.</li>
+                                            <li>Edit account.</li>
+                                            <li>Add free products to account's company.</li>
+                                            <li>View account statistics.</li>
+                                        </ol>
+                                        An additional "Colleagues" section was added (out of our scope) just to show the linking possibilities when dealing with accounts.
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- end row -->
-                </div>
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-6">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="alert well fade in">
-                                <button class="close" data-dismiss="alert">
-                                    &#xD7;
-                                </button>
-                                <h1><span class="semi-bold slideInRight fast animated"><i class="fa fa-lg fa-fw fa-user"></i>Profile Page</span></h1>
-                                <p>
-                                    Account details UI to show a specific account in detail. The user info is shown and the following actions can be performed:
-                                    <ol>
-                                        <li>Deletion of the account</li>
-                                        <li>Activation/deactivation of the account.</li>
-                                        <li>Attach account to an existing company.</li>
-                                        <li>Edit account.</li>
-                                        <li>Add free products to account's company.</li>
-                                        <li>View account statistics.</li>
-                                    </ol>
-                                    An additional "Colleagues" section was added (out of our scope) just to show the linking possibilities when dealing with accounts.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 </div>
             </div>
         </div>

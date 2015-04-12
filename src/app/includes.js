@@ -48,7 +48,6 @@ define([
     'shared/utils/directives/table-tools/datatable-basic',
     'shared/utils/directives/file-upload/smart-dropzone',
     'shared/utils/directives/tree-view/tree-view',
-    'shared/utils/controllers/tree-view-controller',
     'shared/utils/filters/capitalize',
 
     // Shared Widgets
@@ -64,8 +63,12 @@ define([
     'components/account/module',
     'components/account/directives/account-info/account-info',
     'components/account/directives/company-list/company-list',
+    'components/account/directives/company-profile/company-profile',
+    'components/account/directives/user-profile/user-profile',
     'components/account/directives/profile-list/profile-list',
     'components/account/controllers/company-list',
+    'components/account/controllers/company-profile',
+    'components/account/controllers/user-profile',
     'components/account/controllers/profile-list',
 
     // Multilingual Content

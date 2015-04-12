@@ -1,0 +1,106 @@
+<div class="well well-light well-sm no-margin no-padding">
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="myCarousel" class="carousel fade profile-carousel">
+                <div class="air air-bottom-right padding-10">
+                    <div data-dropdown>
+                        <a id="dLabel" role="button" class="btn btn-lg btn-success dropdown-toggle" href-void><i class="fa fa-cogs"></i> Actions <span class="caret"></span> </a>
+                        <ul class="dropdown-menu multi-level" role="menu">
+                            <li>
+                                <a href-void>Edit Info</a>
+                            </li>
+                            <li>
+                                <a href-void>Toggle Status</a>
+                            </li>
+                            <li>
+                                <a href-void>Attach to Company</a>
+                            </li>
+                            <li>
+                                <a href-void>Add Free Products</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href-void><i class="fa fa-trash-o"></i> Delete Account</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="air air-top-left padding-10">
+                    <h4 class="txt-color-white font-md"><strong>Jan 1, 2014</strong></h4>
+                </div>
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <!-- Slide 1 -->
+                    <div class="item active">
+                        <img src="assets/img/demo/s1.jpg" alt="demo user">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-3 profile-pic">
+                    <img ng-src="{{user.image}}" alt="demo user">
+                </div>
+                <div class="col-sm-6">
+                    <h1>{{user.first_name}} <span class="semi-bold">{{user.last_name}}</span></h1>
+                    <span class="label label-success">Active</span>
+                    <span class="label label-danger">Inactive</span>
+                    <h1><small>{{user.employer.name}}</small></h1>
+                    <ul class="list-unstyled">
+                        <li>
+                            <p class="text-muted">
+                                <i class="fa fa-phone"></i>&#xA0;&#xA0;{{user.employer.phone}}
+                            </p>
+                        </li>
+                        <li>
+                            <p class="text-muted">
+                                <i class="fa fa-envelope"></i>&#xA0;&#xA0;<a href="mailto:{{user.email}}">{{user.email}}</a>
+                            </p>
+                        </li>
+                    </ul>
+                    <br>
+                </div>
+                <div class="col-sm-3">
+                    <h1>
+                        <small>Colleagues</small>
+                    </h1>
+                    <ul class="list-inline friends-list">
+                        <li>
+                            <img src="assets/img/avatars/1.png" alt="friend-1">
+                        </li>
+                        <li>
+                            <img src="assets/img/avatars/2.png" alt="friend-2">
+                        </li>
+                        <li>
+                            <img src="assets/img/avatars/3.png" alt="friend-3">
+                        </li>
+                        <li>
+                            <img src="assets/img/avatars/4.png" alt="friend-4">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <hr />
+            <div class="padding-10">
+                <ul class="nav nav-tabs tabs-pull-right">
+                    <li class="active">
+                        <a href="#a1" data-toggle="tab">Usage Statistics</a>
+                    </li>
+                </ul>
+                <div class="tab-content padding-top-10">
+                    <div class="tab-pane fade in active" id="a1">
+                        Usage statistics can be added here!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
+</div>
