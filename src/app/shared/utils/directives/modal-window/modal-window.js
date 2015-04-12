@@ -7,8 +7,9 @@ define(['shared/utils/module'], function (module) {
 			transclude: true,
 			replace:true,
 			scope: {
-				title: '@title',
+				title: '@',
 				action_title: '@actionTitle',
+				icon: '@',
 				action: '&submitAction',
 				visible: '='
 			},
