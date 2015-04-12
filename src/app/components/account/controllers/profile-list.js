@@ -2,8 +2,14 @@ define(['components/account/module', 'lodash'], function (module, _) {
 
 	'use strict';
 	module.registerController('ProfileListController', function ($scope, AccountModel, $state) {
+		$scope.np = {};
 		$scope.profile = {};
 		$scope.profile.list = AccountModel.getProfileList();
+		
+		$scope.modalVisibility = false;
+		$scope.showModal = function(){
+	        $scope.modalVisibility = !$scope.modalVisibility;
+	    };
 
 		$scope.refreshList = function() {
 			$state.go($state.current, {}, {reload: true});

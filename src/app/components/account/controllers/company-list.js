@@ -1,9 +1,15 @@
 define(['components/account/module', 'lodash'], function (module, _) {
 
 	'use strict';
-	module.registerController('CompanyListController', function ($scope, AccountModel, $state) {
+	module.registerController('CompanyListController', function ($scope, AccountModel, $state, $log) {
+		$scope.nc = {};
 		$scope.company = {};
 		$scope.company.list = AccountModel.getCompanyList();
+		
+		$scope.modalVisibility = false;
+		$scope.showModal = function(){
+	        $scope.modalVisibility = !$scope.modalVisibility;
+	    };
 
 		$scope.refreshList = function() {
 			$state.go($state.current, {}, {reload: true});

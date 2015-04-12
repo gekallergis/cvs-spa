@@ -5,7 +5,7 @@
             <span class="widget-icon"> <i class="fa fa-building"></i> </span>
             <h2>Companies</h2>
             <div class="widget-toolbar">
-                <button class="btn btn-success" data-toggle="modal" data-target="#addNewCompanyModal"><i class="fa fa-plus"></i> Add Company</button>
+                <button class="btn btn-success" ng-click="showModal()"><i class="fa fa-plus"></i> Add Company</button>
                 <button class="btn btn-primary" ng-click="refreshList()"><i class="fa fa-refresh"></i></button>
             </div>
         </header>
@@ -47,75 +47,53 @@
         </div>
     </div>
     <!-- Companies List -->
-
+    
     <!-- Add Company Modal -->
-    <div class="modal fade" id="addNewCompanyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                        &times;
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel">New Company</h4>
-                </div>
-
-                <div class="modal-body">
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Company Registration Number" ng-model="nc.reg_number" required />
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Company Name" ng-model="nc.name" required />
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Primary Address" ng-model="nc.primary_address" required />
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Secondary Address" ng-model="nc.secondary_address" required />
-                            </div>
-                        </div>
+    <div cvs-modal-window title="Add New Company" action-title="Add Company" submit-action="addNewCompany()" visible="modalVisibility">
+        <form role="form">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Company Registration Number" ng-model="nc.reg_number" required />
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Postal Code" ng-model="nc.postcode" required />
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="City" ng-model="nc.city" required />
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Company Name" ng-model="nc.name" required />
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <select class="form-control" id="category" ng-model="nc.country">
-									<option value="" selected="" disabled="">Country</option>
-									<option value="{{country.key}}" ng-repeat="country in countries" >{{country.value}}</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Phonenumber" ng-model="nc.phone" required />
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Primary Address" ng-model="nc.primary_address" required />
                     </div>
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">
-                        Cancel
-                    </button>
-                    <button type="button" class="btn btn-primary" ng-click="addNewCompany()">
-                        <i class="fa fa-plus"></i> Add Company
-                    </button>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Secondary Address" ng-model="nc.secondary_address" required />
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Postal Code" ng-model="nc.postcode" required />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="City" ng-model="nc.city" required />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <select class="form-control" id="category" ng-model="nc.country">
+                            <option value="" selected="" disabled="">Country</option>
+                            <option value="{{country.key}}" ng-repeat="country in countries" >{{country.value}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Phonenumber" ng-model="nc.phone" required />
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
-    <!-- Add Company Modal -->
 </div>

@@ -87,6 +87,7 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                         deps: $couchPotatoProvider.resolveDependencies([
                             'shared/cvs-model/models/account-model',
                             'shared/utils/directives/table-tools/datatable-basic',
+                            'shared/utils/directives/modal-window/modal-window',
                             'components/account/directives/profile-list/profile-list',
                             'components/account/controllers/profile-list'
                         ]),
@@ -130,8 +131,9 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                         deps: $couchPotatoProvider.resolveDependencies([
                             'shared/cvs-model/models/account-model',
                             'shared/utils/directives/table-tools/datatable-basic',
+                            'shared/utils/directives/modal-window/modal-window',
                             'components/account/directives/company-list/company-list',
-                            'components/account/controllers/company-list'
+                            'components/account/controllers/company-list',
                         ]),
                         companies: function(AccountModel) {
                             return AccountModel.getCompanies();

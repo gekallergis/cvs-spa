@@ -48,6 +48,7 @@ define([
     'shared/utils/directives/table-tools/datatable-basic',
     'shared/utils/directives/file-upload/smart-dropzone',
     'shared/utils/directives/tree-view/tree-view',
+    'shared/utils/directives/modal-window/modal-window',
     'shared/utils/filters/capitalize',
 
     // Shared Widgets
