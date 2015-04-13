@@ -6,6 +6,7 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
     	var _current_user;
 		var _company_list;
 		var _current_company;
+		var _country_list;
 
 		function _getProfiles() {
 			return CVSService.getProfiles()
@@ -24,7 +25,8 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 		function _getCompanies() {
 			return CVSService.getCompanies()
 			.then(function(company_list){
-				_company_list = company_list;
+				_company_list = company_list.companies;
+				_country_list = company_list.countries;
 			});
 		}
 
@@ -100,7 +102,11 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 				var deferred = $q.defer();
 				deferred.resolve();
 				return deferred.promise;
-			}
+			},
+			// Countries
+			getCountryList: function() {
+				return _country_list;
+			},
 		};
     });
 });

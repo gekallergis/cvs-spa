@@ -50,50 +50,69 @@
     
     <!-- Add Company Modal -->
     <div cvs-modal-window title="Add New Company" icon="plus" action-title="Add Company" submit-action="addNewCompany()" visible="modalVisibility">
-        <form role="form">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Company Registration Number" ng-model="nc.reg_number" required />
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Company Name" ng-model="nc.name" required />
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Primary Address" ng-model="nc.primary_address" required />
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Secondary Address" ng-model="nc.secondary_address" required />
-                    </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <input type="text" name="reg-num" class="form-control"
+						data-smart-validate-input data-required
+						data-message-required="Enter the company registration number"
+                    	placeholder="Company Registration Number" ng-model="nc.reg_number" />
+                </div>
+                <div class="form-group">
+                    <input type="text" name="name" class="form-control" 
+                    	data-smart-validate-input data-required
+						data-message-required="Enter the company name"
+                    	placeholder="Company Name" ng-model="nc.name" />
+                </div>
+                <div class="form-group">
+                    <input type="text" name="prim_address" class="form-control"
+                    	data-smart-validate-input data-required
+						data-message-required="Enter the company's primary address"
+                    	placeholder="Primary Address" ng-model="nc.primary_address" />
+                </div>
+                <div class="form-group">
+                    <input type="text" name="sec_address" class="form-control"
+                    	data-smart-validate-input
+                    	placeholder="Secondary Address" ng-model="nc.secondary_address" />
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Postal Code" ng-model="nc.postcode" required />
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="City" ng-model="nc.city" required />
-                    </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" name="postcode" class="form-control"
+                    	data-smart-validate-input data-required
+						data-message-required="Enter the company's postal code"
+                    	placeholder="Postal Code" ng-model="nc.postcode" />
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <select class="form-control" id="category" ng-model="nc.country">
-                            <option value="" selected="" disabled="">Country</option>
-                            <option value="{{country.key}}" ng-repeat="country in countries" >{{country.value}}</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Phonenumber" ng-model="nc.phone" required />
-                    </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" name="city" class="form-control"
+                    	data-smart-validate-input data-required
+						data-message-required="Enter the company's city"
+                    	placeholder="City" ng-model="nc.city" required />
                 </div>
             </div>
-        </form>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <select class="form-control" id="category" name="country" ng-model="nc.country"
+                    	data-smart-validate-input data-required data-message-required="Select the company's country">
+                        <option value="" selected="" disabled="">Country</option>
+                        <option value="{{country.key}}" ng-repeat="country in country.list" >{{country.value}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" name="phone" class="form-control"
+                    	data-smart-validate-input data-required
+						data-message-required="Enter the company's phone number"
+                    	placeholder="Phonenumber" ng-model="nc.phone" />
+                </div>
+            </div>
+        </div>
     </div>
 </div>

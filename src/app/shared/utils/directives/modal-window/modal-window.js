@@ -6,6 +6,7 @@ define(['shared/utils/module'], function (module) {
 			restrict: 'A',
 			transclude: true,
 			replace:true,
+			priority: 10,
 			scope: {
 				title: '@',
 				action_title: '@actionTitle',

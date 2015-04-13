@@ -49,6 +49,7 @@ define([
     'shared/utils/directives/file-upload/smart-dropzone',
     'shared/utils/directives/tree-view/tree-view',
     'shared/utils/directives/modal-window/modal-window',
+    'shared/utils/directives/validator/smart-validate-form',
     'shared/utils/filters/capitalize',
 
     // Shared Widgets

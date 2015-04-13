@@ -19,7 +19,7 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
             },
             resolve: {
                 deps: $couchPotatoProvider.resolveDependencies([
-                    'modules/forms/directives/validate/smartValidateForm'
+                    'shared/utils/directives/validator/smart-validate-form'
                 ]),
                 //delay: function($q, $timeout) {
                 //    var def = $q.defer();
@@ -88,6 +88,7 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                             'shared/cvs-model/models/account-model',
                             'shared/utils/directives/table-tools/datatable-basic',
                             'shared/utils/directives/modal-window/modal-window',
+                            'shared/utils/directives/validator/smart-validate-form',
                             'components/account/directives/profile-list/profile-list',
                             'components/account/controllers/profile-list'
                         ]),
@@ -132,6 +133,7 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                             'shared/cvs-model/models/account-model',
                             'shared/utils/directives/table-tools/datatable-basic',
                             'shared/utils/directives/modal-window/modal-window',
+                            'shared/utils/directives/validator/smart-validate-form',
                             'components/account/directives/company-list/company-list',
                             'components/account/controllers/company-list',
                         ]),

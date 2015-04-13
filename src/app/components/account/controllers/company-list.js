@@ -5,6 +5,8 @@ define(['components/account/module', 'lodash'], function (module, _) {
 		$scope.nc = {};
 		$scope.company = {};
 		$scope.company.list = AccountModel.getCompanyList();
+		$scope.country = {};
+		$scope.country.list = AccountModel.getCountryList();
 		
 		$scope.modalVisibility = false;
 		$scope.showModal = function(){

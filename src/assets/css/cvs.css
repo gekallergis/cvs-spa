@@ -17,3 +17,8 @@
 .btn-header>:first-child>a {
 	cursor: pointer !important;
 }
+
+.has-error label.input input, .has-error input{
+	border-color: #b94a48;
+	background-color:#f2dede;
+}
