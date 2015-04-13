@@ -114,6 +114,8 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                         deps: $couchPotatoProvider.resolveDependencies([
                             'shared/cvs-model/models/account-model',
                             'shared/cvs-model/models/product-model',
+                            'shared/utils/directives/modal-window/modal-window',
+                            'shared/utils/directives/validator/smart-validate-form',
                             'components/account/directives/user-profile/user-profile',
                             'components/account/controllers/user-profile',
                             'components/products/directives/product-list/product-list',
@@ -164,6 +166,8 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                     resolve: {
                         deps: $couchPotatoProvider.resolveDependencies([
                             'shared/cvs-model/models/account-model',
+                            'shared/utils/directives/modal-window/modal-window',
+                            'shared/utils/directives/validator/smart-validate-form',
                             'components/account/directives/company-profile/company-profile',
                             'components/account/controllers/company-profile'
                         ]),

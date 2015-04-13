@@ -23,14 +23,51 @@
 	                    <tr ng-repeat="owned_product in owned_products.list">
 	                        <td>{{owned_product.id}}</td>
 	                        <td>{{owned_product.name}}</td>
-	                        <td>{{owned_product.owned_by}}</td>
+	                        <td>{{owned_product.owned_by.name}}</td>
 	                        <td>{{owned_product.qty}}</td>
 	                        <td align="center">
-	                            <a href-void class="btn btn-primary btn-xs" ng-class="{disabled: (owned_products.qty == 0)}"><i class="fa fa-cogs"></i> Generate</a>
+	                            <a href-void class="btn btn-primary btn-xs" ng-class="{disabled: (owned_product.qty == 0)}" ng-click="showModal(owned_product.id, owned_product.owned_by.id)"><i class="fa fa-cogs"></i> Generate</a>
 	                        </td>
 	                    </tr>
 	                </tbody>
                 </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Generate Report Modal -->
+    <div cvs-modal-window title="Generate Report" icon="cogs" action-title="Generate" submit-action="generateReport()" visible="modalVisibility">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <select class="form-control" id="sales_data" name="sales_data" ng-model="mw.data.country"
+                        data-smart-validate-input data-required data-message-required="Select sales data to analyze">
+                        <option value="" selected="" disabled="">Sales Data</option>
+                        <option value="{{sales_data.id}}" ng-repeat="sales_data in sales_data.list" >{{sales_data.sales_period}} ({{sales_data.uploaded_by}})</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <select class="form-control" id="currency" name="currency" ng-model="mw.currency"
+                        data-smart-validate-input data-required data-message-required="Select currency for the report">
+                        <option value="" selected="" disabled="">Currency</option>
+                        <option value="0">SEK</option>
+                        <option value="1">EUR</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <select class="form-control" id="language" name="language" ng-model="mw.language"
+                        data-smart-validate-input data-required data-message-required="Select language for the report">
+                        <option value="" selected="" disabled="">Language</option>
+                        <option value="0">English</option>
+                        <option value="1">Swedish</option>
+                    </select>
+                </div>
             </div>
         </div>
     </div>

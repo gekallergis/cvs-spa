@@ -36,12 +36,18 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
                     resolve: {
                         deps: $couchPotatoProvider.resolveDependencies([
                             'shared/cvs-model/models/product-model',
+                            'shared/cvs-model/models/sales-data-model',
+                            'shared/utils/directives/modal-window/modal-window',
+                            'shared/utils/directives/validator/smart-validate-form',
                             'shared/utils/directives/table-tools/datatable-basic',
                             'components/products/directives/owned-product-list/owned-product-list',
                             'components/products/controllers/owned-product-list'
                         ]),
                         owned_products: function(ProductModel) {
                             return ProductModel.getOwnedProducts();
+                        },
+                        sales_data: function(SalesDataModel) {
+                            return SalesDataModel.getSalesData();
                         }
                     }
                 }

@@ -18,12 +18,18 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			getReportList: function(){
 				return _report_list;
 			},
-			deleteReport: function(reportId) {
+			deleteReport: function(reportID) {
 				// Delete report through the API here!
 				var deferred = $q.defer();
 				deferred.resolve();
 				return deferred.promise;
-			}
+			},
+			generateReport: function(productID, salesDataID, config) {
+				// Generate report through the API here!
+				var deferred = $q.defer();
+				deferred.resolve();
+				return deferred.promise;
+			},
 		};
     });
 });

@@ -28,7 +28,7 @@
 		                    <td>{{sales_data.sales_period}}</td>
 		                    <td>{{sales_data.uploaded_on}}</td>
 		                    <td>{{sales_data.uploaded_by}}</td>
-		                    <td>{{sales_data.uploaded_for}}</td>
+		                    <td>{{sales_data.uploaded_for.name}}</td>
 		                    <td align="center" ng-switch="sales_data.status">
 	                        	<span class="label label-success" ng-switch-when="checked">{{sales_data.status}}</span>
 	                        	<span class="label label-warning" ng-switch-when="processing">{{sales_data.status}}</span>
