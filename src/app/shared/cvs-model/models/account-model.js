@@ -78,8 +78,20 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 				deferred.resolve();
 				return deferred.promise;
 			},
+			editProfile: function(profile) {
+				// Edit a profile through the API here!
+				var deferred = $q.defer();
+				deferred.resolve();
+				return deferred.promise;
+			},
 			deleteProfile: function(id) {
 				// Delete a profile through the API here!
+				var deferred = $q.defer();
+				deferred.resolve();
+				return deferred.promise;
+			},
+			setStatus: function(id) {
+				// Set the status of a profile through the API here!
 				var deferred = $q.defer();
 				deferred.resolve();
 				return deferred.promise;
@@ -99,6 +111,43 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			},
 			addCompany: function(company) {
 				// Add a new company through the API here!
+				var deferred = $q.defer();
+				deferred.resolve();
+				return deferred.promise;
+			},
+			editCompany: function(company) {
+				// Edit a company through the API here!
+				var deferred = $q.defer();
+				deferred.resolve();
+				return deferred.promise;
+			},
+			deleteCompany: function(id) {
+				// Delete a profile through the API here!
+				var deferred = $q.defer();
+				deferred.resolve();
+				return deferred.promise;
+			},
+			setBespokeCurrency: function(bespoke) {
+				// Add a bespoke currency through the API here!
+				var deferred = $q.defer();
+				deferred.resolve();
+				return deferred.promise;
+			},
+			attachManagingAccount: function(managing_account) {
+				// Attach managing account through the API here!
+				var deferred = $q.defer();
+				deferred.resolve();
+				return deferred.promise;
+			},
+			attachToCompany: function(parent_company) {
+				// Attach managing account through the API here!
+				var deferred = $q.defer();
+				deferred.resolve();
+				return deferred.promise;
+			},
+			addFreeProducts: function(products) {
+				$log.debug(products);
+				// Add free products through the API here!
 				var deferred = $q.defer();
 				deferred.resolve();
 				return deferred.promise;

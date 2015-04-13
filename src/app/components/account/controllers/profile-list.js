@@ -1,7 +1,7 @@
 define(['components/account/module', 'lodash'], function (module, _) {
 
 	'use strict';
-	module.registerController('ProfileListController', function ($scope, AccountModel, $state) {
+	module.registerController('ProfileListController', function ($scope, AccountModel, $state, $log) {
 		$scope.np = {};
 		$scope.profile = {};
 		$scope.profile.list = AccountModel.getProfileList();
@@ -19,20 +19,34 @@ define(['components/account/module', 'lodash'], function (module, _) {
 			AccountModel.addProfile({
 				"first_name": $scope.np.first_name,
 				"last_name": $scope.np.last_name,
-				"company_name": $scope.np.company_name,
-				"company_phone": $scope.np.company_phone,
-				"company_city": $scope.np.company_city,
-				"company_zip": $scope.np.company_zip
+				"password": $scope.np.password,
 			}).then(function(){
 				$scope.refreshList();
 			});
 		};
 
 		$scope.deleteProfile = function(id) {
-			AccountModel.deleteProfile(id)
-			.then(function(){
-				$scope.refreshList();
-			});
+			var profile = $scope.profile.list[_.findIndex($scope.profile.list, 'id', id)];
+
+			$.SmartMessageBox({
+                title: "Delete User Profile!",
+                content: "You are about to delete " + profile.first_name + " " + profile.last_name + "! Are you sure?",
+                buttons: '[Cancel][Delete]'
+            }, function (key_press) {
+				if (key_press === "Delete") {
+					AccountModel.deleteProfile(id)
+					.then(function(){
+						$.smallBox({
+	                        title: "User Profile Deleted",
+	                        content: "User " + profile.first_name + " " + profile.last_name + " was deleted!",
+	                        color: "#C46A69",
+	                        icon: "fa fa-trash-o swing animated",
+	                        timeout: 4000
+	                    });
+	                    $scope.refreshList();
+					});
+                }
+            });
 		};
 	});
 });

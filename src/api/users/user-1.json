@@ -4,9 +4,9 @@
 	"last_name": "Kallergis",
 	"email": "kallergis.george@saab.com",
 	"image": "assets/img/avatars/george-big.png",
-	"status": "active",
+	"isActive": true,
 	"employer": {
-		"id": "1",
+		"id": "2",
 		"reg_number": "1-342-463-4367",
 		"name": "Saab Norway",
 		"phone": "(123) 456-7890",

@@ -7,9 +7,10 @@
 	"secondary_address": "Sveavegen 23",
 	"postcode": "53634",
 	"city": "Helsinki",
-	"country": "Finland",
+	"country": "26",
 	"parent_company": null,
 	"managing_account" : {
+		"id": "4",
 		"first_name": "Bill",
 		"last_name": "Gates",
 		"email": "kallergis.george@saab.com",

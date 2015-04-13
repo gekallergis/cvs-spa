@@ -7,20 +7,20 @@
                         <a id="dLabel" role="button" class="btn btn-lg btn-success dropdown-toggle" href-void><i class="fa fa-cogs"></i> Actions <span class="caret"></span> </a>
                         <ul class="dropdown-menu multi-level" role="menu">
                             <li>
-                                <a href-void>Edit Info</a>
+                                <a href-void ng-click="showModal('editProfileInfoModal')">Edit Info</a>
                             </li>
                             <li>
-                                <a href-void>Toggle Status</a>
+                                <a href-void ng-click="toggleStatus()">Toggle Status</a>
+                            </li>
+                            <li>    
+                                <a href-void ng-click="showModal('attachToCompanyModal')">Attach to Company</a>
                             </li>
                             <li>
-                                <a href-void>Attach to Company</a>
-                            </li>
-                            <li>
-                                <a href-void>Add Free Products</a>
+                                <a href-void ng-click="showModal('addFreeProductsModal')">Add Free Products</a>
                             </li>
                             <li class="divider"></li>
                             <li>
-                                <a href-void><i class="fa fa-trash-o"></i> Delete Account</a>
+                                <a href-void ng-click="deleteProfile(user.id)"><i class="fa fa-trash-o"></i> Delete Account</a>
                             </li>
                         </ul>
                     </div>
@@ -46,11 +46,11 @@
                 </div>
                 <div class="col-sm-6">
                     <h1>{{user.first_name}} <span class="semi-bold">{{user.last_name}}</span></h1>
-                    <span class="label label-success">Active</span>
-                    <span class="label label-danger">Inactive</span>
+                    <span ng-show="user.isActive"><span class="label label-success">Active</span></span>
+                    <span ng-hide="user.isActive"><span class="label label-danger">Inactive</span></span>
                     <h1><small>{{user.employer.name}}</small></h1>
                     <ul class="list-unstyled">
-                        <li>
+                        <li ng-show="user.employer.phone">
                             <p class="text-muted">
                                 <i class="fa fa-phone"></i>&#xA0;&#xA0;{{user.employer.phone}}
                             </p>
@@ -103,4 +103,85 @@
         </div>
     </div>
     <!-- end row -->
+
+    <!-- Edit Information -->
+    <div cvs-modal-window title="Edit Profile Information" icon="floppy-o" action-title="Save" submit-action="editProfileInformation()" visible="mw.editProfileInfoModal.visibility">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" name="first_name" class="form-control"
+                        data-smart-validate-input data-required
+                        data-message-required="Please enter the account holder's first name"
+                        placeholder="First Name" ng-model="mw.editProfileInfoModal.data.first_name" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" name="last_name" class="form-control"
+                        data-smart-validate-input data-required
+                        data-message-required="Please enter the account holder's last name"
+                        placeholder="Last Name" ng-model="mw.editProfileInfoModal.data.last_name" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <input type="text" name="email" class="form-control"
+                        data-smart-validate-input data-required data-email
+                        data-message-required="Please enter the account holder's email"
+                        data-message-email="Please enter a valid email address"
+                        placeholder="Email" ng-model="mw.editProfileInfoModal.data.email" />
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" class="form-control"
+                        data-smart-validate-input
+                        placeholder="Password" ng-model="mw.editProfileInfoModal.data.password" />
+                </div>
+                <div class="form-group">
+                    <input type="password" name="re_password" class="form-control"
+                        data-smart-validate-input
+                        placeholder="Retype Password" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Attach to Company -->
+    <div cvs-modal-window title="Attach to Company" icon="plus" action-title="Attach" submit-action="attachToCompany()" visible="mw.attachToCompanyModal.visibility">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <select class="form-control" id="company" name="company" ng-model="mw.attachToCompanyModal.data.id"
+                        data-smart-validate-input data-required data-message-required="Select a parent company">
+                        <option value="" selected="" disabled="">Parent Company</option>
+                        <option value="{{company.id}}" ng-repeat="company in company.list">{{company.name}} [Company ID: {{company.id}}]</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Free Products -->
+    <div cvs-modal-window title="Add Free Products" icon="plus" action-title="Attach" submit-action="addFreeProducts()" visible="mw.addFreeProductsModal.visibility">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="form-group">
+                    <select class="form-control" id="product" name="product" ng-model="mw.addFreeProductsModal.data.id"
+                        data-smart-validate-input data-required data-message-required="Select a product">
+                        <option value="" selected="" disabled="">Product</option>
+                        <option value="{{product.id}}" ng-repeat="product in product.list">{{product.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <input type="text" name="last_name" class="form-control"
+                        data-smart-validate-input data-required
+                        data-message-required="Quantity"
+                        placeholder="Qty" ng-model="mw.addFreeProductsModal.data.qty" />
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

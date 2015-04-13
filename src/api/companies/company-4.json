@@ -1,5 +1,5 @@
 {
-	"id": "2",
+	"id": "4",
 	"reg_number": "1-342-463-4367",
 	"name": "Saab UK",
 	"phone": "(123) 456-7890",
@@ -7,9 +7,10 @@
 	"secondary_address": "Sveavegen 23",
 	"postcode": "53634",
 	"city": "Helsinki",
-	"country": "Finland",
+	"country": "43",
 	"parent_company": null,
 	"managing_account" : {
+		"id": "7",
 		"first_name": "Bill",
 		"last_name": "Gates",
 		"email": "kallergis.george@saab.com",

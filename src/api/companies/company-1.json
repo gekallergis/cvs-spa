@@ -7,11 +7,11 @@
 	"secondary_address": "Sveavegen 23",
 	"postcode": "53634",
 	"city": "Helsinki",
-	"country": "Finland",
+	"country": "20",
 	"parent_company": {
-		"id": "43",
+		"id": "2",
 		"reg_number": "1-342-463-4367",
-		"name": "Saab UK",
+		"name": "Microsoft",
 		"phone": "(123) 456-7890",
 		"primary_address": "Nortullsgatan 34",
 		"secondary_address": "Sveavegen 23",
@@ -27,6 +27,7 @@
 		}
 	},
 	"managing_account" : {
+		"id": "1",
 		"first_name": "George",
 		"last_name": "Kallergis",
 		"email": "kallergis.george@saab.com",

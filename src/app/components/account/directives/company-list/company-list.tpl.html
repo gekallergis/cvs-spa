@@ -36,7 +36,7 @@
                             <td>{{company.secondary_address}}</td>
                             <td>{{company.postcode}}</td>
                             <td>{{company.city}}</td>
-                            <td>{{company.country}}</td>
+                            <td>{{country.list[company.country]}}</td>
                             <td align="center">
                                 <a ui-sref="app.company.details({companyId: company.id})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
                             </td>
@@ -101,7 +101,7 @@
                     <select class="form-control" id="category" name="country" ng-model="nc.country"
                     	data-smart-validate-input data-required data-message-required="Select the company's country">
                         <option value="" selected="" disabled="">Country</option>
-                        <option value="{{country.key}}" ng-repeat="country in country.list" >{{country.value}}</option>
+                        <option value="{{key}}" ng-repeat="(key, value) in country.list" >{{value}}</option>
                     </select>
                 </div>
             </div>

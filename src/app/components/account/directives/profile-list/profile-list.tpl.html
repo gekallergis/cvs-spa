@@ -34,8 +34,8 @@
                             <td>{{profile.company.city}}</td>
                             <td>{{profile.company.postcode}}</td>
                             <td align="center">
-                                <span ng-show="{{profile.isActive}}"><span class="label label-success">Active</span></span>
-                                <span ng-hide="{{profile.isActive}}"><span class="label label-danger">Inactive</span></span>
+                                <span ng-show="profile.isActive"><span class="label label-success">Active</span></span>
+                                <span ng-hide="profile.isActive"><span class="label label-danger">Inactive</span></span>
                             </td>
                             <td align="center">
                                 <a ui-sref="app.profile.details({profileId: profile.id})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
@@ -77,19 +77,19 @@
                     <input type="text" name="email" class="form-control"
                         data-smart-validate-input data-required data-email
                         data-message-required="Please enter the account holder's email"
-                        data-message-email="Please enter a valid email address"
+                        data-message-email="Enter a valid email address"
                         placeholder="Email" ng-model="np.email" required />
                 </div>
                 <div class="form-group">
                     <input type="password" name="password" class="form-control"
                         data-smart-validate-input data-required
-                        data-message-required="Please enter the account password"
+                        data-message-required="Enter account password"
                         placeholder="Password" ng-model="np.password" required />
                 </div>
                 <div class="form-group">
                     <input type="password" name="re_password" class="form-control"
                         data-smart-validate-input data-required
-                        data-message-required="Please enter the account holder's first name"
+                        data-message-required="Retype account password"
                         placeholder="Retype Password" required />
                 </div>
             </div>

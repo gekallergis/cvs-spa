@@ -94,6 +94,9 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                         ]),
                         profiles: function(AccountModel) {
                             return AccountModel.getProfiles();
+                        },
+                        companies: function(AccountModel) {
+                            return AccountModel.getCompanies();
                         }
                     }
                 }
@@ -110,11 +113,17 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                     resolve: {
                         deps: $couchPotatoProvider.resolveDependencies([
                             'shared/cvs-model/models/account-model',
+                            'shared/cvs-model/models/product-model',
                             'components/account/directives/user-profile/user-profile',
-                            'components/account/controllers/user-profile'
+                            'components/account/controllers/user-profile',
+                            'components/products/directives/product-list/product-list',
+                            'components/products/controllers/product-list'
                         ]),
                         user_profile: function(AccountModel, $stateParams) {
                             return AccountModel.getUserProfile($stateParams.profileId);
+                        },
+                        products: function(ProductModel) {
+                            return ProductModel.getProducts();
                         }
                     }
                 }
@@ -160,6 +169,9 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                         ]),
                         company_profile: function(AccountModel, $stateParams) {
                             return AccountModel.getCompanyProfile($stateParams.companyId);
+                        },
+                        profiles: function(AccountModel) {
+                            return AccountModel.getProfiles();
                         }
                     }
                 }
