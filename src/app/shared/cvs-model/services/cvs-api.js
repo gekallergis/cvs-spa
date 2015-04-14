@@ -42,6 +42,9 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			getUserProfile: function(id) {
 				return _makeGETRequest('users/user-' + id + '.json');
 			},
+			getUserRoles: function(id) {
+				return _makeGETRequest('user-roles.json');
+			},
 			getOrders: function() {
 				return _makeGETRequest('order-list.json');
 			},

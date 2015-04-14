@@ -126,7 +126,10 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                         },
                         products: function(ProductModel) {
                             return ProductModel.getProducts();
-                        }
+                        },
+                        roles: function(AccountModel) {
+							return AccountModel.getUserRoles();
+						}
                     }
                 }
             },

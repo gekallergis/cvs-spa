@@ -7,6 +7,7 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 		var _company_list;
 		var _current_company;
 		var _country_list;
+		var _user_roles_list;
 		var _loggedin_user = null;
 
 		function _login(email, password) {
@@ -22,6 +23,13 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 
 		function _resetPassword(email) {
 			//return CVSService.resetPassword(info);
+		}
+
+		function _getUserRoles() {
+			return CVSService.getUserRoles()
+			.then(function(user_roles_list){
+				_user_roles_list = user_roles_list;
+			});
 		}
 
 		function _getProfiles() {
@@ -93,6 +101,12 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			},
 			getLoggedInUser: function() {
 				return _loggedin_user;
+			},
+			getUserRoles: function() {
+				return _getUserRoles();
+			},
+			getUserRolesList: function() {
+				return _user_roles_list;
 			},
 			// Profile
 			getProfileList: function(){

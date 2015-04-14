@@ -1,0 +1,42 @@
+[
+	{
+		"id": "0",
+		"label": "canViewSystemLog"
+	},
+	{
+		"id": "1",
+		"label": "canDeleteUserProfile"
+	},
+	{
+		"id": "2",
+		"label": "canDeleteCompany"
+	},
+	{
+		"id": "3",
+		"label": "canEditUserProfile"
+	},
+	{
+		"id": "4",
+		"label": "canViewCompanyHierearchy"
+	},
+	{
+		"id": "5",
+		"label": "canUploadSalesData"
+	},
+	{
+		"id": "6",
+		"label": "canGenerateReport"
+	},
+	{
+		"id": "7",
+		"label": "canSendMessage"
+	},
+	{
+		"id": "8",
+		"label": "canPurchaseProduct"
+	},
+	{
+		"id": "9",
+		"label": "canSettleInvoices"
+	}
+]

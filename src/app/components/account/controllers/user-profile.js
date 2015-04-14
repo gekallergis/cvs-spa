@@ -7,6 +7,8 @@ define(['components/account/module', 'lodash'], function (module, _) {
 		$scope.company.list = AccountModel.getCompanyList();
 		$scope.product = {};
 		$scope.product.list = ProductModel.getProductList();
+		$scope.roles = {};
+		$scope.roles.list = AccountModel.getUserRolesList();
 
 		$scope.mw = {
 			editProfileInfoModal: {

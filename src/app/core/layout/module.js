@@ -22,7 +22,7 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                                 'shared/language/directives/language-selector',
                                 'components/account/directives/account-info/account-info',
                                 'components/inbox/directives/unread-messages-count'
-                            ]),
+                            ])
                             //delay: function($q, $timeout) {
                             //    var def = $q.defer();
                             //    

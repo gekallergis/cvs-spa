@@ -22,3 +22,7 @@
 	border-color: #b94a48;
 	background-color:#f2dede;
 }
+
+.select2-hidden-accessible {
+	display: none;
+}
