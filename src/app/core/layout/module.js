@@ -16,6 +16,7 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                             deps: $couchPotatoProvider.resolveDependencies([
                                 'core/layout/controllers/menu',
 								'shared/cvs-model/services/cvs-api',
+                                'shared/cvs-model/models/account-model',
                                 'shared/utils/directives/shortcut-menu/shortcut-menu',
                                 'shared/utils/directives/shortcut-menu/toggle-shortcut-menu',
                                 'shared/language/directives/language-selector',

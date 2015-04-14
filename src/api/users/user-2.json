@@ -3,7 +3,7 @@
 	"first_name": "George",
 	"last_name": "Kallergis",
 	"email": "kallergis.george@saab.com",
-	"image": "assets/img/avatars/sunny-big.png",
+	"image": "assets/img/avatars/sunny.png",
 	"isActive": false,
 	"employer": null
 }
