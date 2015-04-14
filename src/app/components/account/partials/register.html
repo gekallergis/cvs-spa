@@ -47,9 +47,8 @@
 
             </div>
             <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
-                <div class="well no-padding">
-
-                    <form action="#/login" id="smart-form-register" class="smart-form client-form">
+                <div class="well no-padding" ng-controller="RegistrationController">
+                    <form role="form" name="theForm" ng-submit="theForm.$valid && register()" class="smart-form client-form" data-smart-validate-form novalidate>
                         <header>
                             Register Now! It's Free!
                         </header>
@@ -61,54 +60,72 @@
 								<i class="fa-fw fa fa-info"></i>
 								If your company is already registered in our system, leave the related fields empty.
 							</div>
-                            <section>
+                            <div class="alert alert-danger fade in" ng-show="registration.error_message">
+                                <button class="close" data-dismiss="alert">
+                                    ×
+                                </button>
+                                <i class="fa-fw fa fa-times"></i>
+                                {{registration.error_message}}
+                            </div>
+                            <section class="form-group">
                                 <label class="input"> <i class="icon-append fa fa-building-o"></i>
-                                    <input type="text" name="regnum" placeholder="Company Registration Number">
-                                    <b class="tooltip tooltip-bottom-right">The official company number</b></label>
+                                    <input type="text" name="regnum" ng-model="registration.info.reg_num"
+                                           data-smart-validate-input placeholder="Company Registration Number">
+                                    <b class="tooltip tooltip-bottom-right">The official company number</b>
+                                </label>
                             </section>
-                            <section>
-                                <label class="input"> <i class="icon-append fa fa-credit-card"></i>
-                                    <input type="text" name="coname" placeholder="Company Name">
-                                    <b class="tooltip tooltip-bottom-right">The name of your company</b></label>
+                            <section class="form-group">
+                                <label class="input"> <i class="icon-append fa fa-building-o"></i>
+                                    <input type="text" name="coname" ng-model="registration.info.name"
+                                           data-smart-validate-input placeholder="Company Name">
+                                    <b class="tooltip tooltip-bottom-right">The name of your company</b>
+                                </label>
                             </section>
-                            <section>
+                            <section class="form-group">
                                 <label class="input"> <i class="icon-append fa fa-globe"></i>
-                                    <input type="text" name="address" placeholder="Primary Address">
-                                    <b class="tooltip tooltip-bottom-right">The primary address of your company</b></label>
+                                    <input type="text" name="paddress" ng-model="registration.info.primary_address"
+                                           data-smart-validate-input placeholder="Primary Address">
+                                    <b class="tooltip tooltip-bottom-right">The primary address of your company</b>
+                                </label>
                             </section>
-                            <section>
+                            <section class="form-group">
                                 <label class="input"> <i class="icon-append fa fa-globe"></i>
-                                    <input type="text" name="address" placeholder="Secondary Address">
-                                    <b class="tooltip tooltip-bottom-right">The secondary address of your company</b></label>
+                                    <input type="text" name="saddress" ng-model="registration.info.secondary_address"
+                                           data-smart-validate-input placeholder="Secondary Address">
+                                    <b class="tooltip tooltip-bottom-right">The secondary address of your company</b>
+                                </label>
                             </section>
                             <div class="row">
-                                <section class="col col-6">
+                                <section class="form-group col col-6">
                                     <label class="input"> <i class="icon-append fa fa-map-marker"></i>
-                                        <input type="text" name="postcode" placeholder="Postal Code">
-                                        <b class="tooltip tooltip-bottom-right">The post code of your company</b></label>
+                                        <input type="text" name="postcode" ng-model="registration.info.postcode"
+                                               data-smart-validate-input placeholder="Postal Code">
+                                        <b class="tooltip tooltip-bottom-right">The post code of your company</b>
                                     </label>
                                 </section>
-                                <section class="col col-6">
+                                <section class="form-group col col-6">
                                     <label class="input"> <i class="icon-append fa fa-globe"></i>
-                                        <input type="text" name="City" placeholder="City">
-                                        <b class="tooltip tooltip-bottom-right">The city of your company</b></label>
+                                        <input type="text" name="city" ng-model="registration.info.city"
+                                               data-smart-validate-input placeholder="City">
+                                        <b class="tooltip tooltip-bottom-right">The city of your company</b>
                                     </label>
                                 </section>
                             </div>
                             <div class="row">
                                 <section class="col col-6">
 	                                <label class="select">
-	                                    <select name="country">
-	                                        <option value="0" selected="" disabled="">Country</option>
-	                                        <option value="{{country.key}}" ng-repeat="country in countries" >{{country.value}}</option>
-	                                    </select>
+                                        <select class="form-control" id="country" name="country" ng-model="registration.info.country" data-smart-validate-input>
+                                            <option value="" selected="" disabled="">Country</option>
+                                            <option value="{{key}}" ng-repeat="(key, value) in registration.countries" >{{value}}</option>
+                                        </select>
 	                                    <i></i>
 	                                </label>
 	                            </section>
-                                <section class="col col-6">
+                                <section class="form-group col col-6">
                                     <label class="input"> <i class="icon-append fa fa-phone"></i>
-                                        <input type="text" name="phone" placeholder="Phonenumber">
-                                        <b class="tooltip tooltip-bottom-right">The phone number of your company</b></label>
+                                        <input type="text" name="phone" ng-model="registration.info.phone"
+                                               data-smart-validate-input placeholder="Phonenumber">
+                                        <b class="tooltip tooltip-bottom-right">The phone number of your company</b>
                                     </label>
                                 </section>
                             </div>
@@ -116,34 +133,57 @@
 
                         <fieldset>
                             <div class="row">
-                                <section class="col col-6">
+                                <section class="form-group col col-6">
                                     <label class="input"> <i class="icon-append fa fa-user"></i>
-                                        <input type="text" name="fname" placeholder="First Name">
-                                        <b class="tooltip tooltip-bottom-right">Your name</b></label>
+                                        <input type="text" name="fname" ng-model="registration.info.first_name"
+                                               data-smart-validate-input data-required data-message-required="Please enter your first name"
+                                               placeholder="First Name">
+                                        <b class="tooltip tooltip-bottom-right">Your first name</b>
                                     </label>
                                 </section>
-                                <section class="col col-6">
+                                <section class="form-group col col-6">
                                     <label class="input"> <i class="icon-append fa fa-user"></i>
-                                        <input type="text" name="surname" placeholder="Last Name">
-                                        <b class="tooltip tooltip-bottom-right">Your last name</b></label>
+                                        <input type="text" name="lname" ng-model="registration.info.last_name"
+                                               data-smart-validate-input data-required data-message-required="Please enter your last name"
+                                               placeholder="Last Name">
+                                        <b class="tooltip tooltip-bottom-right">Your last name</b>
                                     </label>
                                 </section>
                             </div>
-                            <section>
-                                <label class="input"> <i class="icon-append fa fa-envelope"></i>
-                                    <input type="email" name="email" placeholder="Email address">
-                                    <b class="tooltip tooltip-bottom-right">Your company email</b> </label>
+							<section class="form-group">
+                                <label class="input"> <i class="icon-append fa fa-user"></i>
+                                    <input type="email" name="email" ng-model="registration.info.email"
+                                           data-smart-validate-input data-required data-email
+                                           data-message-required="Please enter your email address"
+                                           data-message-email="Please enter a VALID email address"
+                                           placeholder="E-mail">
+                                    <b class="tooltip tooltip-bottom-right">Please enter your email address</b>
+                                </label>
                             </section>
-                            <section>
-                                <label class="input"> <i class="icon-append fa fa-lock"></i>
-                                    <input type="password" name="password" placeholder="Password" id="password">
-                                    <b class="tooltip tooltip-bottom-right">Password should be between 8-40 characters and contain lowercase letters, upercase letters and numbers</b> </label>
-                            </section>
-                            <section>
-                                <label class="input"> <i class="icon-append fa fa-lock"></i>
-                                    <input type="password" name="passwordConfirm" placeholder="Confirm password">
-                                    <b class="tooltip tooltip-bottom-right">Repeat your password</b> </label>
-                            </section>
+							<section class="form-group">
+							    <label class="input"> <i class="icon-append fa fa-lock"></i>
+							        <input  id="password" type="text" name="password" ng-model="registration.info.password"
+							            data-smart-validate-input data-required data-message-required="Please enter your password"
+							            placeholder="Password">
+							        <b class="tooltip tooltip-bottom-right">Password should be between 8-40 characters and contain lowercase letters, upercase letters and numbers</b>
+								</label>
+							</section>
+							<section class="form-group">
+							    <label class="input"> <i class="icon-append fa fa-lock"></i>
+							        <input type="text" name="repassword" ng-model="registration.info.password_confirmation"
+							        	data-smart-validate-input data-required data-message-required="Please retype your password"
+							            placeholder="Confirm Password">
+							        <b class="tooltip tooltip-bottom-right">Confirm your password</b>
+							    </label>
+							</section>
+							<!--
+								<section>
+	                                <label class="checkbox">
+	                                    <input type="checkbox" name="terms" id="terms">
+	                                    <i></i>I agree with the <a href="#" data-toggle="modal" data-target="#myModal"> Terms and Conditions </a>
+	                                </label>
+	                            </section>
+	                        -->
                         </fieldset>
                         <footer>
                             <button type="submit" class="btn btn-primary">

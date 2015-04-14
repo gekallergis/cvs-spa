@@ -65,6 +65,8 @@ define([
     // Accounts (companies, users)
     'components/account/module',
     'components/account/controllers/login',
+    'components/account/controllers/registration',
+    'components/account/controllers/reset-password',
     'components/account/directives/account-info/account-info',
     'components/account/directives/company-list/company-list',
     'components/account/directives/company-profile/company-profile',

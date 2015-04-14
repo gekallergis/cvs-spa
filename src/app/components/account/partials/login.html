@@ -52,12 +52,9 @@
                             Sign In
                         </header>
                         <fieldset>
-                            <div class="alert alert-danger fade in" ng-show="login.error_message">
-                                <button class="close" data-dismiss="alert">
-                                    ×
-                                </button>
-                                <i class="fa-fw fa fa-times"></i>
-                                {{login.error_message}}
+                            <div class="alert fade in" ng-class="{'alert-danger': login.message.type == 'error', 'alert-info': login.message.type == 'info'}" ng-show="login.message">
+                                <i class="fa-fw fa" ng-class="{'fa-times': login.message.type == 'error', 'fa-check': login.message.type == 'info'}"></i>
+                                {{login.message.text}}
                             </div>
                             <section class="form-group">
                                 <label class="input"> <i class="icon-append fa fa-user"></i>

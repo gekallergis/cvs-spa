@@ -16,6 +16,14 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			});
 		}
 
+		function _register(info) {
+			//return CVSService.register(info);
+		}
+
+		function _resetPassword(email) {
+			//return CVSService.resetPassword(info);
+		}
+
 		function _getProfiles() {
 			return CVSService.getProfiles()
 			.then(function(profile_list){
@@ -70,6 +78,18 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			// Login, Register, Lock, Reset Password
 			login: function(email, password) {
 				return _login(email, password);
+			},
+			register: function(profile) {
+				// Add a new profile through the API here!
+				var deferred = $q.defer();
+				deferred.resolve();
+				return deferred.promise;
+			},
+			resetPassword: function(email) {
+				// Reset a password through the API here!
+				var deferred = $q.defer();
+				deferred.resolve();
+				return deferred.promise;
 			},
 			getLoggedInUser: function() {
 				return _loggedin_user;

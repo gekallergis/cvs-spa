@@ -8,6 +8,7 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
     module.config(function ($stateProvider, $couchPotatoProvider) {
         $stateProvider.state('login', {
             url: '/login',
+            params: { message: {} },
             views: {
                 'root': {
                     templateUrl: 'app/components/account/partials/login.html'
@@ -37,8 +38,13 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
             },
             resolve: {
                 deps: $couchPotatoProvider.resolveDependencies([
-                    'modules/forms/directives/validate/smartValidateForm'
-                ])
+                    'shared/cvs-model/models/account-model',
+                    'shared/utils/directives/validator/smart-validate-form',
+                    'components/account/controllers/registration'
+                ]),
+                companies: function(AccountModel) {
+                    return AccountModel.getCompanies();
+                }
             }
         })
         .state('forgotPassword', {
@@ -54,7 +60,9 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
             },
             resolve: {
                 deps: $couchPotatoProvider.resolveDependencies([
-                    'modules/forms/directives/validate/smartValidateForm'
+                    'shared/cvs-model/models/account-model',
+                    'shared/utils/directives/validator/smart-validate-form',
+                    'components/account/controllers/reset-password'
                 ])
             }
         })
