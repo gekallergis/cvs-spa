@@ -34,6 +34,7 @@ var require = {
         'jquery-color': '../assets/plugins/jquery-color/jquery.color',
 
         'select2': '../assets/plugins/select2/select2.min',
+        'angular-ui-select2': '../assets/plugins/angular-ui-select2/src/select2',
 
         'summernote': '../assets/plugins/summernote/dist/summernote.min',
 
@@ -145,6 +146,8 @@ var require = {
         'angular-google-plus': { deps: ['angular'] },
 
         'select2': { deps: ['jquery']},
+        'angular-ui-select2': {deps: ['angular', 'select2']},
+        
         'summernote': { deps: ['jquery']},
 
         'to-markdown': {deps: ['he']},

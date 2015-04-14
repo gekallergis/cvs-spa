@@ -145,6 +145,16 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-12">
+                <select ui-select2 multiple="multiple" ng-model="mw.editProfileInfoModal.data.roles" style="width:100%" class="select2">
+                    <option value="0">canViewSystemLog</option>
+                    <option value="1">canDeleteAccount</option>
+                    <option value="2">canAddCompany</option>
+                    <option value="3">canGenerateReport</option>
+                </select>
+            </div>
+        </div>
     </div>
 
     <!-- Attach to Company -->

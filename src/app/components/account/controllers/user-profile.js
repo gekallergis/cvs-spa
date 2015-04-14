@@ -62,7 +62,8 @@ define(['components/account/module', 'lodash'], function (module, _) {
 				"first_name": $scope.mw.editProfileInfoModal.data.first_name,
 				"last_name": $scope.mw.editProfileInfoModal.data.last_name,
 				"email": $scope.mw.editProfileInfoModal.data.email,
-				"password": $scope.mw.editProfileInfoModal.data.password
+				"password": $scope.mw.editProfileInfoModal.data.password,
+				"roles": $scope.mw.editProfileInfoModal.data.roles
 			}).then(function(){
 				$scope.refreshPage();
 			});

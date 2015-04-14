@@ -1,7 +1,6 @@
-'use strict';
+define(['angular', 'angular-couch-potato', 'angular-ui-router', 'angular-animate', 'angular-bootstrap', 'angular-ui-select2', 'smartwidgets', 'notification'], function (ng, couchPotato) {
 
-define(['angular', 'angular-couch-potato', 'angular-ui-router', 'angular-animate', 'angular-bootstrap', 'smartwidgets', 'notification'], function (ng, couchPotato) {
-
+    'use strict';
     var app = ng.module('app', [
         'ngSanitize',
 
@@ -9,6 +8,7 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router', 'angular-animate
         'ngAnimate',
         'ui.router',
         'ui.bootstrap',
+        'ui.select2',
         
         // App
         'app.seed',

@@ -19,6 +19,7 @@
 	"/fastclick/lib/fastclick.js",
 	"/jquery-color/jquery.color.js",
 	"/select2/select2.min.js",
+	"angular-ui-select2/src/select2.js",
 	"/summernote/dist/summernote.min.js",
 	"/he/he.js",
 	"/to-markdown/src/to-markdown.js",
