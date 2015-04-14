@@ -46,25 +46,23 @@
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
-                <div class="well no-padding">
-                    <form action="#/profile/1" id="login-form" class="smart-form client-form" data-smart-validate-form novalidate>
+                <div class="well no-padding" ng-controller="LoginController">
+                    <form role="form" name="theForm" ng-submit="theForm.$valid && login()" class="smart-form client-form" data-smart-validate-form novalidate>
                         <header>
                             Sign In
                         </header>
                         <fieldset>
-                            <div class="alert alert-danger fade in">
+                            <div class="alert alert-danger fade in" ng-show="login.error_message">
                                 <button class="close" data-dismiss="alert">
                                     ×
                                 </button>
                                 <i class="fa-fw fa fa-times"></i>
-                                Wrong email/password combination! You have 2 remaining tries!
+                                {{login.error_message}}
                             </div>
                             <section class="form-group">
                                 <label class="input"> <i class="icon-append fa fa-user"></i>
-                                    <input type="email" name="email"
-                                           data-smart-validate-input
-                                           data-required
-                                           data-email
+                                    <input type="email" name="email" ng-model="login.credentials.email"
+                                           data-smart-validate-input data-required data-email
                                            data-message-required="Please enter your email address"
                                            data-message-email="Please enter a VALID email address"
                                            placeholder="E-mail">
@@ -73,31 +71,18 @@
                             </section>
                             <section class="form-group">
                                 <label class="input"> <i class="icon-append fa fa-lock"></i>
-                                   <input type="password" name="password"
-                                          data-smart-validate-input
-                                          data-required
-                                          data-minlength="3"
-                                          data-maxnlength="20"
-                                          data-message="Please enter your password"
-                                          placeholder="Password">
+                                   <input type="password" name="password" ng-model="login.credentials.password"
+                                          data-smart-validate-input data-required data-minlength="3" data-maxnlength="20"
+                                          data-message="Please enter your password" placeholder="Password">
                                     <b class="tooltip tooltip-bottom-right">Please enter your password</b>
                                 </label>
                                 <div class="note">
                                     <a ui-sref="forgotPassword">Forgot password?</a>
                                 </div>
                             </section>
-                            <!-- 
-                                <section>
-                                    <label class="checkbox">
-                                        <input type="checkbox" name="remember" checked>
-                                        <i></i>Stay signed in</label>
-                                </section>
-                            -->
                         </fieldset>
                         <footer>
-                            <button type="submit" class="btn btn-primary">
-                                Sign in
-                            </button>
+                            <button type="submit" class="btn btn-primary">Sign in</button>
                         </footer>
                     </form>
                 </div>

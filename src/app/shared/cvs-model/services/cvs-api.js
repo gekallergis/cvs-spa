@@ -24,6 +24,9 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 		}
 
 		return {
+			login: function(email, password) {
+				return _makeGETRequest('users/user-2.json');
+			},
 			getSystemLog: function() {
 				return _makeGETRequest('system-log.json');
 			},

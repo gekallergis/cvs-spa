@@ -10,10 +10,10 @@
         traditional href="" links. See documentation for details.
         -->
 
-        <ul data-smart-menu>
+        <ul data-smart-menu ng-controller="MenuController">
 			<!-- Profile -->
 			<li data-ui-sref-active="active" class="top-menu-invisible">
-                <a data-ui-sref="app.profile.details({profileId: 1})">
+                <a data-ui-sref="app.profile.details({profileId: loggedin_user.id})">
                     <i class="fa fa-lg fa-fw fa-user"></i>
                     <span class="menu-item-parent">{{i18n.getTranslation('My Profile')}}</span>
                     <span class="badge pull-right inbox-badge bg-color-green">UD</span>

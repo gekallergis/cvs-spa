@@ -7,6 +7,14 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 		var _company_list;
 		var _current_company;
 		var _country_list;
+		var _loggedin_user = null;
+
+		function _login(email, password) {
+			return CVSService.login(email, password)
+			.then(function(loggedin_user){
+				_loggedin_user = loggedin_user;
+			});
+		}
 
 		function _getProfiles() {
 			return CVSService.getProfiles()
@@ -59,6 +67,13 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 		}
 
 		return {
+			// Login, Register, Lock, Reset Password
+			login: function(email, password) {
+				return _login(email, password);
+			},
+			getLoggedInUser: function() {
+				return _loggedin_user;
+			},
 			// Profile
 			getProfileList: function(){
 				return _profile_list;

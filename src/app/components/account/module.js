@@ -19,17 +19,9 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
             },
             resolve: {
                 deps: $couchPotatoProvider.resolveDependencies([
-                    'shared/utils/directives/validator/smart-validate-form'
-                ]),
-                //delay: function($q, $timeout) {
-                //    var def = $q.defer();
-                //    
-                //    $timeout(function(){
-                //        def.resolve();
-                //    }, 5000);
-                //    
-                //    return def.promise;
-                //}
+                    'shared/utils/directives/validator/smart-validate-form',
+                    'components/account/controllers/login'
+                ])
             }
         })
         .state('register', {

@@ -17,6 +17,7 @@ define([
 
     // Layout
     'core/layout/module',
+    'core/layout/controllers/menu',
     'core/layout/actions/minifyMenu',
     'core/layout/actions/toggleMenu',
     'core/layout/actions/fullScreen',
@@ -63,6 +64,7 @@ define([
 
     // Accounts (companies, users)
     'components/account/module',
+    'components/account/controllers/login',
     'components/account/directives/account-info/account-info',
     'components/account/directives/company-list/company-list',
     'components/account/directives/company-profile/company-profile',
