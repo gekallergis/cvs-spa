@@ -123,7 +123,6 @@ define([
     'components/basket/controllers/basket-controller',
     'components/basket/directives/basket-dropdown-toggle',
     'components/basket/directives/basket/basket',
-    'components/basket/services/basket-service',
 
 
 

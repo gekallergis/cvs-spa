@@ -5,7 +5,7 @@ define(['components/basket/module'], function(module){
     	return {
     		restrict: 'EA',
     		controller: 'BasketController',
-    		templateUrl: 'app/components/basket/directives/basket/basket.html',
+    		templateUrl: 'app/components/basket/directives/basket/basket.tpl.html',
     	};
 	});
 });

@@ -1,0 +1,55 @@
+<div class="unselectable">
+	<span id="activity" class="activity-dropdown" basket-dropdown-toggle> 
+		<i class="fa fa-shopping-cart"></i> 
+		<b class="badge bg-color-green">{{basket.items.length}}</b>
+	</span>
+	<div class="ajax-dropdown">
+		<div class="btn-group btn-group-justified" data-toggle="buttons">
+			My Shopping Cart <span class="pull-right">{{basket.total | currency:'SEK'}}</span>
+		</div>
+
+		<!-- notification content -->
+		<div class="ajax-notifications custom-scroll">
+			<ul class="notification-body" ng-hide="basket.items.length == 0">
+				<li ng-repeat="item in basket.items">
+					<span>
+						<a void-href class="msg">
+							<i class="air air-top-left margin-top-5 fa fa-times fa-3x txt-color-red pointer" ng-click="removeItem(item.id)"></i>
+							<span class="from"><strong>{{item.name}}</strong></span>
+							<span class="subject">Unit price: {{item.price | currency:'SEK'}}, Quantity: {{item.qty}}</span>
+							<span>(Subtotal {{item.price * item.qty | currency:'SEK'}})</span>
+							<i class="fa fa-plus fa-2x pull-right pointer" ng-click="increaseQty(item.id)"></i>
+							<i class="fa fa-minus fa-2x pull-right pointer" ng-click="decreaseQty(item.id)"></i>
+						</a>
+					</span>
+				</li>
+			</ul>
+			<div ng-show="basket.items.length == 0">
+				<div class="alert alert-transparent">
+					<h4>Your Shopping Cart is Empty</h4>
+					Navigate to the products section and add one or more products to your basket!
+				</div>
+
+				<i class="fa fa-shopping-cart fa-4x fa-border"></i>
+			</div>
+		</div>
+		<!-- end notification content -->
+
+		<!-- footer: refresh area -->
+		<span>
+			<button type="button" class="btn btn-labeled btn-success" ui-sref="app.products">
+				<span class="btn-label">
+					<i class="fa fa-plus"></i>
+				</span>
+				Add Products
+			</button>
+			<button type="button" class="btn btn-labeled btn-success pull-right" ng-class="{disabled: (basket.items.length == 0)}" ng-click="checkout()">
+				<span class="btn-label">
+					<i class="fa fa-credit-card"></i>
+				</span>
+				Checkout
+			</button>
+		</span>
+		<!-- end footer -->
+	</div>
+</div>

@@ -5,23 +5,23 @@ define(['components/basket/module'], function(module){
     	return {
     		restrict: 'EA',
     		link: function(scope, iElement, iAttrs) {
-    			var ajax_dropdown = null;
+    			var basket_dropdown = null;
 
 				iElement.on('click', function(){
-					ajax_dropdown = $(this).next('.ajax-dropdown');
+					basket_dropdown = $(this).next('.ajax-dropdown');
 
-					if (!ajax_dropdown.is(':visible')) {
-						ajax_dropdown.fadeIn(150);
+					if (!basket_dropdown.is(':visible')) {
+						basket_dropdown.fadeIn(150);
 						$(this).addClass('active');
 					} else {
-						ajax_dropdown.fadeOut(150);
+						basket_dropdown.fadeOut(150);
 						$(this).removeClass('active');
 					}
 				});
 
 				$(document).mouseup(function(e) {
-					if (ajax_dropdown && !ajax_dropdown.is(e.target) && ajax_dropdown.has(e.target).length === 0) {
-						ajax_dropdown.fadeOut(150);
+					if (basket_dropdown && !basket_dropdown.is(e.target) && basket_dropdown.has(e.target).length === 0) {
+						basket_dropdown.fadeOut(150);
 						iElement.removeClass('active');
 					}
 				});

@@ -22,7 +22,7 @@
 				</div>
 	        </div>
 	        <div class="panel-footer text-align-center">
-	            <a href-void class="btn btn-block" ng-class="{'btn-success': !product.isPopular, 'btn-primary': product.isPopular}" role="button"><i class="fa fa-shopping-cart"></i> Add to Cart! <span ng-show="product.isPopular">NOW!</span></a>
+	            <a href-void class="btn btn-block" ng-class="{'btn-success': !product.isPopular, 'btn-primary': product.isPopular}" role="button" ng-click="addItemToBasket(product)"><i class="fa fa-shopping-cart"></i> Add to Cart! <span ng-show="product.isPopular">NOW!</span></a>
 	        </div>
 	    </div>
 	</div>	
