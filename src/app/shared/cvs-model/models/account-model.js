@@ -25,6 +25,27 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			//return CVSService.resetPassword(info);
 		}
 
+		function _authorize(roles) {
+			var authorized = false;
+
+			if (_loggedin_user == null) {
+				return authorized;
+			}
+
+			if(_.isArray(roles)) {
+				authorized = true;
+				_.forEach(roles, function(roleId, index){
+					if (!_.includes(_loggedin_user.roles, roleId)) {
+						authorized = false;
+					}
+				});
+			} else {
+				authorized = _.includes(_loggedin_user.roles, roles);
+			}
+
+			return authorized;
+		}
+
 		function _getUserRoles() {
 			return CVSService.getUserRoles()
 			.then(function(user_roles_list){
@@ -107,6 +128,9 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			},
 			getUserRolesList: function() {
 				return _user_roles_list;
+			},
+			authorize: function(id) {
+				return _authorize(id);
 			},
 			// Profile
 			getProfileList: function(){

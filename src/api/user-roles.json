@@ -1,11 +1,11 @@
 [
 	{
 		"id": "0",
-		"label": "canViewSystemLog"
+		"label": "canDeleteUserProfile"
 	},
 	{
 		"id": "1",
-		"label": "canDeleteUserProfile"
+		"label": "canViewBusinessIntel"
 	},
 	{
 		"id": "2",

@@ -37,10 +37,9 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
 							//}
 						}
 					}
-				}
+				},
 			});
 		$urlRouterProvider.otherwise('/login');
-
 	});
 
 	module.run(function ($couchPotato) {

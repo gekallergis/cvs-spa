@@ -34,7 +34,11 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                 }
             },
             data: {
-                title: 'System Log'
+                title: 'System Log',
+                auth: {
+                    requireLogin: true,
+                    requiredRoles: ["1"]
+                }
             }
         });
     });

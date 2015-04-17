@@ -3,6 +3,7 @@ define(['components/basket/module'], function(module){
     "use strict";
     return module.registerController('BasketController', function($scope, OrderModel, $state, $log) {
     	$scope.basket = {};
+    	$scope.basket.total = 0;
     	$scope.basket.items = [];
 
 		$scope.$on('OrderModel::basketUpdate', function() {

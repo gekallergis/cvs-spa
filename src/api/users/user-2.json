@@ -5,6 +5,6 @@
 	"email": "kallergis.george@saab.com",
 	"image": "assets/img/avatars/sunny-big.png",
 	"isActive": false,
-	"roles": ["1"],
+	"roles": ["0", "1", "5"],
 	"employer": null
 }

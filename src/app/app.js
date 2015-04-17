@@ -1,4 +1,4 @@
-define(['angular', 'angular-couch-potato', 'angular-ui-router', 'angular-animate', 'angular-bootstrap', 'angular-ui-select2', 'smartwidgets', 'notification'], function (ng, couchPotato) {
+define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angular-animate', 'angular-bootstrap', 'angular-ui-select2', 'smartwidgets', 'notification'], function (ng, couchPotato, _) {
 
     'use strict';
     var app = ng.module('app', [
@@ -80,36 +80,28 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router', 'angular-animate
         $httpProvider.interceptors.push('ErrorHttpInterceptor');
     });
 
-    app.run(function ($couchPotato, $rootScope, $state, $stateParams) {
+    app.run(function ($couchPotato, $rootScope, $state, $stateParams, AccountModel) {
         app.lazy = $couchPotato;
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
         // editableOptions.theme = 'bs3';
 
-        // Intercept stateChangeError event to redirect in case of a faild promise in a state resolve block.
-        $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error){
-            //$state.go('app.inbox.folder', {folder: "sent"});
+        // Authorization
+        $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState) {
+            if (toState.data == undefined || toState.data.auth == undefined) {
+                return;
+            }
+
+            var auth = toState.data.auth;
+
+            if (auth.requireLogin && AccountModel.getLoggedInUser() == null) {
+                event.preventDefault();
+                $state.go('login', {message: {text: "You need to be logged in to view '" + toState.data.title + "' page!", type: "info"}}, {reload: true});
+            } else if (!AccountModel.authorize(auth.requiredRoles)) {
+                event.preventDefault();
+                $state.reload();
+            }
         });
-
-
-        // DEBUGING UI ROUTER
-        //$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
-        //  console.log('$stateChangeStart to '+toState.to+'- fired when the transition begins. toState,toParams : \n',toState, toParams);
-        //});
-        //$rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error){
-        //  console.log('$stateChangeError - fired when an error occurs during transition.');
-        //  console.log(arguments);
-        //});
-        //$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
-        //  console.log('$stateChangeSuccess to '+toState.name+'- fired once the state transition is complete.');
-        //});
-        //$rootScope.$on('$viewContentLoaded', function(event){
-        //  console.log('$viewContentLoaded - fired after dom rendered',event);
-        //});
-        //$rootScope.$on('$stateNotFound', function(event, unfoundState, fromState, fromParams){
-        //  console.log('$stateNotFound '+unfoundState.to+'  - fired when a state cannot be found by its name.');
-        //  console.log(unfoundState, fromState, fromParams);
-        //});
     });
 
     return app;
