@@ -14,10 +14,10 @@ define(['components/account/module', 'lodash'], function (module, _) {
 
 		$scope.login = function() {
 			AccountModel.login($scope.login.credentials.email, $scope.login.credentials.password)
-			.then(function(){
+			.then(function(response){
 				$state.go('app.profile.details', {profileId: AccountModel.getLoggedInUser().id});
-			}, function(){
-				$scope.login.message = {text: "Wrong email/password combination! You have 2 remaining tries!", type: "error"};
+			}, function(errorResponse){
+				$scope.login.message = {text: errorResponse.message, type: "error"};
 			});
 		};
 	});

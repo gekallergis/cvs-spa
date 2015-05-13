@@ -43,35 +43,33 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
 
         // Intercept http calls.
         $provide.factory('ErrorHttpInterceptor', function ($q) {
-            var errorCounter = 0;
-            function notifyError(rejection){
-                console.log(rejection);
+            function notifyError(errorResponse){
+                console.log(errorResponse);
                 $.bigBox({
-                    title: rejection.status + ' ' + rejection.statusText,
-                    content: rejection.data,
+                    title: errorResponse.status + ' ' + errorResponse.statusText,
+                    content: "[" + errorResponse.data.code + "] " + errorResponse.data.message,
                     color: "#C46A69",
                     icon: "fa fa-warning shake animated",
-                    number: ++errorCounter,
-                    timeout: 6000
+                    timeout: 5000
                 });
             }
 
             return {
                 // On request failure
-                requestError: function (rejection) {
+                requestError: function (errorResponse) {
                     // show notification
-                    notifyError(rejection);
+                    notifyError(errorResponse);
 
-                    // Return the promise rejection.
-                    return $q.reject(rejection);
+                    // Return the promise errorResponse.
+                    return $q.reject(errorResponse);
                 },
 
                 // On response failure
-                responseError: function (rejection) {
+                responseError: function (errorResponse) {
                     // show notification
-                    notifyError(rejection);
-                    // Return the promise rejection.
-                    return $q.reject(rejection);
+                    notifyError(errorResponse);
+                    // Return the promise errorResponse.
+                    return $q.reject(errorResponse);
                 }
             };
         });
@@ -85,6 +83,9 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
         // editableOptions.theme = 'bs3';
+
+        // Check if the user is logged in already upon every refresh to avoid loggin out!
+        // ...
 
         // Authorization
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState) {

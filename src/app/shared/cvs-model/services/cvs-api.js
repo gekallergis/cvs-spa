@@ -1,9 +1,9 @@
 define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 
     'use strict';
-    module.registerFactory('CVSService', function (SERVICE_ENDPOINT, $http, $q, $log, $timeout) {
+    module.registerFactory('CVSService', function (SERVICE_ENDPOINT, $rootScope, $http, $q, $log, $timeout) {
 
-    	var artificial_delay = 500;
+    	var artificial_delay = 0;
 
         function _makeGETRequest(filename) {
         	var deferred = $q.defer();
@@ -23,9 +23,35 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			return deferred.promise;
 		}
 
+		function _makeRequest(endpoint, method, data) {
+			var deferred = $q.defer();
+
+			var localeOptions = ($rootScope.i18n)?"?lang=" + $rootScope.i18n.activeLanguage.key:"?lang=us";
+
+			var request = {
+				method: method,
+ 				url: SERVICE_ENDPOINT.url + endpoint + localeOptions,
+ 				headers: {},
+ 				data: data
+			}
+			$http(request)
+			.success(function(data){
+				$timeout(function(){
+					deferred.resolve(data);
+					$log.info('[CVS_SERVICE] Request Success (' + endpoint + ')');
+				}, artificial_delay);
+			})
+			.error(function(response){
+				deferred.reject(response);
+				$log.error('[CVS_SERVICE] Request Failure (' + endpoint + ')');
+			});
+
+			return deferred.promise;
+		}
+
 		return {
 			login: function(email, password) {
-				return _makeGETRequest('users/user-2.json');
+				return _makeRequest('login', 'POST', {"email": email, "password": password});
 			},
 			getSystemLog: function() {
 				return _makeGETRequest('system-log.json');

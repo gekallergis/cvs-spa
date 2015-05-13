@@ -4,7 +4,7 @@
 
 var appConfig = {};
 
-appConfig.service_endpoint = 'http://127.0.0.1:8000/api/';
+appConfig.service_endpoint = 'https://localhost/api/';
 
 appConfig.menu_speed = 200;
 
