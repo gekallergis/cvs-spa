@@ -39,10 +39,12 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 				$timeout(function(){
 					deferred.resolve(data);
 					$log.info('[CVS_SERVICE] Request Success (' + endpoint + ')');
+					$log.debug(data);
 				}, artificial_delay);
 			})
 			.error(function(response){
 				deferred.reject(response);
+				$log.debug(response);
 				$log.error('[CVS_SERVICE] Request Failure (' + endpoint + ')');
 			});
 
