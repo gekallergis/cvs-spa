@@ -78,14 +78,18 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
         $httpProvider.interceptors.push('ErrorHttpInterceptor');
     });
 
-    app.run(function ($couchPotato, $rootScope, $state, $stateParams, AccountModel) {
+    app.run(function ($couchPotato, $rootScope, $state, $stateParams, $log, AccountModel) {
         app.lazy = $couchPotato;
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
-        // editableOptions.theme = 'bs3';
 
         // Check if the user is logged in already upon every refresh to avoid loggin out!
-        // ...
+        // AccountModel.login("", "")
+        // .then(function(response){
+        //     $state.go('app.profile.details', {profileId: AccountModel.getLoggedInUser().id});
+        // }, function(errorResponse){
+        //     $state.go('login', {reload: true});
+        // });
 
         // Authorization
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState) {
@@ -98,7 +102,7 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
             if (auth.requireLogin && AccountModel.getLoggedInUser() == null) {
                 event.preventDefault();
                 $state.go('login', {message: {text: "You need to be logged in to view '" + toState.data.title + "' page!", type: "info"}}, {reload: true});
-            } else if (!AccountModel.authorize(auth.requiredRoles)) {
+            } else if (auth.requiredRoles != undefined && !AccountModel.authorize(auth.requiredRoles)) {
                 event.preventDefault();
                 $state.reload();
             }

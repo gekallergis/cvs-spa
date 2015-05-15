@@ -19,7 +19,10 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                 }
             },
             data:{
-                title: 'Seed'
+                title: 'Seed',
+                auth: {
+                    requireLogin: true
+                }
             }
         });
     });

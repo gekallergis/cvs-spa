@@ -29,7 +29,10 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
                 }
             },
             data: {
-                title: 'Inbox'
+                title: 'Inbox',
+                auth: {
+                    requireLogin: true
+                }
             }
         })
         .state('app.inbox.folder', {

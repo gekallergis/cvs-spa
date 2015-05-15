@@ -25,7 +25,10 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
                 }
             },
             data: {
-                title: 'Products'
+                title: 'Products',
+                auth: {
+                    requireLogin: true
+                }
             }
         })
         .state('app.ownedproducts', {
@@ -53,7 +56,10 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
                 }
             },
             data: {
-                title: 'Owned Products'
+                title: 'Owned Products',
+                auth: {
+                    requireLogin: true
+                }
             }
         })
         .state('app.invoice', {
@@ -77,7 +83,10 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
                 }
             },
             data: {
-                title: 'Invoices'
+                title: 'Invoices',
+                auth: {
+                    requireLogin: true
+                }
             }
         })
         .state('app.invoice.details', {
@@ -98,7 +107,10 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
                 }
             },
             data: {
-                title: 'Invoice'
+                title: 'Invoice',
+                auth: {
+                    requireLogin: true
+                }
             }
         })
         .state('app.order', {
@@ -120,7 +132,10 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
                 }
             },
             data: {
-                title: 'Orders'
+                title: 'Orders',
+                auth: {
+                    requireLogin: true
+                }
             }
         });
     });

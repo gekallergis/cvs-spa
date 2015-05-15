@@ -15,7 +15,7 @@ define(['components/account/module', 'lodash'], function (module, _) {
 		$scope.login = function() {
 			AccountModel.login($scope.login.credentials.email, $scope.login.credentials.password)
 			.then(function(response){
-				$state.go('app.profile.details', {profileId: AccountModel.getLoggedInUser().id});
+				$state.go('app.profile.details', {profileId: AccountModel.getLoggedInUser().employeeId});
 			}, function(errorResponse){
 				$scope.login.message = {text: errorResponse.message, type: "error"};
 			});

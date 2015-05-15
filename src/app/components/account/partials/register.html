@@ -60,12 +60,9 @@
 								<i class="fa-fw fa fa-info"></i>
 								If your company is already registered in our system, leave the related fields empty.
 							</div>
-                            <div class="alert alert-danger fade in" ng-show="registration.error_message">
-                                <button class="close" data-dismiss="alert">
-                                    ×
-                                </button>
-                                <i class="fa-fw fa fa-times"></i>
-                                {{registration.error_message}}
+                            <div class="alert fade in" ng-class="{'alert-danger': registration.message.type == 'error', 'alert-info': registration.message.type == 'info'}" ng-show="registration.message">
+                                <i class="fa-fw fa" ng-class="{'fa-times': registration.message.type == 'error', 'fa-check': registration.message.type == 'info'}"></i>
+                                {{registration.message.text}}
                             </div>
                             <section class="form-group">
                                 <label class="input"> <i class="icon-append fa fa-building-o"></i>
@@ -116,7 +113,7 @@
 	                                <label class="select">
                                         <select class="form-control" id="country" name="country" ng-model="registration.info.country" data-smart-validate-input>
                                             <option value="" selected="" disabled="">Country</option>
-                                            <option value="{{key}}" ng-repeat="(key, value) in registration.countries" >{{value}}</option>
+                                            <option value="{{country.countryId}}" ng-repeat="country in registration.countries" >{{country.name}}</option>
                                         </select>
 	                                    <i></i>
 	                                </label>
@@ -176,14 +173,14 @@
 							        <b class="tooltip tooltip-bottom-right">Confirm your password</b>
 							    </label>
 							</section>
-							<!--
-								<section>
-	                                <label class="checkbox">
-	                                    <input type="checkbox" name="terms" id="terms">
-	                                    <i></i>I agree with the <a href="#" data-toggle="modal" data-target="#myModal"> Terms and Conditions </a>
-	                                </label>
-	                            </section>
-	                        -->
+                            <!-- 
+    							<section>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="terms" id="terms" />
+                                        <i></i>I agree with the <a href="#" data-toggle="modal" data-target="#myModal"> Terms and Conditions </a>
+                                    </label>
+                                </section>
+                            -->
                         </fieldset>
                         <footer>
                             <button type="submit" class="btn btn-primary">

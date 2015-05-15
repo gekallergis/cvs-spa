@@ -28,7 +28,10 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                 }
             },
             data: {
-                title: 'Sales Data'
+                title: 'Sales Data',
+                auth: {
+                    requireLogin: true
+                }
             },
         })
         .state('app.reports', {
@@ -50,7 +53,10 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                 }
             },
             data: {
-                title: 'Reports'
+                title: 'Reports',
+                auth: {
+                    requireLogin: true
+                }
             },
         })
     });

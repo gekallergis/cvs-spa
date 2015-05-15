@@ -42,8 +42,8 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                     'shared/utils/directives/validator/smart-validate-form',
                     'components/account/controllers/registration'
                 ]),
-                companies: function(AccountModel) {
-                    return AccountModel.getCompanies();
+                countries: function(AccountModel) {
+                    return AccountModel.getCountries();
                 }
             }
         })
@@ -78,6 +78,31 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                 htmlId: 'lock-page'
             }
         })
+        .state('activate', {
+            url: '/activate/:activationKey',
+            views: {
+                'root': {
+                    template: '<div data-cvs-loading-animation></div>',
+                    controller: function(AccountModel, $state, $stateParams) {
+                        AccountModel.activate($stateParams.activationKey)
+                        .then(function(response){
+                            $state.go('login', {message: {text: response.message, type: "info"}});
+                        }, function(errorResponse){
+                            $state.go('login', {message: {text: errorResponse.message, type: "error"}});
+                        });
+                    },
+                    resolve: {
+                        deps: $couchPotatoProvider.resolveDependencies([
+                            'shared/cvs-model/models/account-model'
+                        ])
+                    }
+                }
+            },
+            data: {
+                title: 'Activation',
+                htmlId: 'extr-page'
+            }
+        })
         .state('app.profile', {
             url: '/profile',
             views: {
@@ -102,7 +127,10 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                 }
             },
             data: {
-                title: 'Profiles'
+                title: 'Profiles',
+                auth: {
+                    requireLogin: true
+                }
             }
         })
         .state('app.profile.details', {
@@ -134,7 +162,10 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                 }
             },
             data: {
-                title: 'Profile'
+                title: 'Profile',
+                auth: {
+                    requireLogin: true
+                }
             }
         })
         .state('app.company', {
@@ -158,7 +189,10 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                 }
             },
             data: {
-                title: 'Companies'
+                title: 'Companies',
+                auth: {
+                    requireLogin: true
+                }
             }
         })
         .state('app.company.details', {
@@ -184,7 +218,10 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                 }
             },
             data: {
-                title: 'Company Profile'
+                title: 'Company Profile',
+                auth: {
+                    requireLogin: true
+                }
             }
         });
     });

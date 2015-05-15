@@ -34,6 +34,7 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
  				headers: {},
  				data: data
 			}
+
 			$http(request)
 			.success(function(data){
 				$timeout(function(){
@@ -55,6 +56,19 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			login: function(email, password) {
 				return _makeRequest('login', 'POST', {"email": email, "password": password});
 			},
+			resetPassword: function(email) {
+				return _makeRequest('reset', 'POST', {"email": email});	
+			},
+			register: function(companyInfo, employeeInfo) {
+				return _makeRequest('register', 'POST', {"companyInfo": companyInfo, "employeeInfo": employeeInfo});
+			},
+			activate: function(activationKey) {
+				return _makeRequest('activate', 'POST', {"key": activationKey});
+			},
+			getCountries: function() {
+				return _makeRequest('country', 'GET', {});
+			},
+
 			getSystemLog: function() {
 				return _makeGETRequest('system-log.json');
 			},

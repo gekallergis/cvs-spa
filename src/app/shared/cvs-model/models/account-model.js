@@ -17,12 +17,23 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			});
 		}
 
-		function _register(info) {
-			//return CVSService.register(info);
+		function _resetPassword(email) {
+			return CVSService.resetPassword(email);
 		}
 
-		function _resetPassword(email) {
-			//return CVSService.resetPassword(info);
+		function _register(companyInfo, employeeInfo) {
+			return CVSService.register(companyInfo, employeeInfo);
+		}
+
+		function _activate(activationKey) {
+			return CVSService.activate(activationKey);
+		}
+
+		function _getCountries() {
+			return CVSService.getCountries()
+			.then(function(country_list){
+				_country_list = country_list;
+			});
 		}
 
 		function _authorize(roles) {
@@ -71,7 +82,6 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			return CVSService.getCompanies()
 			.then(function(company_list){
 				_company_list = company_list.companies;
-				_country_list = company_list.countries;
 			});
 		}
 
@@ -108,18 +118,19 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			login: function(email, password) {
 				return _login(email, password);
 			},
-			register: function(profile) {
-				// Add a new profile through the API here!
-				var deferred = $q.defer();
-				deferred.resolve();
-				return deferred.promise;
-			},
 			resetPassword: function(email) {
-				// Reset a password through the API here!
-				var deferred = $q.defer();
-				deferred.resolve();
-				return deferred.promise;
+				return _resetPassword(email);
 			},
+			getCountries: function() {
+				return _getCountries();
+			},
+			register: function(companyInfo, employeeInfo) {
+				return _register(companyInfo, employeeInfo);
+			},
+			activate: function(activationKey) {
+				return _activate(activationKey);
+			},
+
 			getLoggedInUser: function() {
 				return _loggedin_user;
 			},
