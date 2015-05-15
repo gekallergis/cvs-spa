@@ -68,6 +68,9 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			getCountries: function() {
 				return _makeRequest('country', 'GET', {});
 			},
+			getProfiles: function() {
+				return _makeRequest('employee', 'GET', {});
+			},
 
 			getSystemLog: function() {
 				return _makeGETRequest('system-log.json');
@@ -77,9 +80,6 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			},
 			getCompanyProfile: function(id) {
 				return _makeGETRequest('companies/company-' + id + '.json');
-			},
-			getProfiles: function() {
-				return _makeGETRequest('profile-list.json');
 			},
 			getUserProfile: function(id) {
 				return _makeGETRequest('users/user-' + id + '.json');

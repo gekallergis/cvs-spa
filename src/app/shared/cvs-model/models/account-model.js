@@ -115,45 +115,44 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 
 		return {
 			// Login, Register, Lock, Reset Password
-			login: function(email, password) {
+			login: function(email, password) { //OK
 				return _login(email, password);
 			},
-			resetPassword: function(email) {
+			resetPassword: function(email) { //OK
 				return _resetPassword(email);
 			},
-			getCountries: function() {
+			getCountries: function() { //OK
 				return _getCountries();
 			},
-			register: function(companyInfo, employeeInfo) {
+			register: function(companyInfo, employeeInfo) { //OK
 				return _register(companyInfo, employeeInfo);
 			},
-			activate: function(activationKey) {
+			activate: function(activationKey) { //OK
 				return _activate(activationKey);
 			},
-
-			getLoggedInUser: function() {
+			getLoggedInUser: function() { //OK
 				return _loggedin_user;
 			},
 			getUserRoles: function() {
 				return _getUserRoles();
 			},
-			getUserRolesList: function() {
+			getUserRolesList: function() { //OK
 				return _user_roles_list;
 			},
-			authorize: function(id) {
+			authorize: function(id) { //OK
 				return _authorize(id);
 			},
 			// Profile
-			getProfileList: function(){
-				return _profile_list;
-			},
 			getProfiles: function() {
 				return _getProfiles();
+			},
+			getProfileList: function(){ //OK
+				return _profile_list;
 			},
 			getUserProfile: function(id) {
 				return _getUserProfile(id);
 			},
-			getCurrentUser: function() {
+			getCurrentUser: function() { //OK
 				return _current_user;
 			},
 			addProfile: function(profile) {
@@ -181,7 +180,7 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 				return deferred.promise;
 			},
 			// Company
-			getCompanyList: function(){
+			getCompanyList: function(){ //OK
 				return _company_list;
 			},
 			getCompanies: function() {
@@ -237,7 +236,7 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 				return deferred.promise;
 			},
 			// Countries
-			getCountryList: function() {
+			getCountryList: function() { //OK
 				return _country_list;
 			},
 		};
