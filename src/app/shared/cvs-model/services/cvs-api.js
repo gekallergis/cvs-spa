@@ -39,14 +39,14 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			.success(function(data){
 				$timeout(function(){
 					deferred.resolve(data);
-					$log.info('[CVS_SERVICE] Request Success (' + endpoint + ')');
+					$log.info('[CVS_SERVICE] Request Success (' + endpoint + '::' + method + ')');
 					$log.debug(data);
 				}, artificial_delay);
 			})
 			.error(function(response){
 				deferred.reject(response);
 				$log.debug(response);
-				$log.error('[CVS_SERVICE] Request Failure (' + endpoint + ')');
+				$log.error('[CVS_SERVICE] Request Failure (' + endpoint + '::' + method + ')');
 			});
 
 			return deferred.promise;
@@ -71,21 +71,27 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			getProfiles: function() {
 				return _makeRequest('employee', 'GET', {});
 			},
+			getCompanies: function() {
+				return _makeRequest('company', 'GET', {});
+			},
+			getUserRoles: function() {
+				return _makeRequest('role', 'GET', {});
+			},
+			getUserProfile: function(id) {
+				return _makeRequest('employee/' + id, 'GET', {});
+			},
+			getProducts: function() {
+				return _makeRequest('product', 'GET', {});	
+			},
+			editProfile: function(profile) {
+				return _makeRequest('employee', 'POST', profile);	
+			},
 
 			getSystemLog: function() {
 				return _makeGETRequest('system-log.json');
 			},
-			getCompanies: function() {
-				return _makeGETRequest('company-list.json');
-			},
 			getCompanyProfile: function(id) {
 				return _makeGETRequest('companies/company-' + id + '.json');
-			},
-			getUserProfile: function(id) {
-				return _makeGETRequest('users/user-' + id + '.json');
-			},
-			getUserRoles: function(id) {
-				return _makeGETRequest('user-roles.json');
 			},
 			getOrders: function() {
 				return _makeGETRequest('order-list.json');
@@ -98,9 +104,6 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			},
 			getSalesData: function() {
 				return _makeGETRequest('sales-data-list.json');	
-			},
-			getProducts: function() {
-				return _makeGETRequest('product-list.json');	
 			},
 			getOwnedProducts: function() {
 				return _makeGETRequest('owned-products-list.json');	

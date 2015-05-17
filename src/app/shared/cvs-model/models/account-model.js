@@ -14,6 +14,7 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			return CVSService.login(email, password)
 			.then(function(loggedin_user){
 				_loggedin_user = loggedin_user;
+				return loggedin_user;
 			});
 		}
 
@@ -34,6 +35,12 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			.then(function(country_list){
 				_country_list = country_list;
 			});
+		}
+
+		function _editProfile(profile) {
+			$log.info("PROFILE");
+			$log.debug(profile);
+			return CVSService.editProfile(profile);
 		}
 
 		function _authorize(roles) {
@@ -81,7 +88,7 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 		function _getCompanies() {
 			return CVSService.getCompanies()
 			.then(function(company_list){
-				_company_list = company_list.companies;
+				_company_list = company_list;
 			});
 		}
 
@@ -133,7 +140,7 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			getLoggedInUser: function() { //OK
 				return _loggedin_user;
 			},
-			getUserRoles: function() {
+			getUserRoles: function() { //OK
 				return _getUserRoles();
 			},
 			getUserRolesList: function() { //OK
@@ -149,7 +156,7 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			getProfileList: function(){ //OK
 				return _profile_list;
 			},
-			getUserProfile: function(id) {
+			getUserProfile: function(id) { //OK
 				return _getUserProfile(id);
 			},
 			getCurrentUser: function() { //OK
@@ -161,11 +168,8 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 				deferred.resolve();
 				return deferred.promise;
 			},
-			editProfile: function(profile) {
-				// Edit a profile through the API here!
-				var deferred = $q.defer();
-				deferred.resolve();
-				return deferred.promise;
+			editProfile: function(profile) { //OK
+				return _editProfile(profile);
 			},
 			deleteProfile: function(id) {
 				// Delete a profile through the API here!
@@ -183,7 +187,7 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			getCompanyList: function(){ //OK
 				return _company_list;
 			},
-			getCompanies: function() {
+			getCompanies: function() { //OK
 				return _getCompanies();
 			},
 			getCompanyProfile: function(id) {

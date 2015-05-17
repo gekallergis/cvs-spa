@@ -42,17 +42,17 @@
         <div class="col-sm-12">
             <div class="row">
                 <div class="col-sm-3 profile-pic">
-                    <img ng-src="{{user.image}}" alt="demo user">
+                    <img ng-src="{{user.photoPath}}" alt="demo user">
                 </div>
                 <div class="col-sm-6">
-                    <h1>{{user.first_name}} <span class="semi-bold">{{user.last_name}}</span></h1>
-                    <span ng-show="user.isActive"><span class="label label-success">Active</span></span>
-                    <span ng-hide="user.isActive"><span class="label label-danger">Inactive</span></span>
+                    <h1>{{user.firstName}} <span class="semi-bold">{{user.lastName}}</span></h1>
+                    <span ng-show="user.active"><span class="label label-success">Active</span></span>
+                    <span ng-hide="user.active"><span class="label label-danger">Inactive</span></span>
                     <h1><small>{{user.employer.name}}</small></h1>
                     <ul class="list-unstyled">
                         <li ng-show="user.employer.phone">
                             <p class="text-muted">
-                                <i class="fa fa-phone"></i>&#xA0;&#xA0;{{user.employer.phone}}
+                                <i class="fa fa-phone"></i>&#xA0;&#xA0;{{user.employer.phoneNumber}}
                             </p>
                         </li>
                         <li>
@@ -107,12 +107,20 @@
     <!-- Edit Information -->
     <div cvs-modal-window title="Edit Profile Information" icon="floppy-o" action-title="Save" submit-action="editProfileInformation()" visible="mw.editProfileInfoModal.visibility">
         <div class="row">
+            <div class="col-md-12">
+                <div class="alert fade in" ng-class="{'alert-danger': mw.editProfileInfoModal.data.message.type == 'error', 'alert-info': mw.editProfileInfoModal.data.message.type == 'info'}" ng-show="mw.editProfileInfoModal.data.message">
+                    <i class="fa-fw fa" ng-class="{'fa-times': mw.editProfileInfoModal.data.message.type == 'error', 'fa-check': mw.editProfileInfoModal.data.message.type == 'info'}"></i>
+                    {{mw.editProfileInfoModal.data.message.text}}
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <input type="text" name="first_name" class="form-control"
                         data-smart-validate-input data-required
                         data-message-required="Please enter the account holder's first name"
-                        placeholder="First Name" ng-model="mw.editProfileInfoModal.data.first_name" />
+                        placeholder="First Name" ng-model="mw.editProfileInfoModal.data.firstName" />
                 </div>
             </div>
             <div class="col-md-6">
@@ -120,7 +128,7 @@
                     <input type="text" name="last_name" class="form-control"
                         data-smart-validate-input data-required
                         data-message-required="Please enter the account holder's last name"
-                        placeholder="Last Name" ng-model="mw.editProfileInfoModal.data.last_name" />
+                        placeholder="Last Name" ng-model="mw.editProfileInfoModal.data.lastName" />
                 </div>
             </div>
         </div>
@@ -135,12 +143,12 @@
                 </div>
                 <div class="form-group">
                     <input type="password" name="password" class="form-control"
-                        data-smart-validate-input
+                        data-smart-validate-input data-minlength="3" data-maxnlength="20"
                         placeholder="Password" ng-model="mw.editProfileInfoModal.data.password" />
                 </div>
                 <div class="form-group">
                     <input type="password" name="re_password" class="form-control"
-                        data-smart-validate-input
+                        data-smart-validate-input data-minlength="3" data-maxnlength="20"
                         placeholder="Retype Password" />
                 </div>
             </div>
@@ -148,7 +156,7 @@
         <div class="row">
             <div class="col-md-12">
                 <select ui-select2 multiple="multiple" ng-model="mw.editProfileInfoModal.data.roles" style="width:100%" class="select2">
-                    <option ng-repeat="role in roles.list" value="{{role.id}}">{{role.label}}</option>
+                    <option ng-repeat="role in roles.list" value="{{role.roleId}}">{{role.label}}</option>
                 </select>
             </div>
         </div>
@@ -162,7 +170,7 @@
                     <select class="form-control" id="company" name="company" ng-model="mw.attachToCompanyModal.data.id"
                         data-smart-validate-input data-required data-message-required="Select a parent company">
                         <option value="" selected="" disabled="">Parent Company</option>
-                        <option value="{{company.id}}" ng-repeat="company in company.list">{{company.name}} [Company ID: {{company.id}}]</option>
+                        <option value="{{company.companyId}}" ng-repeat="company in company.list">{{company.name}} [Company ID: {{company.companyId}}]</option>
                     </select>
                 </div>
             </div>

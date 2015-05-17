@@ -6,7 +6,7 @@ define(['shared/language/module', 'lodash'], function (module, _) {
         function getLanguage(iso_code) {
         	var deferred = $q.defer();
 
-			$http.get(SERVICE_ENDPOINT.url + 'i18n/' + iso_code + '.json')
+			$http.get('assets/i18n/' + iso_code + '.json', {cache: false})
 			.success(function(data){
 				deferred.resolve(data);
 				$log.info('[LANGUAGE_SERVICE] Retrieved language for ISO 3166-1 code "' + iso_code + '".');
@@ -22,7 +22,7 @@ define(['shared/language/module', 'lodash'], function (module, _) {
 		function getLanguages() {
 			var deferred = $q.defer();
 
-			$http.get(SERVICE_ENDPOINT.url + 'i18n/languages.json')
+			$http.get('assets/i18n/languages.json', {cache: false})
 			.success(function(data){
 				deferred.resolve(data);
 				$log.info('[LANGUAGE_SERVICE] Retrieved all languages.');

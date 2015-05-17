@@ -20,7 +20,7 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 		}
 
 		return {
-			getProducts: function() {
+			getProducts: function() { //OK
 				return _getProducts();
 			},
 			getProductList: function(){

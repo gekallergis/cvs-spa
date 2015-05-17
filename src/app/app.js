@@ -44,7 +44,6 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
         // Intercept http calls.
         $provide.factory('ErrorHttpInterceptor', function ($q) {
             function notifyError(errorResponse){
-                console.log(errorResponse);
                 $.bigBox({
                     title: errorResponse.status + ' ' + errorResponse.statusText,
                     content: "[" + errorResponse.data.code + "] " + errorResponse.data.message,
@@ -105,6 +104,24 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
             } else if (auth.requiredRoles != undefined && !AccountModel.authorize(auth.requiredRoles)) {
                 event.preventDefault();
                 $state.reload();
+            }
+        });
+
+        $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, rejection) {
+            if(toState.name == "app.profile.details") {
+                event.preventDefault();
+                if(rejection.code == "107") {
+                    $state.go('login', {message: {text: "You need to be logged in to view '" + toState.data.title + "' page!", type: "error"}}, {reload: true});
+                } else {
+                    $.smallBox({
+                        title: rejection.message,
+                        content: "[" + rejection.code + "]",
+                        color: "#C46A69",
+                        icon: "fa fa-times swing animated",
+                        timeout: 4000
+                    });
+                    $state.reload();
+                }
             }
         });
     });

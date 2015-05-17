@@ -27,9 +27,10 @@ define(['components/account/module', 'lodash'], function (module, _) {
 		$scope.showModal = function(modal){
 			if(modal === 'editProfileInfoModal') {
 				$scope.mw.editProfileInfoModal.data = _.clone($scope.user);
+				$scope.mw.editProfileInfoModal.data.roles = _.pluck($scope.mw.editProfileInfoModal.data.roles, 'roleId');
 			} else if(modal === 'attachToCompanyModal') {
 				if($scope.user.employer != null) {
-					$scope.mw.attachToCompanyModal.data.id = $scope.user.employer.id;
+					$scope.mw.attachToCompanyModal.data.id = $scope.user.employer.companyId;
 				}
 			}
 
@@ -60,14 +61,33 @@ define(['components/account/module', 'lodash'], function (module, _) {
 		};
 
 		$scope.editProfileInformation = function() {
+			var rolesList = [];
+			_.forEach($scope.mw.editProfileInfoModal.data.roles, function(roleId) {
+				rolesList.push({"roleId": roleId, "label":""});
+			});
+
 			AccountModel.editProfile({
-				"first_name": $scope.mw.editProfileInfoModal.data.first_name,
-				"last_name": $scope.mw.editProfileInfoModal.data.last_name,
+				"employeeId": $scope.user.employeeId,
+				"firstName": $scope.mw.editProfileInfoModal.data.firstName,
+				"lastName": $scope.mw.editProfileInfoModal.data.lastName,
 				"email": $scope.mw.editProfileInfoModal.data.email,
 				"password": $scope.mw.editProfileInfoModal.data.password,
-				"roles": $scope.mw.editProfileInfoModal.data.roles
-			}).then(function(){
-				$scope.refreshPage();
+				"roles": rolesList
+			}).then(function(response){
+				if(AccountModel.getLoggedInUser().employeeId == $scope.user.employeeId) {
+					$state.go('login', {message: {text: response.message, type: "info"}}, {reload: true});
+				} else {
+					$.smallBox({
+                        title: response.message,
+                        content: response.code,
+                        color: "#739E73",
+						icon: "fa fa-check-square-o swing animated",
+                        timeout: 4000
+                    });
+                    $scope.refreshPage();
+				}
+			}, function(errorResponse){
+				$scope.mw.editProfileInfoModal.data.message = {text: errorResponse.message, type: 'error'};
 			});
 		};
 

@@ -1,0 +1,26 @@
+[
+	{
+		"key": "us",
+		"alt": "United States",
+		"title": "English (US)",
+		"default": true
+	},
+	{
+		"key": "se",
+		"alt": "Sweden",
+		"title": "Swedish",
+		"default": false
+	},
+	{
+        "key": "gr",
+        "alt": "Greece",
+        "title": "Greek",
+        "default": false
+    },
+    {
+        "key": "ir",
+        "alt": "Iran",
+        "title": "Farsi",
+        "default": false
+    }
+]
