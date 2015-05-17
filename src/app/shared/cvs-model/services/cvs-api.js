@@ -56,6 +56,9 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			login: function(email, password) {
 				return _makeRequest('login', 'POST', {"email": email, "password": password});
 			},
+			logout: function() {
+				return _makeRequest('logout', 'GET', {});
+			},
 			resetPassword: function(email) {
 				return _makeRequest('reset', 'POST', {"email": email});	
 			},

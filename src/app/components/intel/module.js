@@ -37,7 +37,7 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                 title: 'System Log',
                 auth: {
                     requireLogin: true,
-                    requiredRoles: ["1"]
+                    requiredRoles: []
                 }
             }
         });

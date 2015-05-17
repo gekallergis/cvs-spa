@@ -18,6 +18,7 @@ define([
     // Layout
     'core/layout/module',
     'core/layout/controllers/menu',
+    'core/layout/controllers/header',
     'core/layout/actions/minifyMenu',
     'core/layout/actions/toggleMenu',
     'core/layout/actions/fullScreen',

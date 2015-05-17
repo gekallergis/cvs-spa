@@ -1,4 +1,4 @@
-<header id="header">
+<header id="header" ng-controller="HeaderController">
     <div id="logo-group">
         <!-- PLACE YOUR LOGO HERE -->
         <span id="logo"> <img src="assets/img/logo.png" alt="SmartAdmin"> </span>
@@ -32,7 +32,7 @@
                     </li>
                     <li class="divider"></li>
                     <li>
-                        <a href="#/login" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"><i
+                        <a ng-click="logout()" class="padding-10 padding-top-5 padding-bottom-5"><i
                                 class="fa fa-sign-out fa-lg"></i> <strong><u>L</u>ogout</strong></a>
                     </li>
                 </ul>
@@ -40,9 +40,9 @@
         </ul>
 
         <!-- logout button -->
-        <div id="logout" class="btn-header transparent pull-right">
+        <div id="logout" class="btn-header transparent pull-right" ng-click="logout()">
             <span>
-                <a ui-sref="login" title="Sign Out" data-action="userLogout" data-logout-msg="You can improve your security further after logging out by closing this opened browser">
+                <a>
                     <i class="fa fa-sign-out"></i>
                 </a>
             </span>

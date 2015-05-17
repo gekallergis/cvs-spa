@@ -75,7 +75,10 @@ define(['components/account/module', 'lodash'], function (module, _) {
 				"roles": rolesList
 			}).then(function(response){
 				if(AccountModel.getLoggedInUser().employeeId == $scope.user.employeeId) {
-					$state.go('login', {message: {text: response.message, type: "info"}}, {reload: true});
+					AccountModel.logout()
+					.then(function(logoutResponse) {
+						$state.go('login', {message: {text: response.message, type: "info"}}, {reload: true});
+					});
 				} else {
 					$.smallBox({
                         title: response.message,

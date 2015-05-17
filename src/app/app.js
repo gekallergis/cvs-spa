@@ -122,6 +122,8 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
                     });
                     $state.reload();
                 }
+            } else {
+                $state.reload();
             }
         });
     });

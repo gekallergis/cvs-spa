@@ -18,6 +18,10 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			});
 		}
 
+		function _logout() {
+			return CVSService.logout();
+		}
+
 		function _resetPassword(email) {
 			return CVSService.resetPassword(email);
 		}
@@ -38,8 +42,6 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 		}
 
 		function _editProfile(profile) {
-			$log.info("PROFILE");
-			$log.debug(profile);
 			return CVSService.editProfile(profile);
 		}
 
@@ -124,6 +126,9 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			// Login, Register, Lock, Reset Password
 			login: function(email, password) { //OK
 				return _login(email, password);
+			},
+			logout: function() { //OK
+				return _logout();
 			},
 			resetPassword: function(email) { //OK
 				return _resetPassword(email);
