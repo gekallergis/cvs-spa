@@ -10,8 +10,8 @@ define(['components/account/module'], function(module){
                 var loggedin_user = AccountModel.getLoggedInUser();
 
                 $scope.user = {};
-                $scope.user.username = loggedin_user.first_name + " " + loggedin_user.last_name;
-                $scope.user.image = loggedin_user.image;
+                $scope.user.username = loggedin_user.firstName + " " + loggedin_user.lastName;
+                $scope.user.image = loggedin_user.photoPath;
             }
         };
     });
