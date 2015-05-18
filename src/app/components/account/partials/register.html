@@ -183,9 +183,8 @@
                             -->
                         </fieldset>
                         <footer>
-                            <button type="submit" class="btn btn-primary">
-                                Register
-                            </button>
+                            <button ng-show="state.registering" class="btn btn-primary" type="button"><i class="fa fa-refresh fa-spin"></i>&nbsp;&nbsp;Registering...</button>
+                            <button ng-hide="state.registering" type="submit" class="btn btn-primary">Register</button>
                         </footer>
                     </form>
                 </div>

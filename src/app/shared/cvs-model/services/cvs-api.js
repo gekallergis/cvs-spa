@@ -87,7 +87,10 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 				return _makeRequest('product', 'GET', {});	
 			},
 			editProfile: function(profile) {
-				return _makeRequest('employee', 'POST', profile);	
+				return _makeRequest('employee', 'POST', profile);
+			},
+			toggleStatus: function(id) {
+				return _makeRequest('status/' + id, 'POST', {});
 			},
 
 			getSystemLog: function() {

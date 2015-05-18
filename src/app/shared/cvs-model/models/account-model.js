@@ -122,6 +122,10 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			return company;
 		}
 
+		function _toggleStatus(id) {
+			return CVSService.toggleStatus(id);
+		}
+
 		return {
 			// Login, Register, Lock, Reset Password
 			login: function(email, password) { //OK
@@ -182,11 +186,8 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 				deferred.resolve();
 				return deferred.promise;
 			},
-			setStatus: function(id) {
-				// Set the status of a profile through the API here!
-				var deferred = $q.defer();
-				deferred.resolve();
-				return deferred.promise;
+			toggleStatus: function(id) { //OK
+				return _toggleStatus(id);
 			},
 			// Company
 			getCompanyList: function(){ //OK

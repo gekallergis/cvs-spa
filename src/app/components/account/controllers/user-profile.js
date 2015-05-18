@@ -42,12 +42,24 @@ define(['components/account/module', 'lodash'], function (module, _) {
 		};
 
 		$scope.toggleStatus = function() {
-			AccountModel.setStatus({
-				"id": $scope.user.id,
-				"isActive": !$scope.user.isActive
-			})
-			.then(function(){
+			AccountModel.toggleStatus($scope.user.employeeId)
+			.then(function(response){
+				$.smallBox({
+                    title: response.message,
+                    content: "[" + response.code + "]",
+                    color: "#739E73",
+					icon: "fa fa-check-square-o swing animated",
+                    timeout: 4000
+                });
 				$scope.refreshPage();
+			}, function(errorResponse) {
+				$.smallBox({
+                        title: errorResponse.message,
+                        content: "[" + errorResponse.code + "]",
+                        color: "#C46A69",
+                        icon: "fa fa-times swing animated",
+                        timeout: 4000
+                    });
 			});
 		};
 
@@ -82,7 +94,7 @@ define(['components/account/module', 'lodash'], function (module, _) {
 				} else {
 					$.smallBox({
                         title: response.message,
-                        content: response.code,
+                        content: "[" + response.code + "]",
                         color: "#739E73",
 						icon: "fa fa-check-square-o swing animated",
                         timeout: 4000

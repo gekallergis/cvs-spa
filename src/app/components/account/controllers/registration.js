@@ -6,8 +6,11 @@ define(['components/account/module', 'lodash'], function (module, _) {
 		$scope.registration.info = {};
 		$scope.registration.message = null;
 		$scope.registration.countries = AccountModel.getCountryList();
+		$scope.state = {};
+		$scope.state.registering = false;
 
 		$scope.register = function() {
+			$scope.state.registering = true;
 			AccountModel.register({
 				"registrationNumber": $scope.registration.info.reg_num,
 				"name": $scope.registration.info.name,
@@ -25,6 +28,7 @@ define(['components/account/module', 'lodash'], function (module, _) {
 			.then(function(response){
 				$state.go('login', {message: {text: response.message, type: "info"}});
 			}, function(errorResponse){
+				$scope.state.registering = false;
 				$scope.registration.message = {text: errorResponse.message, type: "error"};
 			});
 		};

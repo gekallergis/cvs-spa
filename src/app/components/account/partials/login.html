@@ -58,7 +58,7 @@
                             </div>
                             <section class="form-group">
                                 <label class="input"> <i class="icon-append fa fa-user"></i>
-                                    <input type="email" name="email" ng-model="login.credentials.email"
+                                    <input type="email" name="email" ng-model="credentials.email"
                                            data-smart-validate-input data-required data-email
                                            data-message-required="Please enter your email address"
                                            data-message-email="Please enter a VALID email address"
@@ -68,7 +68,7 @@
                             </section>
                             <section class="form-group">
                                 <label class="input"> <i class="icon-append fa fa-lock"></i>
-                                   <input type="password" name="password" ng-model="login.credentials.password"
+                                   <input type="password" name="password" ng-model="credentials.password"
                                           data-smart-validate-input data-required data-minlength="3" data-maxnlength="20"
                                           data-message="Please enter your password" placeholder="Password">
                                     <b class="tooltip tooltip-bottom-right">Please enter your password</b>
@@ -79,7 +79,17 @@
                             </section>
                         </fieldset>
                         <footer>
-                            <button type="submit" class="btn btn-primary">Sign in</button>
+                            <button ng-show="state.loggingIn" class="btn btn-primary" type="button"><i class="fa fa-refresh fa-spin"></i>&nbsp;&nbsp;Logging In...</button>
+                            <button ng-hide="state.loggingIn" type="submit" class="btn btn-primary">Sign in</button>
+                        </footer>
+                        <footer>
+                            <button ng-click="preLogin(1)" class="btn btn-primary">Admin</button>
+                            <button ng-click="preLogin(2)" class="btn btn-primary">Utattached</button>
+                            <button ng-click="preLogin(3)" class="btn btn-primary">GM</button>
+                            <button ng-click="preLogin(4)" class="btn btn-primary">CM A</button>
+                            <button ng-click="preLogin(5)" class="btn btn-primary">CE A</button>
+                            <button ng-click="preLogin(6)" class="btn btn-primary">CM B</button>
+                            <button ng-click="preLogin(7)" class="btn btn-primary">CE B</button>
                         </footer>
                     </form>
                 </div>

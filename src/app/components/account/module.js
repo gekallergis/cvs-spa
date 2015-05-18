@@ -22,7 +22,10 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                 deps: $couchPotatoProvider.resolveDependencies([
                     'shared/utils/directives/validator/smart-validate-form',
                     'components/account/controllers/login'
-                ])
+                ]),
+                logout: function(AccountModel) {
+                    return AccountModel.logout();
+                }
             }
         })
         .state('register', {

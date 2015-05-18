@@ -2,9 +2,9 @@ define(['components/inbox/module', 'lodash'], function(module, _){
 
     "use strict";
     return module.registerFactory('InboxMessage', function($resource){
-       var InboxMessage = $resource('api/messages.json/:id', {'id': '@_id'}, {
+       var InboxMessage = $resource('fAPI/messages.json/:id', {'id': '@_id'}, {
             get:{
-                url: 'api/message.json',
+                url: 'fAPI/message.json',
                 isArray: false
             }
         });
