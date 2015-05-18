@@ -54,21 +54,37 @@ define(['components/account/module', 'lodash'], function (module, _) {
 				$scope.refreshPage();
 			}, function(errorResponse) {
 				$.smallBox({
-                        title: errorResponse.message,
-                        content: "[" + errorResponse.code + "]",
-                        color: "#C46A69",
-                        icon: "fa fa-times swing animated",
-                        timeout: 4000
-                    });
+                    title: errorResponse.message,
+                    content: "[" + errorResponse.code + "]",
+                    color: "#C46A69",
+                    icon: "fa fa-times swing animated",
+                    timeout: 4000
+                });
 			});
 		};
 
 		$scope.attachToCompany = function() {
 			AccountModel.attachToCompany({
-				"profile": $scope.user.id,
-				"parent_company": $scope.mw.attachToCompanyModal.data.id
-			}).then(function() {
-				$scope.refreshPage();
+				"employeeId": $scope.user.employeeId,
+				"companyId": $scope.mw.attachToCompanyModal.data.id
+			}).then(function(response) {
+				if(AccountModel.getLoggedInUser().employeeId == $scope.user.employeeId) {
+					AccountModel.logout()
+					.then(function(logoutResponse) {
+						$state.go('login', {message: {text: response.message, type: "info"}}, {reload: true});
+					});
+				} else {
+					$.smallBox({
+	                    title: response.message,
+	                    content: "[" + response.code + "]",
+	                    color: "#739E73",
+						icon: "fa fa-check-square-o swing animated",
+	                    timeout: 4000
+	                });
+	                $state.go('app.profile.details', {profileId: AccountModel.getLoggedInUser().employeeId});
+				}
+			}, function(errorResponse) {
+				$scope.mw.attachToCompanyModal.data.message = {text: errorResponse.message, type: 'error'};
 			});
 		};
 
@@ -108,31 +124,48 @@ define(['components/account/module', 'lodash'], function (module, _) {
 
 		$scope.addFreeProducts = function() {
 			AccountModel.addFreeProducts({
-				"company": $scope.user.employer.id,
-				"product": $scope.mw.addFreeProductsModal.data.id,
-				"qty": $scope.mw.addFreeProductsModal.data.qty
-			}).then(function() {
+				"companyId": $scope.user.employer.companyId,
+				"productId": $scope.mw.addFreeProductsModal.data.id,
+				"quantity": $scope.mw.addFreeProductsModal.data.qty
+			}).then(function(response) {
+				$.smallBox({
+                    title: response.message,
+                    content: "[" + response.code + "]",
+                    color: "#739E73",
+					icon: "fa fa-check-square-o swing animated",
+                    timeout: 4000
+                });
 				$scope.refreshPage();
+			}, function(errorResponse) {
+				$scope.mw.addFreeProductsModal.data.message = {text: errorResponse.message, type: 'error'};
 			});
 		};
 
 		$scope.deleteProfile = function(id) {
 			$.SmartMessageBox({
                 title: "Delete User Profile!",
-                content: "You are about to delete " + $scope.user.first_name + " " + $scope.user.last_name + "! Are you sure?",
+                content: "You are about to delete " + $scope.user.firstName + " " + $scope.user.lastName + "! Are you sure?",
                 buttons: '[Cancel][Delete]'
             }, function (key_press) {
 				if (key_press === "Delete") {
 					AccountModel.deleteProfile(id)
-					.then(function(){
+					.then(function(response){
 						$.smallBox({
-	                        title: "User Profile Deleted",
-	                        content: "User " + $scope.user.first_name + " " + $scope.user.last_name + " was deleted!",
-	                        color: "#C46A69",
-	                        icon: "fa fa-trash-o swing animated",
-	                        timeout: 4000
-	                    });
+		                    title: response.message,
+		                    content: "[" + response.code + "]",
+		                    color: "#739E73",
+							icon: "fa fa-check-trash-o swing animated",
+		                    timeout: 4000
+		                });
 	                    $state.go('app.profile', {});
+					}, function(errorResponse) {
+						$.smallBox({
+		                    title: errorResponse.message,
+		                    content: "[" + errorResponse.code + "]",
+		                    color: "#C46A69",
+		                    icon: "fa fa-times swing animated",
+		                    timeout: 4000
+		                });
 					});
                 }
             });

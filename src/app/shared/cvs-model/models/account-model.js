@@ -126,6 +126,18 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			return CVSService.toggleStatus(id);
 		}
 
+		function _attachToCompany(attachment) {
+			return CVSService.attachToCompany(attachment);
+		}
+
+		function _addFreeProducts(products) {
+			return CVSService.addFreeProducts(products);
+		}
+
+		function _deleteProfile(id) {
+			return CVSService.deleteProfile(id);
+		}
+
 		return {
 			// Login, Register, Lock, Reset Password
 			login: function(email, password) { //OK
@@ -180,11 +192,8 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			editProfile: function(profile) { //OK
 				return _editProfile(profile);
 			},
-			deleteProfile: function(id) {
-				// Delete a profile through the API here!
-				var deferred = $q.defer();
-				deferred.resolve();
-				return deferred.promise;
+			deleteProfile: function(id) { //OK
+				return _deleteProfile(id);
 			},
 			toggleStatus: function(id) { //OK
 				return _toggleStatus(id);
@@ -232,18 +241,11 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 				deferred.resolve();
 				return deferred.promise;
 			},
-			attachToCompany: function(parent_company) {
-				// Attach managing account through the API here!
-				var deferred = $q.defer();
-				deferred.resolve();
-				return deferred.promise;
+			attachToCompany: function(attachment) {
+				return _attachToCompany(attachment);
 			},
-			addFreeProducts: function(products) {
-				$log.debug(products);
-				// Add free products through the API here!
-				var deferred = $q.defer();
-				deferred.resolve();
-				return deferred.promise;
+			addFreeProducts: function(products) { //OK
+				return _addFreeProducts(products);
 			},
 			// Countries
 			getCountryList: function() { //OK

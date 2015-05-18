@@ -35,6 +35,8 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
  				data: data
 			}
 
+			$log.debug(data);
+
 			$http(request)
 			.success(function(data){
 				$timeout(function(){
@@ -91,6 +93,15 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			},
 			toggleStatus: function(id) {
 				return _makeRequest('status/' + id, 'POST', {});
+			},
+			attachToCompany: function(attachment) {
+				return _makeRequest('attachEmployeeToCompany', 'POST', attachment);
+			},
+			addFreeProducts: function(products) {
+				return _makeRequest('freeproducts', 'POST', products);
+			},
+			deleteProfile: function(employeeId) {
+				return _makeRequest('employee/' + employeeId, 'DELETE', {});
 			},
 
 			getSystemLog: function() {

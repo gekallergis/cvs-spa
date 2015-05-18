@@ -20,7 +20,7 @@
                             </li>
                             <li class="divider"></li>
                             <li>
-                                <a href-void ng-click="deleteProfile(user.id)"><i class="fa fa-trash-o"></i> Delete Account</a>
+                                <a href-void ng-click="deleteProfile(user.employeeId)"><i class="fa fa-trash-o"></i> Delete Account</a>
                             </li>
                         </ul>
                     </div>
@@ -166,10 +166,19 @@
     <div cvs-modal-window title="Attach to Company" icon="plus" action-title="Attach" submit-action="attachToCompany()" visible="mw.attachToCompanyModal.visibility">
         <div class="row">
             <div class="col-md-12">
+                <div class="alert fade in" ng-class="{'alert-danger': mw.attachToCompanyModal.data.message.type == 'error', 'alert-info': mw.attachToCompanyModal.data.message.type == 'info'}" ng-show="mw.attachToCompanyModal.data.message">
+                    <i class="fa-fw fa" ng-class="{'fa-times': mw.attachToCompanyModal.data.message.type == 'error', 'fa-check': mw.attachToCompanyModal.data.message.type == 'info'}"></i>
+                    {{mw.attachToCompanyModal.data.message.text}}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
                 <div class="form-group">
                     <select class="form-control" id="company" name="company" ng-model="mw.attachToCompanyModal.data.id"
                         data-smart-validate-input data-required data-message-required="Select a parent company">
-                        <option value="" selected="" disabled="">Parent Company</option>
+                        <option value="-1" selected="" disabled="">Parent Company</option>
+                        <option value="0">Remove From Company</option>
                         <option value="{{company.companyId}}" ng-repeat="company in company.list">{{company.name}} [Company ID: {{company.companyId}}]</option>
                     </select>
                 </div>
@@ -180,12 +189,20 @@
     <!-- Add Free Products -->
     <div cvs-modal-window title="Add Free Products" icon="plus" action-title="Attach" submit-action="addFreeProducts()" visible="mw.addFreeProductsModal.visibility">
         <div class="row">
+            <div class="col-md-12">
+                <div class="alert fade in" ng-class="{'alert-danger': mw.addFreeProductsModal.data.message.type == 'error', 'alert-info': mw.addFreeProductsModal.data.message.type == 'info'}" ng-show="mw.addFreeProductsModal.data.message">
+                    <i class="fa-fw fa" ng-class="{'fa-times': mw.addFreeProductsModal.data.message.type == 'error', 'fa-check': mw.addFreeProductsModal.data.message.type == 'info'}"></i>
+                    {{mw.addFreeProductsModal.data.message.text}}
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-10">
                 <div class="form-group">
                     <select class="form-control" id="product" name="product" ng-model="mw.addFreeProductsModal.data.id"
                         data-smart-validate-input data-required data-message-required="Select a product">
                         <option value="" selected="" disabled="">Product</option>
-                        <option value="{{product.id}}" ng-repeat="product in product.list">{{product.name}}</option>
+                        <option value="{{product.productId}}" ng-repeat="product in product.list">{{product.name}}</option>
                     </select>
                 </div>
             </div>
