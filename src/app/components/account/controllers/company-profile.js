@@ -29,10 +29,10 @@ define(['components/account/module', 'lodash', 'notification'], function (module
 			if(modal === 'editCompanyInfoModal') {
 				$scope.mw.editCompanyInfoModal.data = _.clone($scope.company);
 			} else if(modal === 'attachManagingAccountModal') {
-				$scope.mw.attachManagingAccountModal.data.id = $scope.company.managing_account.id;
+				$scope.mw.attachManagingAccountModal.data.id = $scope.company.managingEmployee.employeeId;
 			} else if(modal === 'attachToCompanyModal') {
 				if($scope.company.parent_company != null) {
-					$scope.mw.attachToCompanyModal.data.id = $scope.company.parent_company.id;
+					$scope.mw.attachToCompanyModal.data.id = $scope.company.parentCompany.companyId;
 				}
 			}
 

@@ -103,17 +103,17 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 
 		function _setupCompanyHierarchy(company) {
 			var hierarchy = [
-	            {"content": "<span><i class=\"fa fa-lg fa-building\"></i> " + company.hierarchy.name + "</span>", "expanded": true, "children": [
-	                {"content": "<h4><i class=\"fa fa-lg fa-star\"></i> " + company.hierarchy.managing_account + "</h4>", "expanded": false, "children": []}
+	            {"content": "<span><i class=\"fa fa-lg fa-building\"></i> " + company.hierarchy.company.name + "</span>", "expanded": true, "children": [
+	                {"content": "<h4><i class=\"fa fa-lg fa-star\"></i> " + company.hierarchy.company.managingEmployee.firstName + " " + company.hierarchy.company.managingEmployee.lastName  + "</h4>", "expanded": false, "children": []}
 	            ]}
 	        ];
 
 	        _.forEach(company.hierarchy.children, function(value, index, collection){
-	        	var child = {"content": "<span class=\"label label-success\"><i class=\"fa fa-lg fa-plus-circle\"></i> " + value.name + "</span>", "expanded": false, "children": [
-				                {"content": "<span class=\"alert-info\"><i class=\"fa fa-star\"></i> " + value.managing_account + "</span>"}
+	        	var child = {"content": "<span class=\"label label-success\"><i class=\"fa fa-lg fa-plus-circle\"></i> " + value.company.name + "</span>", "expanded": false, "children": [
+				                {"content": "<span class=\"alert-info\"><i class=\"fa fa-star\"></i> " + value.company.managingEmployee.firstName + " " + value.company.managingEmployee.lastName + "</span>"}
 				            ]};
 	        	_.forEach(value.employees, function(value, index, collection){
-	        		child.children.push({"content": "<span><i class=\"fa fa-user\"></i> " + value.full_name + "</span>"});
+	        		child.children.push({"content": "<span><i class=\"fa fa-user\"></i> " + value.firstName + " " + value.lastName + "</span>"});
 	        	});
 	        	hierarchy[0].children.push(child);
 	        });
@@ -179,7 +179,7 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 				return _authorize(id);
 			},
 			// Profile
-			getProfiles: function() {
+			getProfiles: function() { //OK
 				return _getProfiles();
 			},
 			getProfileList: function(){ //OK
@@ -213,10 +213,10 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			getCompanyProfile: function(id) {
 				return _getCompanyProfile(id);
 			},
-			getCurrentCompany: function() {
+			getCurrentCompany: function() { //OK
 				return _current_company;
 			},
-			addCompany: function(company) {
+			addCompany: function(company) { //OK
 				return _addCompany(company);
 			},
 			editCompany: function(company) {

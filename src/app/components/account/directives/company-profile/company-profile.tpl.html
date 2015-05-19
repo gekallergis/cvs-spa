@@ -21,7 +21,7 @@
                             </li>
                             <li class="divider"></li>
                             <li>
-                                <a href-void ng-click="deleteCompany(company.id)"><i class="fa fa-trash-o"></i> Delete Company</a>
+                                <a href-void ng-click="deleteCompany(company.companyId)"><i class="fa fa-trash-o"></i> Delete Company</a>
                             </li>
                         </ul>
                     </div>
@@ -44,31 +44,31 @@
         <div class="col-sm-12">
             <div class="row">
                 <div class="col-sm-3 profile-pic">
-                    <img ng-src="{{company.managing_account.image}}">
+                    <img ng-src="{{company.managingEmployee.photoPath}}">
                 </div>
                 <div class="col-sm-6">
                     <h1>{{company.name}}
-                        <span ng-show="company.parent_company">
+                        <span ng-show="company.parentCompany">
                             <br />
-                            <small> Parent Company: <a href-void>{{company.parent_company.name}}</a></small>
+                            <small> Parent Company: <a ui-sref="app.company.details({companyId: company.parentCompany.companyId})">{{company.parentCompany.name}}</a></small>
                         </span>
                         <br />
-                        <small> Managing Account: <a ui-sref="app.profile.details({profileId: 1})">{{company.managing_account.first_name}} {{company.managing_account.last_name}}</a></small>
+                        <small> Managing Account: <a ui-sref="app.profile.details({profileId: company.managingEmployee.employeeId})">{{company.managingEmployee.firstName}} {{company.managingEmployee.lastName}}</a></small>
                     </h1>
                     <ul class="list-unstyled">
                         <li>
                             <p class="text-muted">
-                                <i class="fa fa-pencil"></i>&#xA0;&#xA0;{{company.reg_number}}
+                                <i class="fa fa-pencil"></i>&#xA0;&#xA0;{{company.registrationNumber}}
                             </p>
                         </li>
                         <li>
                             <p class="text-muted">
-                                <i class="fa fa-map-marker"></i>&#xA0;&#xA0;{{company.primary_address}}
+                                <i class="fa fa-map-marker"></i>&#xA0;&#xA0;{{company.primaryAddress}}
                             </p>
                         </li>
                         <li>
                             <p class="text-muted">
-                                <i class="fa fa-map-marker"></i>&#xA0;&#xA0;{{company.secondary_address}}
+                                <i class="fa fa-map-marker"></i>&#xA0;&#xA0;{{company.secondaryAddress}}
                             </p>
                         </li>
                         <li>
@@ -78,17 +78,17 @@
                         </li>
                         <li>
                             <p class="text-muted">
-                                <i class="fa fa-globe"></i>&#xA0;&#xA0;{{company.city}}, {{countries[company.country]}}
+                                <i class="fa fa-globe"></i>&#xA0;&#xA0;{{company.city}}, {{company.country.name}}
                             </p>
                         </li>
                         <li>
                             <p class="text-muted">
-                                <i class="fa fa-phone"></i>&#xA0;&#xA0;{{company.phone}}
+                                <i class="fa fa-phone"></i>&#xA0;&#xA0;{{company.phoneNumber}}
                             </p>
                         </li>
                         <li>
                             <p class="text-muted">
-                                <i class="fa fa-envelope"></i>&#xA0;&#xA0;<a href="mailto:{{company.managing_account.email}}">{{company.managing_account.email}}</a>
+                                <i class="fa fa-envelope"></i>&#xA0;&#xA0;<a href="mailto:{{company.managingEmployee.email}}">{{company.managingEmployee.email}}</a>
                             </p>
                         </li>
                     </ul>
@@ -178,7 +178,7 @@
                     <input type="text" name="reg-num" class="form-control"
                         data-smart-validate-input data-required
                         data-message-required="Enter the company registration number"
-                        placeholder="Company Registration Number" ng-model="mw.editCompanyInfoModal.data.reg_number" />
+                        placeholder="Company Registration Number" ng-model="mw.editCompanyInfoModal.data.registrationNumber" />
                 </div>
                 <div class="form-group">
                     <input type="text" name="name" class="form-control" 
@@ -190,12 +190,12 @@
                     <input type="text" name="prim_address" class="form-control"
                         data-smart-validate-input data-required
                         data-message-required="Enter the company's primary address"
-                        placeholder="Primary Address" ng-model="mw.editCompanyInfoModal.data.primary_address" />
+                        placeholder="Primary Address" ng-model="mw.editCompanyInfoModal.data.primaryAddress" />
                 </div>
                 <div class="form-group">
                     <input type="text" name="sec_address" class="form-control"
                         data-smart-validate-input
-                        placeholder="Secondary Address" ng-model="mw.editCompanyInfoModal.data.secondary_address" />
+                        placeholder="Secondary Address" ng-model="mw.editCompanyInfoModal.data.secondaryAddress" />
                 </div>
             </div>
         </div>
@@ -220,10 +220,10 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <select class="form-control" id="country" name="country" ng-model="mw.editCompanyInfoModal.data.country"
+                    <select class="form-control" id="country" name="country" ng-model="mw.editCompanyInfoModal.data.country.countryId"
                         data-smart-validate-input data-required data-message-required="Select the company's country">
                         <option value="" selected="" disabled="">Country</option>
-                        <option value="{{key}}" ng-repeat="(key, value) in countries" >{{value}}</option>
+                        <option value="{{country.countryId}}" ng-repeat="country in countries" >{{country.name}}</option>
                     </select>
                 </div>
             </div>
@@ -232,7 +232,7 @@
                     <input type="text" name="phone" class="form-control"
                         data-smart-validate-input data-required
                         data-message-required="Enter the company's phone number"
-                        placeholder="Phonenumber" ng-model="mw.editCompanyInfoModal.data.phone" />
+                        placeholder="Phonenumber" ng-model="mw.editCompanyInfoModal.data.phoneNumber" />
                 </div>
             </div>
         </div>
@@ -246,7 +246,7 @@
                     <select class="form-control" id="account" name="account" ng-model="mw.attachManagingAccountModal.data.id"
                         data-smart-validate-input data-required data-message-required="Select a managing account">
                         <option value="" selected="" disabled="">Managing Account</option>
-                        <option value="{{user.id}}" ng-repeat="user in user_profiles">{{user.first_name}} {{user.last_name}}</option>
+                        <option value="{{user.employeeId}}" ng-repeat="user in user_profiles">{{user.firstName}} {{user.lastName}}</option>
                     </select>
                 </div>
             </div>
