@@ -103,10 +103,10 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			deleteProfile: function(employeeId) {
 				return _makeRequest('employee/' + employeeId, 'DELETE', {});
 			},
-
 			getSystemLog: function() {
-				return _makeGETRequest('system-log.json');
+				return _makeRequest('intel/systemlog', 'GET', {});
 			},
+
 			getCompanyProfile: function(id) {
 				return _makeGETRequest('companies/company-' + id + '.json');
 			},
