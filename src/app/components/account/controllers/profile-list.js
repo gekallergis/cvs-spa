@@ -5,6 +5,8 @@ define(['components/account/module', 'lodash'], function (module, _) {
 		$scope.np = {};
 		$scope.profile = {};
 		$scope.profile.list = AccountModel.getProfileList();
+		$scope.registration = {};
+		$scope.registration.message = null;
 		
 		$scope.modalVisibility = false;
 		$scope.showModal = function(){
@@ -17,33 +19,51 @@ define(['components/account/module', 'lodash'], function (module, _) {
 
 		$scope.addNewProfile = function() {
 			AccountModel.addProfile({
-				"first_name": $scope.np.first_name,
-				"last_name": $scope.np.last_name,
+				"firstName": $scope.np.first_name,
+				"lastName": $scope.np.last_name,
+				"email": $scope.np.email,
 				"password": $scope.np.password,
-			}).then(function(){
+			}).then(function(response){
+				$.smallBox({
+	                title: response.message,
+	                content: "[" + response.code + "]",
+	                color: "#739E73",
+					icon: "fa fa-check-trash-o swing animated",
+	                timeout: 4000
+	            });
 				$scope.refreshList();
+			}, function(errorResponse) {
+				$scope.registration.message = {text: errorResponse.message, type: "error"};
 			});
 		};
 
-		$scope.deleteProfile = function(id) {
-			var profile = $scope.profile.list[_.findIndex($scope.profile.list, 'id', id)];
+		$scope.deleteProfile = function(employeeId) {
+			var profile = $scope.profile.list[_.findIndex($scope.profile.list, 'employeeId', employeeId)];
 
 			$.SmartMessageBox({
                 title: "Delete User Profile!",
-                content: "You are about to delete " + profile.first_name + " " + profile.last_name + "! Are you sure?",
+                content: "You are about to delete " + profile.firstName + " " + profile.lastName + "! Are you sure?",
                 buttons: '[Cancel][Delete]'
             }, function (key_press) {
 				if (key_press === "Delete") {
-					AccountModel.deleteProfile(id)
-					.then(function(){
+					AccountModel.deleteProfile(employeeId)
+					.then(function(response){
 						$.smallBox({
-	                        title: "User Profile Deleted",
-	                        content: "User " + profile.first_name + " " + profile.last_name + " was deleted!",
-	                        color: "#C46A69",
-	                        icon: "fa fa-trash-o swing animated",
-	                        timeout: 4000
-	                    });
+		                    title: response.message,
+		                    content: "[" + response.code + "]",
+		                    color: "#739E73",
+							icon: "fa fa-check-trash-o swing animated",
+		                    timeout: 4000
+		                });
 	                    $scope.refreshList();
+					}, function(errorResponse) {
+						$.smallBox({
+		                    title: errorResponse.message,
+		                    content: "[" + errorResponse.code + "]",
+		                    color: "#C46A69",
+		                    icon: "fa fa-times swing animated",
+		                    timeout: 4000
+		                });
 					});
                 }
             });

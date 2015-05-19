@@ -157,7 +157,7 @@ define(['components/account/module', 'lodash'], function (module, _) {
 							icon: "fa fa-check-trash-o swing animated",
 		                    timeout: 4000
 		                });
-	                    $state.go('app.profile', {});
+	                    $state.go('app.profile', {}, {reload: true});
 					}, function(errorResponse) {
 						$.smallBox({
 		                    title: errorResponse.message,

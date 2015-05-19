@@ -106,6 +106,9 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			getSystemLog: function() {
 				return _makeRequest('intel/systemlog', 'GET', {});
 			},
+			addProfile: function(profile) {
+				return _makeRequest('employee', 'PUT', profile);
+			},
 
 			getCompanyProfile: function(id) {
 				return _makeGETRequest('companies/company-' + id + '.json');

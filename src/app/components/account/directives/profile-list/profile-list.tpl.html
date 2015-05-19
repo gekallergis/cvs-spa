@@ -18,8 +18,8 @@
 			            <th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Full Name</th>
 			            <th><i class="fa fa-fw fa-building text-muted hidden-md hidden-sm hidden-xs"></i> Company</th>
 			            <th data-hide="phone"><i class="fa fa-fw fa-phone text-muted hidden-md hidden-sm hidden-xs"></i> Company Phone</th>
-			            <th data-hide="phone,tablet"><i class="fa fa-fw fa-globe text-muted hidden-md hidden-sm hidden-xs"></i> City</th>
-			            <th data-hide="phone,tablet"><i class="fa fa-fw fa-map-marker text-muted hidden-md hidden-sm hidden-xs"></i> Zip</th>
+			            <th data-hide="phone,tablet"><i class="fa fa-fw fa-globe text-muted hidden-md hidden-sm hidden-xs"></i> Company City</th>
+			            <th data-hide="phone,tablet"><i class="fa fa-fw fa-map-marker text-muted hidden-md hidden-sm hidden-xs"></i> Company Zip</th>
 			            <th data-hide="phone,tablet"><i class="fa fa-fw fa-cogs text-muted hidden-md hidden-sm hidden-xs"></i> Status</th>
 			            <th data-hide="phone,tablet"><i class="fa fa-fw fa-info text-muted hidden-md hidden-sm hidden-xs"></i> Details</th>
 			            <th data-hide="phone,tablet"><i class="fa fa-fw fa-times text-muted hidden-md hidden-sm hidden-xs"></i> Delete</th>
@@ -27,21 +27,21 @@
 			        </thead>
 			        <tbody>
 			        	<tr ng-repeat="profile in profile.list">
-                            <td align="center">{{profile.id}}</td>
-                            <td>{{profile.first_name}} {{profile.last_name}}</td>
-                            <td>{{profile.company.name}}</td>
-                            <td>{{profile.company.phone}}</td>
-                            <td>{{profile.company.city}}</td>
-                            <td>{{profile.company.postcode}}</td>
+                            <td align="center">{{profile.employeeId}}</td>
+                            <td>{{profile.firstName}} {{profile.lastName}}</td>
+                            <td>{{profile.employer.name}}</td>
+                            <td>{{profile.employer.phoneNumber}}</td>
+                            <td>{{profile.employer.city}}</td>
+                            <td>{{profile.employer.postcode}}</td>
                             <td align="center">
-                                <span ng-show="profile.isActive"><span class="label label-success">Active</span></span>
-                                <span ng-hide="profile.isActive"><span class="label label-danger">Inactive</span></span>
+                                <span ng-show="profile.active"><span class="label label-success">Active</span></span>
+                                <span ng-hide="profile.active"><span class="label label-danger">Inactive</span></span>
                             </td>
                             <td align="center">
-                                <a ui-sref="app.profile.details({profileId: profile.id})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                                <a ui-sref="app.profile.details({profileId: profile.employeeId})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
                             </td>
                             <td align="center">
-                                <button class="btn btn-danger btn-xs" data-ng-click="deleteProfile(profile.id)"><i class="fa fa-times"></i> Delete</button>
+                                <button class="btn btn-danger btn-xs" data-ng-click="deleteProfile(profile.employeeId)"><i class="fa fa-times"></i> Delete</button>
                             </td>
                         </tr>
 			        </tbody>
@@ -53,6 +53,14 @@
 
 	<!-- Add Profile Modal -->
     <div cvs-modal-window title="Add New Profile" icon="plus" action-title="Add Profile" submit-action="addNewProfile()" visible="modalVisibility">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert fade in" ng-class="{'alert-danger': registration.message.type == 'error', 'alert-info': registration.message.type == 'info'}" ng-show="registration.message">
+                    <i class="fa-fw fa" ng-class="{'fa-times': registration.message.type == 'error', 'fa-check': registration.message.type == 'info'}"></i>
+                    {{registration.message.text}}
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">

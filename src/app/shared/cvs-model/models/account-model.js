@@ -138,6 +138,10 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			return CVSService.deleteProfile(id);
 		}
 
+		function _addProfile(profile) {
+			return CVSService.addProfile(profile);
+		}
+
 		return {
 			// Login, Register, Lock, Reset Password
 			login: function(email, password) { //OK
@@ -183,11 +187,8 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			getCurrentUser: function() { //OK
 				return _current_user;
 			},
-			addProfile: function(profile) {
-				// Add a new profile through the API here!
-				var deferred = $q.defer();
-				deferred.resolve();
-				return deferred.promise;
+			addProfile: function(profile) { //OK
+				return _addProfile(profile);
 			},
 			editProfile: function(profile) { //OK
 				return _editProfile(profile);

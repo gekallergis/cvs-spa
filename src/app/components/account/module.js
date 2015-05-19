@@ -122,9 +122,6 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                         ]),
                         profiles: function(AccountModel) {
                             return AccountModel.getProfiles();
-                        },
-                        companies: function(AccountModel) {
-                            return AccountModel.getCompanies();
                         }
                     }
                 }
@@ -154,6 +151,9 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                         ]),
                         user_profile: function(AccountModel, $stateParams) {
                             return AccountModel.getUserProfile($stateParams.profileId);
+                        },
+                        companies: function(AccountModel) {
+                            return AccountModel.getCompanies();
                         },
                         products: function(ProductModel) {
                             return ProductModel.getProducts();
