@@ -142,6 +142,10 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			return CVSService.addProfile(profile);
 		}
 
+		function _addCompany(company) {
+			return CVSService.addCompany(company);
+		}
+
 		return {
 			// Login, Register, Lock, Reset Password
 			login: function(email, password) { //OK
@@ -213,10 +217,7 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 				return _current_company;
 			},
 			addCompany: function(company) {
-				// Add a new company through the API here!
-				var deferred = $q.defer();
-				deferred.resolve();
-				return deferred.promise;
+				return _addCompany(company);
 			},
 			editCompany: function(company) {
 				// Edit a company through the API here!

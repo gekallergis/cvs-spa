@@ -187,6 +187,9 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                         ]),
                         companies: function(AccountModel) {
                             return AccountModel.getCompanies();
+                        },
+                        countries: function(AccountModel) {
+                            return AccountModel.getCountries();
                         }
                     }
                 }

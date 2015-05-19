@@ -28,17 +28,17 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="company in company.list">
-                            <td align="center">{{company.id}}</td>
-                            <td>{{company.reg_number}}</td>
+                            <td align="center">{{company.companyId}}</td>
+                            <td>{{company.registrationNumber}}</td>
                             <td>{{company.name}}</td>
-                            <td>{{company.phone}}</td>
-                            <td>{{company.primary_address}}</td>
-                            <td>{{company.secondary_address}}</td>
+                            <td>{{company.phoneNumber}}</td>
+                            <td>{{company.primaryAddress}}</td>
+                            <td>{{company.secondaryAddress}}</td>
                             <td>{{company.postcode}}</td>
                             <td>{{company.city}}</td>
-                            <td>{{country.list[company.country]}}</td>
+                            <td>{{company.country.name}}</td>
                             <td align="center">
-                                <a ui-sref="app.company.details({companyId: company.id})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
+                                <a ui-sref="app.company.details({companyId: company.companyId})" class="btn btn-primary btn-xs"><i class="fa fa-info"></i> Details</a>
                             </td>
                         </tr>
                     </tbody>
@@ -50,6 +50,14 @@
     
     <!-- Add Company Modal -->
     <div cvs-modal-window title="Add New Company" icon="plus" action-title="Add Company" submit-action="addNewCompany()" visible="modalVisibility">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert fade in" ng-class="{'alert-danger': nc.message.type == 'error', 'alert-info': nc.message.type == 'info'}" ng-show="nc.message">
+                    <i class="fa-fw fa" ng-class="{'fa-times': nc.message.type == 'error', 'fa-check': nc.message.type == 'info'}"></i>
+                    {{nc.message.text}}
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
@@ -101,7 +109,7 @@
                     <select class="form-control" id="country" name="country" ng-model="nc.country"
                     	data-smart-validate-input data-required data-message-required="Select the company's country">
                         <option value="" selected="" disabled="">Country</option>
-                        <option value="{{key}}" ng-repeat="(key, value) in country.list" >{{value}}</option>
+                        <option value="{{country.countryId}}" ng-repeat="country in country.list" >{{country.name}}</option>
                     </select>
                 </div>
             </div>

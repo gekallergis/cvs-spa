@@ -109,6 +109,9 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			addProfile: function(profile) {
 				return _makeRequest('employee', 'PUT', profile);
 			},
+			addCompany: function(company) {
+				return _makeRequest('company', 'PUT', company);
+			},
 
 			getCompanyProfile: function(id) {
 				return _makeGETRequest('companies/company-' + id + '.json');

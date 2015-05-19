@@ -19,16 +19,25 @@ define(['components/account/module', 'lodash'], function (module, _) {
 
 		$scope.addNewCompany = function() {
 			AccountModel.addCompany({
-				"reg_number": $scope.nc.reg_number,
+				"registrationNumber": $scope.nc.reg_number,
 				"name": $scope.nc.name,
-				"phone": $scope.nc.phone,
-				"primary_address": $scope.nc.primary_address,
-				"secondary_address": $scope.nc.secondary_address,
+				"phoneNumber": $scope.nc.phone,
+				"primaryAddress": $scope.nc.primary_address,
+				"secondaryAddress": $scope.nc.secondary_address,
 				"postcode": $scope.nc.postcode,
 				"city": $scope.nc.city,
-				"country": $scope.nc.country
-			}).then(function() {
+				"countryId": $scope.nc.country
+			}).then(function(response) {
+				$.smallBox({
+	                title: response.message,
+	                content: "[" + response.code + "]",
+	                color: "#739E73",
+					icon: "fa fa-check-trash-o swing animated",
+	                timeout: 4000
+	            });
 				$scope.refreshList();
+			}, function(errorResponse) {
+				$scope.nc.message = {text: errorResponse.message, type: "error"};
 			});
 		};
 	});
