@@ -115,6 +115,9 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			getCompanyProfile: function(id) {
 				return _makeRequest('company/' + id, 'GET', {});
 			},
+			editCompany: function(company) {
+				return _makeRequest('company' , 'POST', company);
+			},
 
 			getOrders: function() {
 				return _makeGETRequest('order-list.json');
