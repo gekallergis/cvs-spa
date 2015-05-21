@@ -154,7 +154,7 @@ define(['components/account/module', 'lodash'], function (module, _) {
 		                    title: response.message,
 		                    content: "[" + response.code + "]",
 		                    color: "#739E73",
-							icon: "fa fa-check-trash-o swing animated",
+							icon: "fa fa-trash-o swing animated",
 		                    timeout: 4000
 		                });
 	                    $state.go('app.profile', {}, {reload: true});

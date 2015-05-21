@@ -122,6 +122,12 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			attachManagingAccount: function(attachment) {
 				return _makeRequest('attachManagingEmployee', 'POST', attachment);
 			},
+			attachParentCompany: function(attachment) {
+				return _makeRequest('attachParentCompany', 'POST', attachment);
+			},
+			deleteCompany: function(id) {
+				return _makeRequest('company/' + id, 'DELETE', {});	
+			},
 
 			getOrders: function() {
 				return _makeGETRequest('order-list.json');

@@ -14,10 +14,10 @@
                                 <a href-void ng-click="showModal('editCompanyInfoModal')">Edit Information</a>
                             </li>
                             <li>
-                                <a href-void ng-click="showModal('attachManagingAccountModal')">Attach Managing Account</a>
+                                <a href-void ng-click="showModal('attachManagingAccountModal')">Set Managing Employee</a>
                             </li>
                             <li>
-                                <a href-void ng-click="showModal('attachToCompanyModal')">Attach to Company</a>
+                                <a href-void ng-click="showModal('attachToCompanyModal')">Attach Parent Company</a>
                             </li>
                             <li class="divider"></li>
                             <li>
@@ -271,14 +271,23 @@
     </div>
 
     <!-- Attach to Company -->
-    <div cvs-modal-window title="Attach to Company" icon="plus" action-title="Attach" submit-action="attachToCompany()" visible="mw.attachToCompanyModal.visibility">
+    <div cvs-modal-window title="Attach to Company" icon="plus" action-title="Attach" submit-action="attachParentCompany()" visible="mw.attachToCompanyModal.visibility">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert fade in" ng-class="{'alert-danger': mw.attachToCompanyModal.data.message.type == 'error', 'alert-info': mw.attachToCompanyModal.data.message.type == 'info'}" ng-show="mw.attachToCompanyModal.data.message">
+                    <i class="fa-fw fa" ng-class="{'fa-times': mw.attachToCompanyModal.data.message.type == 'error', 'fa-check': mw.attachToCompanyModal.data.message.type == 'info'}"></i>
+                    {{mw.attachToCompanyModal.data.message.text}}
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
                     <select class="form-control" id="company" name="company" ng-model="mw.attachToCompanyModal.data.id"
                         data-smart-validate-input data-required data-message-required="Select a parent company">
                         <option value="" selected="" disabled="">Parent Company</option>
-                        <option value="{{company.id}}" ng-repeat="company in company.list">{{company.name}} [Company ID: {{company.id}}]</option>
+                        <option value="0">Remove Parent Company</option>
+                        <option value="{{company.companyId}}" ng-repeat="company in company.list">{{company.name}} [Company ID: {{company.companyId}}]</option>
                     </select>
                 </div>
             </div>

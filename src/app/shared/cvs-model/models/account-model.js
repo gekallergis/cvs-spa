@@ -166,6 +166,14 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			return CVSService.attachManagingAccount(attachment);
 		}
 
+		function _attachParentCompany(attachment) {
+			return CVSService.attachParentCompany(attachment);
+		}
+
+		function _deleteCompany(companyId) {
+			return CVSService.deleteCompany(companyId);
+		}
+
 		return {
 			// Login, Register, Lock, Reset Password
 			login: function(email, password) { //OK
@@ -242,11 +250,11 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			editCompany: function(company) { //OK
 				return _editCompany(company);
 			},
-			deleteCompany: function(id) {
-				// Delete a profile through the API here!
-				var deferred = $q.defer();
-				deferred.resolve();
-				return deferred.promise;
+			attachParentCompany: function(attachment) { //OK
+				return _attachParentCompany(attachment);
+			},
+			deleteCompany: function(companyId) { //OK
+				return _deleteCompany(companyId);
 			},
 			setBespokeCurrency: function(bespoke) {
 				// Add a bespoke currency through the API here!
@@ -257,7 +265,7 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			attachManagingAccount: function(attachment) { //OK
 				return _attachManagingAccount(attachment);
 			},
-			attachToCompany: function(attachment) {
+			attachToCompany: function(attachment) { //OK
 				return _attachToCompany(attachment);
 			},
 			addFreeProducts: function(products) { //OK

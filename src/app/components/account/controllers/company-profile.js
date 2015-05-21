@@ -40,7 +40,7 @@ define(['components/account/module', 'lodash', 'notification'], function (module
 					$scope.mw.attachManagingAccountModal.data.id = $scope.company.managingEmployee.employeeId;
 				}
 			} else if(modal === 'attachToCompanyModal') {
-				if($scope.company.parent_company != null) {
+				if($scope.company.parentCompany != null) {
 					$scope.mw.attachToCompanyModal.data.id = $scope.company.parentCompany.companyId;
 				}
 			}
@@ -106,32 +106,49 @@ define(['components/account/module', 'lodash', 'notification'], function (module
 			});
 		};
 
-		$scope.attachToCompany = function() {
-			AccountModel.attachToCompany({
-				"company": $scope.company.id,
-				"parent_company": $scope.mw.attachToCompanyModal.data.id
-			}).then(function() {
+		$scope.attachParentCompany = function() {
+			AccountModel.attachParentCompany({
+				"companyId": $scope.company.companyId,
+				"parentCompanyId": $scope.mw.attachToCompanyModal.data.id
+			}).then(function(response) {
+				$.smallBox({
+                    title: response.message,
+                    content: "[" + response.code + "]",
+                    color: "#739E73",
+					icon: "fa fa-check-square-o swing animated",
+                    timeout: 4000
+                });
 				$scope.refreshPage();
+			}, function(errorResponse) {
+				$scope.mw.attachToCompanyModal.data.message = {text: errorResponse.message, type: 'error'};
 			});
 		};
 
-		$scope.deleteCompany = function(id) {
+		$scope.deleteCompany = function(companyId) {
 			$.SmartMessageBox({
                 title: "Delete Company!",
                 content: "You are about to delete " + $scope.company.name + "! Are you sure?",
                 buttons: '[Cancel][Delete]'
             }, function (key_press) {
 				if (key_press === "Delete") {
-                	AccountModel.deleteProfile(id)
-					.then(function(){
+                	AccountModel.deleteCompany(companyId)
+					.then(function(response){
 						$.smallBox({
-	                        title: "Company Deleted",
-	                        content: "Company " + $scope.company.name + " was deleted!",
-	                        color: "#C46A69",
-	                        icon: "fa fa-trash-o swing animated",
-	                        timeout: 4000
-	                    });
-	                    $state.go('app.company', {});
+		                    title: response.message,
+		                    content: "[" + response.code + "]",
+		                    color: "#739E73",
+							icon: "fa fa-trash-o swing animated",
+		                    timeout: 4000
+		                });
+	                    $state.go('app.company', {}, {reload: true});
+					}, function(errorResponse) {
+						$.smallBox({
+		                    title: errorResponse.message,
+		                    content: "[" + errorResponse.code + "]",
+		                    color: "#C46A69",
+		                    icon: "fa fa-times swing animated",
+		                    timeout: 4000
+		                });
 					});
                 }
             });
