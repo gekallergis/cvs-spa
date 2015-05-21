@@ -53,7 +53,7 @@
                             <small> Parent Company: <a ui-sref="app.company.details({companyId: company.parentCompany.companyId})">{{company.parentCompany.name}}</a></small>
                         </span>
                         <br />
-                        <small> Managing Account: <a ui-sref="app.profile.details({profileId: company.managingEmployee.employeeId})">{{company.managingEmployee.firstName}} {{company.managingEmployee.lastName}}</a></small>
+                        <small ng-show="company.managingEmployee"> Managing Account: <a ui-sref="app.profile.details({profileId: company.managingEmployee.employeeId})">{{company.managingEmployee.firstName}} {{company.managingEmployee.lastName}}</a></small>
                     </h1>
                     <ul class="list-unstyled">
                         <li>
@@ -248,6 +248,14 @@
 
     <!-- Attach Managing Account -->
     <div cvs-modal-window title="Attach Managing Account" icon="plus" action-title="Attach" submit-action="attachManagingAccount()" visible="mw.attachManagingAccountModal.visibility">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert fade in" ng-class="{'alert-danger': mw.attachManagingAccountModal.data.message.type == 'error', 'alert-info': mw.attachManagingAccountModal.data.message.type == 'info'}" ng-show="mw.attachManagingAccountModal.data.message">
+                    <i class="fa-fw fa" ng-class="{'fa-times': mw.attachManagingAccountModal.data.message.type == 'error', 'fa-check': mw.attachManagingAccountModal.data.message.type == 'info'}"></i>
+                    {{mw.attachManagingAccountModal.data.message.text}}
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">

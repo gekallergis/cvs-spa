@@ -102,15 +102,27 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 		}
 
 		function _setupCompanyHierarchy(company) {
+			var managingEmployeeFullName = "No Managing Employee";
+
+			if(company.hierarchy.company.managingEmployee != null) {
+				managingEmployeeFullName = company.hierarchy.company.managingEmployee.firstName + " " + company.hierarchy.company.managingEmployee.lastName;
+			}
+
 			var hierarchy = [
 	            {"content": "<span><i class=\"fa fa-lg fa-building\"></i> " + company.hierarchy.company.name + "</span>", "expanded": true, "children": [
-	                {"content": "<h4><i class=\"fa fa-lg fa-star\"></i> " + company.hierarchy.company.managingEmployee.firstName + " " + company.hierarchy.company.managingEmployee.lastName  + "</h4>", "expanded": false, "children": []}
+	                {"content": "<h4><i class=\"fa fa-lg fa-star\"></i> " + managingEmployeeFullName + "</h4>", "expanded": false, "children": []}
 	            ]}
 	        ];
 
 	        _.forEach(company.hierarchy.children, function(value, index, collection){
+	        	var managingEmployeeFullName = "No Managing Employee";
+
+				if(value.company.managingEmployee != null) {
+					managingEmployeeFullName = value.company.managingEmployee.firstName + " " + value.company.managingEmployee.lastName;
+				}
+
 	        	var child = {"content": "<span class=\"label label-success\"><i class=\"fa fa-lg fa-plus-circle\"></i> " + value.company.name + "</span>", "expanded": false, "children": [
-				                {"content": "<span class=\"alert-info\"><i class=\"fa fa-star\"></i> " + value.company.managingEmployee.firstName + " " + value.company.managingEmployee.lastName + "</span>"}
+				                {"content": "<span class=\"alert-info\"><i class=\"fa fa-star\"></i> " + managingEmployeeFullName + "</span>"}
 				            ]};
 	        	_.forEach(value.employees, function(value, index, collection){
 	        		child.children.push({"content": "<span><i class=\"fa fa-user\"></i> " + value.firstName + " " + value.lastName + "</span>"});
@@ -148,6 +160,10 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 
 		function _editCompany(company) {
 			return CVSService.editCompany(company);
+		}
+
+		function _attachManagingAccount(attachment) {
+			return CVSService.attachManagingAccount(attachment);
 		}
 
 		return {
@@ -214,7 +230,7 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			getCompanies: function() { //OK
 				return _getCompanies();
 			},
-			getCompanyProfile: function(id) {
+			getCompanyProfile: function(id) { //OK
 				return _getCompanyProfile(id);
 			},
 			getCurrentCompany: function() { //OK
@@ -223,7 +239,7 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			addCompany: function(company) { //OK
 				return _addCompany(company);
 			},
-			editCompany: function(company) {
+			editCompany: function(company) { //OK
 				return _editCompany(company);
 			},
 			deleteCompany: function(id) {
@@ -238,11 +254,8 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 				deferred.resolve();
 				return deferred.promise;
 			},
-			attachManagingAccount: function(managing_account) {
-				// Attach managing account through the API here!
-				var deferred = $q.defer();
-				deferred.resolve();
-				return deferred.promise;
+			attachManagingAccount: function(attachment) { //OK
+				return _attachManagingAccount(attachment);
 			},
 			attachToCompany: function(attachment) {
 				return _attachToCompany(attachment);

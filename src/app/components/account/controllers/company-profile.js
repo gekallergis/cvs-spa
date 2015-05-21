@@ -36,7 +36,9 @@ define(['components/account/module', 'lodash', 'notification'], function (module
 			if(modal === 'editCompanyInfoModal') {
 				$scope.mw.editCompanyInfoModal.data = _.clone($scope.company);
 			} else if(modal === 'attachManagingAccountModal') {
-				$scope.mw.attachManagingAccountModal.data.id = $scope.company.managingEmployee.employeeId;
+				if($scope.company.managingEmployee != null) {
+					$scope.mw.attachManagingAccountModal.data.id = $scope.company.managingEmployee.employeeId;
+				}
 			} else if(modal === 'attachToCompanyModal') {
 				if($scope.company.parent_company != null) {
 					$scope.mw.attachToCompanyModal.data.id = $scope.company.parentCompany.companyId;
@@ -88,10 +90,19 @@ define(['components/account/module', 'lodash', 'notification'], function (module
 
 		$scope.attachManagingAccount = function() {
 			AccountModel.attachManagingAccount({
-				"company": $scope.company.id,
-				"managing_account": $scope.mw.attachManagingAccountModal.data.id
+				"companyId": $scope.company.companyId,
+				"employeeId": $scope.mw.attachManagingAccountModal.data.id
 			}).then(function(response) {
+				$.smallBox({
+                    title: response.message,
+                    content: "[" + response.code + "]",
+                    color: "#739E73",
+					icon: "fa fa-check-square-o swing animated",
+                    timeout: 4000
+                });
 				$scope.refreshPage();
+			}, function(errorResponse) {
+				$scope.mw.attachManagingAccountModal.data.message = {text: errorResponse.message, type: 'error'};
 			});
 		};
 

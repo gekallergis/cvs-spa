@@ -35,6 +35,7 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
  				data: data
 			}
 
+			$log.debug("OUTGOING");
 			$log.debug(data);
 
 			$http(request)
@@ -117,6 +118,9 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			},
 			editCompany: function(company) {
 				return _makeRequest('company' , 'POST', company);
+			},
+			attachManagingAccount: function(attachment) {
+				return _makeRequest('attachManagingEmployee', 'POST', attachment);
 			},
 
 			getOrders: function() {
