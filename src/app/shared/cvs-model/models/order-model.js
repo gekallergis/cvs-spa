@@ -13,19 +13,19 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			var items = _basket.items;
 
 			for(var i = 0; i < items.length; i++) {
-				total += items[i].qty * items[i].price;
+				total += items[i].quantity * items[i].unitPrice;
 			}
 
 			_basket.total = total;
     	}
 
     	function _addItem(item) {
-    		var existingBasketItem = _.find(_basket.items, {'id': item.id});
+    		var existingBasketItem = _.find(_basket.items, {'productId': item.productId});
 
     		if(existingBasketItem != undefined) {
-    			existingBasketItem.qty++;
+    			existingBasketItem.quantity++;
     		} else {
-    			item.qty = 1;
+    			item.quantity = 1;
     			_basket.items.push(item);
     		}
 
@@ -33,30 +33,30 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
     		$rootScope.$broadcast('OrderModel::basketUpdate');
     	}
 
-    	function _incQty(id) {
-    		var existingBasketItem = _.find(_basket.items, {'id': id});
+    	function _incQty(productId) {
+    		var existingBasketItem = _.find(_basket.items, {'productId': productId});
 
     		if(existingBasketItem != undefined) {
-    			existingBasketItem.qty++;
+    			existingBasketItem.quantity++;
     		}
 
     		_updateBasketTotal();
     		$rootScope.$broadcast('OrderModel::basketUpdate');
     	}
 
-    	function _decQty(id) {
-    		var existingBasketItem = _.find(_basket.items, {'id': id});
+    	function _decQty(productId) {
+    		var existingBasketItem = _.find(_basket.items, {'productId': productId});
 
-    		if(existingBasketItem != undefined && existingBasketItem.qty > 1) {
-    			existingBasketItem.qty--;
+    		if(existingBasketItem != undefined && existingBasketItem.quantity > 1) {
+    			existingBasketItem.quantity--;
     		}
 
     		_updateBasketTotal();
     		$rootScope.$broadcast('OrderModel::basketUpdate');
     	}
 
-    	function _removeItem(id) {
-    		var existingBasketItemIndex = _.findIndex(_basket.items, {'id': id});
+    	function _removeItem(productId) {
+    		var existingBasketItemIndex = _.findIndex(_basket.items, {'productId': productId});
 
     		if(existingBasketItemIndex > -1) {
     			_basket.items.splice(existingBasketItemIndex, 1);
@@ -72,11 +72,8 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			$rootScope.$broadcast('OrderModel::basketUpdate');
     	}
 
-    	function _placeOrder() {
-			// Place an order through the API here!
-			var deferred = $q.defer();
-			deferred.resolve();
-			return deferred.promise;
+    	function _placeOrder(companyId) {
+    		return CVSService.placeOrder(companyId, _basket);
     	}
 		
 		function _getOrders() {
@@ -105,7 +102,7 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			var items = order.items;
 
 			for(var i = 0; i < items.length; i++) {
-				total += items[i].qty * items[i].unit_price;
+				total += items[i].quantity * items[i].unit_price;
 			}
 
 			return total;
@@ -131,8 +128,8 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			emptyBasket: function() {
 				_emptyBasket();
 			},
-			placeOrder: function() {
-				return _placeOrder();
+			placeOrder: function(companyId) {
+				return _placeOrder(companyId);
 			},
 			// Order History
 			getOrderList: function(){

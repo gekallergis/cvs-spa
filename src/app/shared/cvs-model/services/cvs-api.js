@@ -128,6 +128,9 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			deleteCompany: function(id) {
 				return _makeRequest('company/' + id, 'DELETE', {});	
 			},
+			placeOrder: function(companyId, basket) {
+				return _makeRequest('order/', 'PUT', {"purchasedFor": {"companyId": companyId}, "items": basket.items});
+			},
 
 			getOrders: function() {
 				return _makeGETRequest('order-list.json');

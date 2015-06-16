@@ -1,13 +1,13 @@
 <div class="row">
 	<div class="col-xs-12 col-sm-6 col-md-3" ng-repeat="product in product.list">
-	    <div class="panel pricing-big" ng-class="{'panel-success': !product.isPopular, 'panel-primary': product.isPopular}">
-	    	<img ng-show="product.isPopular" ng-src="assets/img/ribbon.png" class="ribbon" alt>
+	    <div class="panel pricing-big" ng-class="{'panel-success': !product.popular, 'panel-primary': product.popular}">
+	    	<img ng-show="product.popular" ng-src="assets/img/ribbon.png" class="ribbon" alt>
 	        <div class="panel-heading">
 	            <h3 class="panel-title">{{product.name}}</h3>
 	        </div>
 	        <div class="panel-body no-padding text-align-center">
 	            <div class="the-price">
-	                <h1>{{product.price}}:-<span class="subscript">/ report</span></h1>
+	                <h1>{{product.unitPrice}}:-<span class="subscript">/ report</span></h1>
 	            </div>
 				<div class="price-features">
 					<ul class="list-unstyled text-left">
@@ -22,7 +22,7 @@
 				</div>
 	        </div>
 	        <div class="panel-footer text-align-center">
-	            <a href-void class="btn btn-block" ng-class="{'btn-success': !product.isPopular, 'btn-primary': product.isPopular}" role="button" ng-click="addItemToBasket(product)"><i class="fa fa-shopping-cart"></i> Add to Cart! <span ng-show="product.isPopular">NOW!</span></a>
+	            <a href-void class="btn btn-block" ng-class="{'btn-success': !product.popular, 'btn-primary': product.popular}" role="button" ng-click="addItemToBasket(product)"><i class="fa fa-shopping-cart"></i> Add to Cart! <span ng-show="product.popular">NOW!</span></a>
 	        </div>
 	    </div>
 	</div>	

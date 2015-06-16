@@ -14,12 +14,12 @@
 				<li ng-repeat="item in basket.items">
 					<span>
 						<a void-href class="msg">
-							<i class="air air-top-left margin-top-5 fa fa-times fa-3x txt-color-red pointer" ng-click="removeItem(item.id)"></i>
+							<i class="air air-top-left margin-top-5 fa fa-times fa-3x txt-color-red pointer" ng-click="removeItem(item.productId)"></i>
 							<span class="from"><strong>{{item.name}}</strong></span>
-							<span class="subject">Unit price: {{item.price | currency:'SEK'}}, Quantity: {{item.qty}}</span>
-							<span>(Subtotal {{item.price * item.qty | currency:'SEK'}})</span>
-							<i class="fa fa-plus fa-2x pull-right pointer" ng-click="increaseQty(item.id)"></i>
-							<i class="fa fa-minus fa-2x pull-right pointer" ng-click="decreaseQty(item.id)"></i>
+							<span class="subject">Unit price: {{item.unitPrice | currency:'SEK'}}, Quantity: {{item.quantity}}</span>
+							<span>(Subtotal {{item.unitPrice * item.quantity | currency:'SEK'}})</span>
+							<i class="fa fa-plus fa-2x pull-right pointer" ng-click="increaseQty(item.productId)"></i>
+							<i class="fa fa-minus fa-2x pull-right pointer" ng-click="decreaseQty(item.productId)"></i>
 						</a>
 					</span>
 				</li>
