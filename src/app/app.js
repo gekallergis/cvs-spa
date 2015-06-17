@@ -108,7 +108,7 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
         });
 
         $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, rejection) {
-            if(toState.name == "app.profile.details" || toState.name == "app.intel.log" || toState.name == "app.company.details") {
+            if(toState.name == "app.profile.details" || toState.name == "app.intel.log" || toState.name == "app.company.details" || toState.name == "app.order") {
                 event.preventDefault();
                 if(rejection.code == "107") {
                     $state.go('login', {message: {text: "You need to be logged in to view '" + toState.data.title + "' page!", type: "error"}}, {reload: true});

@@ -83,14 +83,14 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			});
 		}
 
-		function _setCurrentOrder(id) {
-			var idIndex = _.findIndex(_order_list, {'id': id});
+		function _setCurrentOrder(orderHeaderId) {
+			var idIndex = _.findIndex(_order_list, {'orderHeaderId': orderHeaderId});
 
 			if(idIndex != -1) {
 				_current_order = _order_list[idIndex];
 
-				if(_current_order.order_total === undefined) {
-					_current_order.order_total = _calculateOrderTotal(_current_order);
+				if(_current_order.orderTotal === undefined) {
+					_current_order.orderTotal = _calculateOrderTotal(_current_order);
 				}
 
 				$rootScope.$broadcast('OrderModel::currentOrderChanged');
@@ -102,10 +102,14 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			var items = order.items;
 
 			for(var i = 0; i < items.length; i++) {
-				total += items[i].quantity * items[i].unit_price;
+				total += items[i].quantity * items[i].unitPrice;
 			}
 
 			return total;
+		}
+
+		function _refundOrder(orderHeaderId) {
+			return CVSService.refundOrder(orderHeaderId);
 		}
 
 		return {
@@ -138,11 +142,8 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			getOrders: function() {
 				return _getOrders();
 			},
-			refundOrder: function(id) {
-				// Refund an order through the API here!
-				var deferred = $q.defer();
-				deferred.resolve();
-				return deferred.promise;
+			refundOrder: function(orderHeaderId) {
+				return _refundOrder(orderHeaderId);
 			},
 			setCurrentOrder: function(id) {
 				_setCurrentOrder(id);

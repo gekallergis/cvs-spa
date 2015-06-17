@@ -24,20 +24,20 @@
 	                </thead>
 	                <tbody>
 	                    <tr ng-repeat="order in order.list">
-	                        <td>{{order.id}}</td>
-	                        <td>{{order.buyer_full_name}}</td>
-	                        <td>{{order.purchased_for}}</td>
-	                        <td>{{order.purchased_on}}</td>
-	                        <td align="center" ng-switch="order.status">
-	                        	<span class="label label-success" ng-switch-when="paid">{{order.status}}</span>
-	                        	<span class="label label-warning" ng-switch-when="refund">{{order.status}}</span>
-	                        	<span class="label label-danger" ng-switch-default>{{order.status}}</span>
+	                        <td>{{order.orderHeaderId}}</td>
+	                        <td>{{order.purchasedBy.firstName}} {{order.purchasedBy.lastName}}</td>
+	                        <td>{{order.purchasedFor.name}}</td>
+	                        <td>{{order.purchasedOn}}</td>
+	                        <td align="center" ng-switch="order.invoice.status">
+	                        	<span class="label label-success" ng-switch-when="PAID">{{order.invoice.status}}</span>
+	                        	<span class="label label-warning" ng-switch-when="REFUND">{{order.invoice.status}}</span>
+	                        	<span class="label label-danger" ng-switch-default>{{order.invoice.status}}</span>
 	                        </td>
 	                        <td align="center">
-	                            <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#orderDetailsModal" ng-click="setCurrentOrder(order.id)"><i class="fa fa-info"></i> Details</button>
+	                            <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#orderDetailsModal" ng-click="setCurrentOrder(order.orderHeaderId)"><i class="fa fa-info"></i> Details</button>
 	                        </td>
 	                        <td align="center">
-	                            <button class="btn btn-primary btn-xs" ng-class="{disabled: (order.status == 'refund')}" ng-click="refundOrder(order.id)"><i class="fa fa-credit-card"></i> Refund</button>
+	                            <button class="btn btn-primary btn-xs" ng-class="{disabled: ((order.invoice.status == 'REFUND') || (order.invoice.status == 'UNPAID'))}" ng-click="refundOrder(order.orderHeaderId)"><i class="fa fa-credit-card"></i> Refund</button>
 	                        </td>
 	                    </tr>
 	                </tbody>
@@ -51,9 +51,9 @@
 	<div class="modal fade" id="orderDetailsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header" ng-class="{'bg-color-red txt-color-white': (order.current.status == 'unpaid'),
-            										 'bg-color-orange txt-color-white': (order.current.status == 'refund'),
-            										 'bg-color-green txt-color-white': (order.current.status == 'paid'),}">
+                <div class="modal-header" ng-class="{'bg-color-red txt-color-white': (order.current.invoice.status == 'UNPAID'),
+            										 'bg-color-orange txt-color-white': (order.current.invoice.status == 'REFUND'),
+            										 'bg-color-green txt-color-white': (order.current.invoice.status == 'PAID'),}">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                         &times;
                     </button>
@@ -67,21 +67,24 @@
 							<div class="dd">
 								<ol class="dd-list">
 									<li class="dd-item">
-										<div class="dd-handle">Order Id: <strong>{{order.current.id}}</strong></div>
+										<div class="dd-handle">Order Id: <strong>{{order.current.orderHeaderId}}</strong></div>
 									</li>
 									<li class="dd-item">
 										<div class="dd-handle">
-											Invoice Id: <strong>{{order.current.invoice_id}}</strong>
+											Invoice Id: <strong>{{order.current.invoice.invoiceId}}</strong>
 										</div>
 									</li>
 									<li class="dd-item">
-										<div class="dd-handle">Purchased By: <strong>{{order.current.buyer_full_name}}</strong></div>
+										<div class="dd-handle">Invoice Number: <strong>{{order.current.invoice.invoiceNumber}}</strong></div>
 									</li>
 									<li class="dd-item">
-										<div class="dd-handle">Purchased For: <strong>{{order.current.purchased_for}}</strong></div>
+										<div class="dd-handle">Purchased By: <strong>{{order.current.purchasedBy.firstName}} {{order.current.purchasedBy.lastName}}</strong></div>
 									</li>
 									<li class="dd-item">
-										<div class="dd-handle">Purchased On: <strong>{{order.current.purchased_on}}</strong></div>
+										<div class="dd-handle">Purchased For: <strong>{{order.current.purchasedFor.name}}</strong></div>
+									</li>
+									<li class="dd-item">
+										<div class="dd-handle">Purchased On: <strong>{{order.current.purchasedOn}}</strong></div>
 									</li>
 								</ol>
 							</div>
@@ -95,9 +98,9 @@
 									<li class="dd-item" ng-repeat="item in order.current.items">
 										<div class="dd-handle">
 											<strong>{{item.name}}</strong><br />
-											<span>Quantity: {{item.qty}}</span> | 
-											<span>Unit Price: {{item.unit_price}}SEK</span>
-											<span class="pull-right">Item Total: {{item.qty * item.unit_price}}SEK</span>
+											<span>Quantity: {{item.quantity}}</span> | 
+											<span>Unit Price: {{item.unitPrice}}SEK</span>
+											<span class="pull-right">Item Total: {{item.quantity * item.unitPrice}}SEK</span>
 										</div>
 									</li>
 								</ol>
@@ -110,7 +113,7 @@
 								<ol class="dd-list">
 									<li class="dd-item">
 										<div class="dd-handle">
-											<strong class="pull-right">Order Total: {{order.current.order_total}}SEK</strong>
+											<strong class="pull-right">Order Total: {{order.current.orderTotal}}SEK</strong>
 											<br />
 										</div>
 									</li>

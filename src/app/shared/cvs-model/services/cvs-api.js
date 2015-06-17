@@ -129,12 +129,15 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 				return _makeRequest('company/' + id, 'DELETE', {});	
 			},
 			placeOrder: function(companyId, basket) {
-				return _makeRequest('order/', 'PUT', {"purchasedFor": {"companyId": companyId}, "items": basket.items});
+				return _makeRequest('order', 'PUT', {"purchasedFor": {"companyId": companyId}, "items": basket.items});
+			},
+			getOrders: function() {
+				return _makeRequest('order', 'GET', {});
+			},
+			refundOrder: function(orderHeaderId) {
+				return _makeRequest('refund/' + orderHeaderId, 'POST', {});	
 			},
 
-			getOrders: function() {
-				return _makeGETRequest('order-list.json');
-			},
 			getInvoices: function() {
 				return _makeGETRequest('invoice-list.json');	
 			},
