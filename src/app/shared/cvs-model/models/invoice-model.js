@@ -12,11 +12,11 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			});
 		}
 
-		function _getInvoice(id) {
-			return CVSService.getInvoice(id)
+		function _getInvoice(invoiceId) {
+			return CVSService.getInvoice(invoiceId)
 			.then(function(current_invoice){
-				if(current_invoice.invoice_total === undefined) {
-					current_invoice.invoice_total = _calculateInvoiceTotal(current_invoice);
+				if(current_invoice.invoiceTotal === undefined) {
+					current_invoice.invoiceTotal = _calculateInvoiceTotal(current_invoice);
 				}
 				_current_invoice = current_invoice;
 			});
@@ -27,10 +27,14 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			var items = invoice.items;
 
 			for(var i = 0; i < items.length; i++) {
-				total += items[i].qty * items[i].unit_price;
+				total += items[i].quantity * items[i].unitPrice;
 			}
 
 			return total;
+		}
+
+		function _settleInvoice(invoiceId) {
+			return CVSService.settleInvoice(invoiceId);
 		}
 
 		return {
@@ -46,11 +50,8 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			getCurrentInvoice: function() {
 				return _current_invoice;
 			},
-			settleInvoice: function(id) {
-				// Settle an invoice through the API here!
-				var deferred = $q.defer();
-				deferred.resolve();
-				return deferred.promise;
+			settleInvoice: function(invoiceId) {
+				return _settleInvoice(invoiceId);
 			}
 		};
     });

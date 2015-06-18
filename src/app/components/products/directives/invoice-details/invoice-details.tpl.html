@@ -3,14 +3,14 @@
 	<div>
 		<!-- widget content -->
 		<div class="widget-body no-padding">
-			<div class="well widget-body-toolbar" ng-class="{'bg-color-red': (invoice.status == 'unpaid'), 'bg-color-green': (invoice.status == 'paid'), 'bg-color-orange': (invoice.status == 'refund')}">
+			<div class="well widget-body-toolbar" ng-class="{'bg-color-red': (invoice.status == 'UNPAID'), 'bg-color-green': (invoice.status == 'PAID'), 'bg-color-orange': (invoice.status == 'REFUND')}">
 				<div class="row">
 					<div class="col-sm-4">
 						<span class="font-lg txt-color-white"><strong>{{invoice.status | capitalize}}</strong></span>
 					</div>
-					<div class="col-sm-8 text-align-right" ng-show="invoice.status == 'unpaid'">
+					<div class="col-sm-8 text-align-right" ng-show="invoice.status == 'UNPAID'">
 						<div class="btn-group">
-							<a href-void class="btn btn-sm btn-success" ng-click="settleInvoice(invoice.id)"> <i class="fa fa-credit-card"></i> Mark as Paid</a>
+							<a href-void class="btn btn-sm btn-success" ng-click="settleInvoice(invoice.invoiceId)"> <i class="fa fa-credit-card"></i> Mark as Paid</a>
 						</div>
 					</div>
 				</div>
@@ -38,35 +38,35 @@
 				<br>
 				<div class="row">
 					<div class="col-sm-9">
-						<h4 class="semi-bold">{{invoice.payer.name}}</h4>
+						<h4 class="semi-bold">{{invoice.company.name}}</h4>
 						<address>
-							<strong>{{invoice.payer.purchaser}}</strong>
+							<strong>{{invoice.purchaser.firstName}} {{invoice.purchaser.lastName}}</strong>
 							<br>
-							{{invoice.payer.postcode}} {{invoice.payer.address}},
+							{{invoice.company.postcode}} {{invoice.coompany.primaryAddress}},
 							<br>
-							{{invoice.payer.city}}, {{invoice.payer.country}}
+							{{invoice.company.city}}, {{invoice.company.country.name}}
 							<br>
-							<abbr title="Phone">P:</abbr> {{invoice.payer.phone}}
+							<abbr title="Phone">P:</abbr> {{invoice.company.phoneNumber}}
 						</address>
 					</div>
 					<div class="col-sm-3">
 						<div>
 							<div>
 								<strong>INVOICE NO :</strong>
-								<span class="pull-right"> #{{invoice.number}} </span>
+								<span class="pull-right"> #{{invoice.invoiceNumber}} </span>
 							</div>
 						</div>
 						<div>
 							<div class="font-md">
 								<strong>INVOICE DATE :</strong>
-								<span class="pull-right"> <i class="fa fa-calendar"></i> {{invoice.due_date}} </span>
+								<span class="pull-right"> <i class="fa fa-calendar"></i> {{invoice.dueDate}} </span>
 							</div>
 						</div>
 						<br>
 						<div class="well well-sm  bg-color-darken txt-color-white no-border">
 							<div class="fa-lg">
 								Total Due :
-								<span class="pull-right"> {{invoice.invoice_total + (invoice.invoice_total * invoice.VAT/100)}} SEK ** </span>
+								<span class="pull-right"> {{invoice.invoiceTotal + (invoice.invoiceTotal * invoice.vat/100)}} SEK ** </span>
 							</div>
 						</div>
 						<br>
@@ -85,19 +85,19 @@
 					</thead>
 					<tbody>
 						<tr ng-repeat="item in invoice.items">
-							<td class="text-center"><strong>{{item.qty}}</strong></td>
+							<td class="text-center"><strong>{{item.quantity}}</strong></td>
 							<td><a href-void>{{item.name}}</a></td>
-							<td>{{item.description}}</td>
-							<td>{{item.unit_price}}:-</td>
-							<td>{{item.qty * item.unit_price}}:-</td>
+							<td>{{item.info}}</td>
+							<td>{{item.unitPrice}}:-</td>
+							<td>{{item.quantity * item.unitPrice}}:-</td>
 						</tr>
 						<tr>
 							<td colspan="4">Total</td>
-							<td><strong>{{invoice.invoice_total}}:-</strong></td>
+							<td><strong>{{invoice.invoiceTotal}}:-</strong></td>
 						</tr>
 						<tr>
 							<td colspan="4">VAT</td>
-							<td><strong>{{invoice.VAT}}%</strong></td>
+							<td><strong>{{invoice.vat}}%</strong></td>
 						</tr>
 					</tbody>
 				</table>
@@ -114,7 +114,7 @@
 						</div>
 						<div class="col-sm-5">
 							<div class="invoice-sum-total pull-right">
-								<h3><strong>Total: <span class="text-success">{{invoice.invoice_total + (invoice.invoice_total * invoice.VAT/100)}} SEK</span></strong></h3>
+								<h3><strong>Total: <span class="text-success">{{invoice.invoiceTotal + (invoice.invoiceTotal * invoice.vat/100)}} SEK</span></strong></h3>
 							</div>
 						</div>
 					</div>

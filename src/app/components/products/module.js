@@ -73,8 +73,7 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
                             'shared/utils/directives/table-tools/datatable-basic',
                             'shared/utils/filters/capitalize',
                             'components/products/directives/invoice-list/invoice-list',
-                            'components/products/controllers/invoice-list',
-
+                            'components/products/controllers/invoice-list'
                         ]),
                         invoices: function(InvoiceModel) {
                             return InvoiceModel.getInvoices();

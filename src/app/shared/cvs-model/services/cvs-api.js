@@ -137,13 +137,16 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			refundOrder: function(orderHeaderId) {
 				return _makeRequest('refund/' + orderHeaderId, 'POST', {});	
 			},
-
 			getInvoices: function() {
-				return _makeGETRequest('invoice-list.json');	
+				return _makeRequest('invoice', 'GET', {});	
 			},
-			getInvoice: function(id) {
-				return _makeGETRequest('invoices/invoice-' + id + '.json');
+			getInvoice: function(invoiceId) {
+				return _makeRequest('invoice/' + invoiceId, 'GET', {});
 			},
+			settleInvoice: function(invoiceId) {
+				return _makeRequest('invoice/settle/' + invoiceId, 'POST', {});
+			},
+
 			getSalesData: function() {
 				return _makeGETRequest('sales-data-list.json');	
 			},
