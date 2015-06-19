@@ -21,12 +21,12 @@
                     </thead>
                     <tbody>
 	                    <tr ng-repeat="owned_product in owned_products.list">
-	                        <td>{{owned_product.id}}</td>
+	                        <td>{{owned_product.ownedProductId}}</td>
 	                        <td>{{owned_product.name}}</td>
-	                        <td>{{owned_product.owned_by.name}}</td>
-	                        <td>{{owned_product.qty}}</td>
+	                        <td>{{owned_product.owner.name}}</td>
+	                        <td>{{owned_product.quantity}}</td>
 	                        <td align="center">
-	                            <a href-void class="btn btn-primary btn-xs" ng-class="{disabled: (owned_product.qty == 0)}" ng-click="showModal(owned_product.id, owned_product.owned_by.id)"><i class="fa fa-cogs"></i> Generate</a>
+	                            <a href-void class="btn btn-primary btn-xs" ng-class="{disabled: (owned_product.quantity == 0)}" ng-click="showModal(owned_product.ownedProductId, owned_product.owner.companyId)"><i class="fa fa-cogs"></i> Generate</a>
 	                        </td>
 	                    </tr>
 	                </tbody>
@@ -43,8 +43,8 @@
                     <select class="form-control" id="sales_data" name="sales_data" ng-model="mw.data.country"
                         data-smart-validate-input data-required data-message-required="Select sales data to analyze">
                         <option value="" selected="" disabled="">Sales Data</option>
-                        <option value="{{sales_data.id}}" ng-repeat="sales_data in sales_data.list" >{{sales_data.sales_period}} ({{sales_data.uploaded_by}})</option>
-                    </select>
+                        <option value="{{sales_data.salesDataId}}" ng-repeat="sales_data in sales_data.list" >{{sales_data.salesPeriod}} ({{sales_data.uploadedFor.name}}, {{sales_data.uploadedBy.firstName}} {{sales_data.uploadedBy.lastName}})</option>
+                    </select>   
                 </div>
             </div>
         </div>

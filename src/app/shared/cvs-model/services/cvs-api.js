@@ -146,16 +146,15 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			settleInvoice: function(invoiceId) {
 				return _makeRequest('invoice/settle/' + invoiceId, 'POST', {});
 			},
-
-			getSalesData: function() {
-				return _makeGETRequest('sales-data-list.json');	
-			},
 			getOwnedProducts: function() {
-				return _makeGETRequest('owned-products-list.json');	
+				return _makeRequest('product/owned', 'GET', {});
+			},
+			getSalesData: function() {
+				return _makeRequest('salesdata', 'GET', {});	
 			},
 			getReports: function() {
-				return _makeGETRequest('report-list.json');
-			},
+				return _makeRequest('report', 'GET', {});
+			}
 		};
     });
 });

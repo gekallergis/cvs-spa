@@ -9,7 +9,8 @@ define(['components/products/module', 'lodash'], function (module, _) {
 		$scope.mw = {};
 
 		var _filterSalesDataList = function(sales_data, companyID) {
-	    	return _.filter(sales_data, {'uploaded_for': {"id": companyID}});
+	    	//return _.filter(sales_data, {'uploadedFor': {"companyId": companyID}});
+	    	return sales_data;
 	    };
 		
 		$scope.modalVisibility = false;

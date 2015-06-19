@@ -25,22 +25,22 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="report in report.list">
-                            <td>{{report.id}}</td>
-                            <td>{{report.product_name}}</td>
-                            <td>{{report.sales_period}}</td>
-                            <td>{{report.generated_by}}</td>
-                            <td>{{report.generated_for}}</td>
-                            <td>{{report.generated_on}}</td>
+                            <td>{{report.reportId}}</td>
+                            <td>{{report.productName}}</td>
+                            <td>{{report.salesPeriod}}</td>
+                            <td>{{report.generatedBy}}</td>
+                            <td>{{report.generatedFor}}</td>
+                            <td>{{report.generatedOn}}</td>
                             <td align="center" ng-switch="report.status">
-                                <span class="label label-warning" ng-switch-when="generating">{{report.status}}</span>
-                                <span class="label label-success" ng-switch-when="ready">{{report.status}}</span>
-                                <span class="label label-danger" ng-switch-when="error">{{report.status}}</span>
+                                <span class="label label-warning" ng-switch-when="GENERATING">{{report.status}}</span>
+                                <span class="label label-success" ng-switch-when="READY">{{report.status}}</span>
+                                <span class="label label-danger" ng-switch-when="ERROR">{{report.status}}</span>
                             </td>
                             <td align="center">
-                                <a target="_blank" ng-href="{{report.file_location}}" class="btn btn-primary btn-xs" ng-class="{disabled: (report.status != 'ready')}" download><i class="fa fa-download"></i> Download</a>
+                                <a target="_blank" ng-href="{{report.filePath}}" class="btn btn-primary btn-xs" ng-class="{disabled: (report.status != 'READY')}" download><i class="fa fa-download"></i> Download</a>
                             </td>
                             <td align="center">
-                                <a href-void class="btn btn-danger btn-xs" ng-class="{disabled: (report.status == 'generating') && (report.status != 'error') }" data-ng-click="deleteReport(report.id)"><i class="fa fa-times"></i> Delete</a>
+                                <a href-void class="btn btn-danger btn-xs" ng-class="{disabled: (report.status == 'GENERATING') && (report.status != 'ERROR') }" data-ng-click="deleteReport(report.reportId)"><i class="fa fa-times"></i> Delete</a>
                             </td>
                         </tr>
                     </tbody>

@@ -63,7 +63,7 @@ define(['components/basket/module'], function(module){
 	                        icon: "fa fa-check-square-o swing animated",
 	                        timeout: 4000
 	                    });
-	                    $state.go('app.invoice.details', {invoiceId: 1});
+	                    $state.go('app.invoice.details', {invoiceId: response.extra});
 					}, function(errorResponse) {
 						$.smallBox({
 							title: errorResponse.message,
