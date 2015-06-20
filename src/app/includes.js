@@ -44,6 +44,7 @@ define([
 
     // Shared Utils
     'shared/utils/module',
+    'shared/utils/directives/authorization/authorization',
     'shared/utils/directives/loading-animation/loading-animation',
     'shared/utils/directives/shortcut-menu/shortcut-menu',
     'shared/utils/directives/shortcut-menu/toggle-shortcut-menu',

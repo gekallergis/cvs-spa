@@ -91,6 +91,8 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
         // });
 
         // Authorization
+        var redirectionRequiredAfterLogin = false;
+        var loginRedirectionState;
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState) {
             if (toState.data == undefined || toState.data.auth == undefined) {
                 return;
@@ -98,11 +100,25 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
 
             var auth = toState.data.auth;
 
-            if (auth.requireLogin && AccountModel.getLoggedInUser() == null) {
+            if(redirectionRequiredAfterLogin) {
                 event.preventDefault();
+                redirectionRequiredAfterLogin = false;
+                $state.go(loginRedirectionState, {}, {reload: true});
+            } else if (auth.requireLogin && AccountModel.getLoggedInUser() == null) {
+                event.preventDefault();
+                $log.debug("NOT LOGGED IN");
+                redirectionRequiredAfterLogin = true;
+                loginRedirectionState = toState.name;
                 $state.go('login', {message: {text: "You need to be logged in to view '" + toState.data.title + "' page!", type: "info"}}, {reload: true});
             } else if (auth.requiredRoles != undefined && !AccountModel.authorize(auth.requiredRoles)) {
                 event.preventDefault();
+                $.smallBox({
+                    title: "Unauthorized Page Access!",
+                    content: "Your account does not have the approproate permisions to access this page!",
+                    color: "#C46A69",
+                    icon: "fa fa-times swing animated",
+                    timeout: 4000
+                });
                 $state.reload();
             }
         });

@@ -10,6 +10,23 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 		var _user_roles_list;
 		var _loggedin_user = null;
 
+		function _authorize(roles) {
+			var authorized = false;
+
+			if (_loggedin_user == null) {
+				return authorized;
+			}
+
+			authorized = true;
+			_.forEach(roles, function(role, index) {
+				if (!_.some(_loggedin_user.roles, {label: role.trim()})) {
+					authorized = false;
+				}
+			});
+
+			return authorized;
+		}
+
 		function _login(email, password) {
 			return CVSService.login(email, password)
 			.then(function(loggedin_user){
@@ -43,27 +60,6 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 
 		function _editProfile(profile) {
 			return CVSService.editProfile(profile);
-		}
-
-		function _authorize(roles) {
-			var authorized = false;
-
-			if (_loggedin_user == null) {
-				return authorized;
-			}
-
-			if(_.isArray(roles)) {
-				authorized = true;
-				_.forEach(roles, function(roleId, index){
-					if (!_.includes(_loggedin_user.roles, roleId)) {
-						authorized = false;
-					}
-				});
-			} else {
-				authorized = _.includes(_loggedin_user.roles, roles);
-			}
-
-			return authorized;
 		}
 
 		function _getUserRoles() {

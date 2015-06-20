@@ -16,7 +16,7 @@
                 <a data-ui-sref="app.profile.details({profileId: loggedin_user.id})">
                     <i class="fa fa-lg fa-fw fa-user"></i>
                     <span class="menu-item-parent">{{i18n.getTranslation('My Profile')}}</span>
-                    <span class="badge pull-right inbox-badge bg-color-green">UD</span>
+                    <!-- <span class="badge pull-right inbox-badge bg-color-green">UD</span> -->
                 </a>
             </li>
 
@@ -35,7 +35,7 @@
                 <a data-ui-sref="app.products">
                     <i class="fa fa-lg fa-fw fa-archive"></i>
                     <span class="menu-item-parent">{{i18n.getTranslation('Products')}}</span>
-                    <span class="badge pull-right inbox-badge bg-color-green">UD</span>
+                    <!-- <span class="badge pull-right inbox-badge bg-color-green">UD</span> -->
                 </a>
             </li>
 
@@ -88,14 +88,14 @@
                         <a data-ui-sref="app.order">
                             <i class="fa fa-lg fa-fw fa-bars"></i>
                             <span class="menu-item-parent">{{i18n.getTranslation('Orders')}}</span>
-                            <span class="badge pull-right inbox-badge bg-color-green">UD</span>
+                            <!-- <span class="badge pull-right inbox-badge bg-color-green">UD</span> -->
                         </a>
                     </li>
                     <li data-ui-sref-active="active">
                         <a data-ui-sref="app.invoice">
                             <i class="fa fa-lg fa-fw fa-list-alt"></i>
                             <span class="menu-item-parent">{{i18n.getTranslation('Invoices')}}</span>
-                            <span class="badge pull-right inbox-badge bg-color-green">UD</span>
+                            <!-- <span class="badge pull-right inbox-badge bg-color-green">UD</span> -->
                         </a>
                     </li>
                 </ul>
@@ -106,7 +106,7 @@
                 <a data-ui-sref="app.profile">
                     <i class="fa fa-lg fa-fw fa-users"></i>
                     <span class="menu-item-parent">{{i18n.getTranslation('Profiles')}}</span>
-                    <span class="badge pull-right inbox-badge bg-color-green">UD</span>
+                    <!-- <span class="badge pull-right inbox-badge bg-color-green">UD</span> -->
                 </a>
             </li>
 			
@@ -115,20 +115,19 @@
                 <a data-ui-sref="app.company">
                     <i class="fa fa-lg fa-fw fa-building"></i>
                     <span class="menu-item-parent">{{i18n.getTranslation('Companies')}}</span></span>
-                    <span class="badge pull-right inbox-badge bg-color-green">UD</span>
+                    <!-- <span class="badge pull-right inbox-badge bg-color-green">UD</span> -->
                 </a>
             </li>
 
             <!-- Business Intel -->
-            <!-- <li data-menu-collapse ng-show="authorize('1')"> -->
-            <li data-menu-collapse>
+            <li data-menu-collapse required-roles="isAdmin, canViewSystemLog">
                 <a href="#"><i class="fa fa-lg fa-fw fa-info"></i><span class="menu-item-parent">{{i18n.getTranslation('Business Intel')}}</span></a>
                 <ul>
                     <li data-ui-sref-active="active">
                         <a data-ui-sref="app.intel.log">
                             <i class="fa fa-pencil-square-o"></i>
                             <span class="menu-item-parent">{{i18n.getTranslation('System Logs')}}</span>
-                            <span class="badge pull-right inbox-badge bg-color-green">UD</span>
+                            <!-- <span class="badge pull-right inbox-badge bg-color-green">UD</span> -->
                         </a>
                     </li>
                 </ul>
