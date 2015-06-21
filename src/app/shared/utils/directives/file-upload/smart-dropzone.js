@@ -1,19 +1,53 @@
-define(['shared/utils/module', 'dropzone'], function (module) {
+define(['shared/utils/module', 'dropzone'], function (module, Dropzone) {
 
     'use strict';
 
-    return module.registerDirective('smartDropzone', function () {
+    return module.registerDirective('smartDropzone', function ($timeout, $log) {
         return {
             restrict: 'A',
-            compile: function (tElement, tAttributes) {
-                tElement.removeAttr('smart-dropzone data-smart-dropzone');
+            link: function (scope, iElement, iAttributes) {
+                iElement.removeAttr('smart-dropzone data-smart-dropzone');
 
-                tElement.dropzone({
-                    addRemoveLinks : true,
-                    maxFilesize: 0.5,
+                var options = {
+                    autoProcessQueue: false,
+                    addRemoveLinks : false,
+                    maxFilesize: 512,
+                    paramName: 'salesData',
+                    uploadMultiple: false,
+                    maxFiles: 1,
                     dictDefaultMessage: '<span class="text-center"><span class="font-lg visible-xs-block visible-sm-block visible-lg-block"><span class="font-lg"><i class="fa fa-caret-right text-danger"></i> Drop files <span class="font-xs">to upload</span></span><span>&nbsp&nbsp<h4 class="display-inline"> (Or Click)</h4></span>',
-                    dictResponseError: 'Error uploading file!'
+                    dictResponseError: 'Error uploading file!',
+                    dictMaxFilesExceeded: 'This file won\'t be uploaded!'
+                };
+
+                var dropzone = new Dropzone(iElement[0], options);
+
+                dropzone.on('success', function() {
+                    $timeout(function() {
+                        scope.refreshList();
+                    }, 1000);
                 });
+
+                var uploadButton = $("#salesDataUpload");
+                if(uploadButton.length == 1) {
+                    uploadButton.on('click', function() {
+                        if((dropzone.getQueuedFiles().length == 1) && (scope.sd.month != undefined) || (scope.sd.year != undefined) || (scope.sd.copmany != undefined)) {
+                            dropzone.processQueue();
+                        } else {
+                            scope.alerts.missingOptions = true;
+                            $timeout(function() {
+                                scope.alerts.missingOptions = false;
+                            }, 10000);
+                        }
+                    });
+                }
+
+                var clearButton = $("#salesDataClear");
+                if(clearButton.length == 1) {
+                    clearButton.on('click', function() {
+                        dropzone.removeAllFiles();
+                    });
+                }
             }
         }
     });

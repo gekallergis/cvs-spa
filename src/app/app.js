@@ -106,7 +106,6 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
                 $state.go(loginRedirectionState, {}, {reload: true});
             } else if (auth.requireLogin && AccountModel.getLoggedInUser() == null) {
                 event.preventDefault();
-                $log.debug("NOT LOGGED IN");
                 redirectionRequiredAfterLogin = true;
                 loginRedirectionState = toState.name;
                 $state.go('login', {message: {text: "You need to be logged in to view '" + toState.data.title + "' page!", type: "info"}}, {reload: true});
@@ -124,23 +123,25 @@ define(['angular', 'angular-couch-potato', 'lodash', 'angular-ui-router', 'angul
         });
 
         $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, rejection) {
-            if(toState.name == "app.profile.details" || toState.name == "app.intel.log" || toState.name == "app.company.details" || toState.name == "app.order" || toState.name == "app.invoice" || toState.name == "app.invoice.details") {
-                event.preventDefault();
-                if(rejection.code == "107") {
-                    $state.go('login', {message: {text: "You need to be logged in to view '" + toState.data.title + "' page!", type: "error"}}, {reload: true});
-                } else {
-                    $.smallBox({
-                        title: rejection.message,
-                        content: "[" + rejection.code + "]",
-                        color: "#C46A69",
-                        icon: "fa fa-times swing animated",
-                        timeout: 4000
-                    });
-                    $state.reload();
-                }
+            //if(toState.name == "app.profile.details" || toState.name == "app.intel.log" || toState.name == "app.company.details" || toState.name == "app.order" || toState.name == "app.invoice" || toState.name == "app.invoice.details") {
+            event.preventDefault();
+            if(rejection.code == "107") {
+                redirectionRequiredAfterLogin = true;
+                loginRedirectionState = toState.name;
+                $state.go('login', {message: {text: "You need to be logged in to view '" + toState.data.title + "' page!", type: "error"}}, {reload: true});
             } else {
+                $.smallBox({
+                    title: rejection.message,
+                    content: "[" + rejection.code + "]",
+                    color: "#C46A69",
+                    icon: "fa fa-times swing animated",
+                    timeout: 4000
+                });
                 $state.reload();
             }
+            //} else {
+            //    $state.reload();
+            //}
         });
     });
 

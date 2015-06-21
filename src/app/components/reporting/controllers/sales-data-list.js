@@ -11,7 +11,7 @@ define(['components/reporting/module', 'lodash'], function (module, _) {
 
 		$scope.deleteSalesData = function(id) {
 			SalesDataModel.deleteSalesData(id)
-			.then(function(){
+			.then(function() {
 				$scope.refreshList();
 			});
 		};

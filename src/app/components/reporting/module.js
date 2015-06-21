@@ -14,6 +14,7 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                     resolve: {
                         deps: $couchPotatoProvider.resolveDependencies([
                             'shared/cvs-model/models/sales-data-model',
+                            'shared/cvs-model/models/account-model',
                             'shared/utils/directives/file-upload/smart-dropzone',
                             'shared/utils/directives/table-tools/datatable-basic',
                             'components/reporting/directives/sales-data-list/sales-data-list',
@@ -23,7 +24,10 @@ define(['angular', 'angular-couch-potato', 'angular-ui-router'], function (ng, c
                         ]),
                         sales_data: function(SalesDataModel) {
                             return SalesDataModel.getSalesData();
-                        }
+                        },
+                        companies: function(AccountModel) {
+                            return AccountModel.getCompanies();
+                        },
                     }
                 }
             },

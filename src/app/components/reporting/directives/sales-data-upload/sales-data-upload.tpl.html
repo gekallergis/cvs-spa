@@ -1,27 +1,46 @@
 <div>
     <!-- Widget ID (each widget will need unique ID)-->
-    <div jarvis-widget data-widget-color="green" id="wid-id-0" data-widget-editbutton="false">
+    <div jarvis-widget data-widget-color="darken" id="wid-id-0" data-widget-editbutton="false">
         <header>
             <span class="widget-icon"> <i class="fa fa-cloud"></i> </span>
             <h2>Upload Sales Data!</h2>
+            <div class="widget-toolbar">
+                <button type="button" id="salesDataUpload" class="btn btn-success"><i class="fa fa-upload"></i> Upload</button>
+                <button type="button" id="salesDataClear" class="btn btn-warning"><i class="fa fa-times"></i> Clear List</button>
+            </div>
         </header>
         <!-- widget div-->
         <div>
             <!-- widget content -->
             <div class="widget-body">
-                <div class="row">
-                    <div class="col-xs-24 col-sm-12">
-                        <label><strong>Upload sales data for: </strong>
-                            <select name="uploadfor" class="">
-                                <option value="10">Microsoft</option>
-                                <option value="25">Scania</option>
-                                <option value="50">Saab</option>
-                                <option value="100">Volvo</option>
-                            </select>
-                        </label>
-                    </div>
+                <div class="alert alert-warning fade in" ng-show="alerts.duplicateSalesData()">
+                    <i class="fa-fw fa fa-warning"></i>
+                    <strong>Warning!</strong> Selected company already has sales data for the period {{period.months[sd.month - 1].name}} {{sd.year}}. If you upload new data, the old ones will be replaced and no further reporting will be possible on the old data set.
                 </div>
-                <form action="/api/plug" class="dropzone" data-smart-dropzone></form>
+
+                <div class="alert alert-danger fade in" ng-show="alerts.missingOptions">
+                    <i class="fa-fw fa fa-times"></i>
+                    <strong>Missing information!</strong> Please select a company, a month and a year for the uploaded sales data as well as a file to upload! All four fields are mandatory!
+                </div>
+
+                <form id="salesData" action="/api/salesdata" class="dropzone" data-smart-dropzone>
+                    <div class="row">
+                        <div class="col-xs-24 col-sm-12">
+                            <strong>Upload sales data for </strong>
+                            <select name="uploadFor" ng-model="sd.companyId">
+                                <option value="{{company.companyId}}" ng-repeat="company in company.list" >{{company.name}}</option>
+                            </select>
+
+                            <strong>, for the period of </strong>
+                            <select name="periodMonth" ng-model="sd.month">
+                                <option value="{{month.monthId}}" ng-repeat="month in period.months" >{{month.name}}</option>
+                            </select>
+                            <select name="periodYear" ng-model="sd.year">
+                                <option value="{{year}}" ng-repeat="year in period.years" >{{year}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
             </div><!-- end widget content -->
         </div><!-- end widget div -->
     </div><!-- end widget -->
