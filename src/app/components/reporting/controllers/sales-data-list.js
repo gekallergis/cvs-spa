@@ -11,8 +11,23 @@ define(['components/reporting/module', 'lodash'], function (module, _) {
 
 		$scope.deleteSalesData = function(id) {
 			SalesDataModel.deleteSalesData(id)
-			.then(function() {
+			.then(function(response){
+				$.smallBox({
+                    title: response.message,
+                    content: "[" + response.code + "]",
+                    color: "#739E73",
+					icon: "fa fa-check-square-o swing animated",
+                    timeout: 4000
+                });
 				$scope.refreshList();
+			}, function(errorResponse) {
+				$.smallBox({
+                    title: errorResponse.message,
+                    content: "[" + errorResponse.code + "]",
+                    color: "#C46A69",
+                    icon: "fa fa-times swing animated",
+                    timeout: 4000
+                });
 			});
 		};
 	});

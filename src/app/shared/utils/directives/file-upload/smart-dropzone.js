@@ -22,7 +22,14 @@ define(['shared/utils/module', 'dropzone'], function (module, Dropzone) {
 
                 var dropzone = new Dropzone(iElement[0], options);
 
-                dropzone.on('success', function() {
+                dropzone.on('success', function(file, response) {
+                    $.smallBox({
+                        title: response.message,
+                        content: "[" + response.code + "]",
+                        color: "#739E73",
+                        icon: "fa fa-check-square-o swing animated",
+                        timeout: 4000
+                    });
                     $timeout(function() {
                         scope.refreshList();
                     }, 1000);
@@ -31,7 +38,7 @@ define(['shared/utils/module', 'dropzone'], function (module, Dropzone) {
                 var uploadButton = $("#salesDataUpload");
                 if(uploadButton.length == 1) {
                     uploadButton.on('click', function() {
-                        if((dropzone.getQueuedFiles().length == 1) && (scope.sd.month != undefined) || (scope.sd.year != undefined) || (scope.sd.copmany != undefined)) {
+                        if((dropzone.getQueuedFiles().length == 1) && ((scope.sd.month != undefined) || (scope.sd.year != undefined) || (scope.sd.copmany != undefined))) {
                             dropzone.processQueue();
                         } else {
                             scope.alerts.missingOptions = true;

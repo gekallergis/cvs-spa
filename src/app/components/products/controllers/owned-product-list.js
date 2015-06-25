@@ -8,9 +8,13 @@ define(['components/products/module', 'lodash'], function (module, _) {
 		$scope.sales_data = {};
 		$scope.mw = {};
 
-		var _filterSalesDataList = function(sales_data, companyID) {
-	    	//return _.filter(sales_data, {'uploadedFor': {"companyId": companyID}});
-	    	return sales_data;
+		var _filterSalesDataList = function(sales_data, companyId) {
+	    	$log.debug(sales_data);
+	    	var newSalesDataList = _.filter(sales_data, function(salesData) {
+	    		return (salesData.status == 'CHECKED') && (salesData.uploadedFor.companyId == companyId);
+	    	});
+	    	$log.debug(newSalesDataList);
+	    	return newSalesDataList;
 	    };
 		
 		$scope.modalVisibility = false;

@@ -19,10 +19,7 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 				return _sales_data_list;
 			},
 			deleteSalesData: function(salesDataId) {
-				// Delete sales data through the API here!
-				var deferred = $q.defer();
-				deferred.resolve();
-				return deferred.promise;
+				return CVSService.deleteSalesData(salesDataId);
 			},
 		};
     });

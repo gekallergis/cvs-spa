@@ -5,24 +5,6 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 
     	var artificial_delay = 0;
 
-        function _makeGETRequest(filename) {
-        	var deferred = $q.defer();
-
-			$http.get(SERVICE_ENDPOINT.url + filename)
-			.success(function(data){
-				$timeout(function(){
-					deferred.resolve(data);
-					$log.info('[CVS_SERVICE] Retrieved [' + filename + '].');
-				}, artificial_delay);
-			})
-			.error(function(response){
-				deferred.reject(response);
-				$log.error('[CVS_SERVICE] Failed to retrieve [' + filename + '].');
-			});
-
-			return deferred.promise;
-		}
-
 		function _makeRequest(endpoint, method, data) {
 			var deferred = $q.defer();
 
@@ -150,7 +132,10 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 				return _makeRequest('product/owned', 'GET', {});
 			},
 			getSalesData: function() {
-				return _makeRequest('salesdata', 'GET', {});	
+				return _makeRequest('salesdata', 'GET', {});
+			},
+			deleteSalesData: function(salesdataId) {
+				return _makeRequest('salesdata/' + salesdataId, 'DELETE', {});
 			},
 			getReports: function() {
 				return _makeRequest('report', 'GET', {});

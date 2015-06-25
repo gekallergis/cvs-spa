@@ -36,16 +36,12 @@ define(['components/reporting/module', 'lodash'], function (module, _) {
 					return false;
 				}
 
-				return ((salesData.uploadedFor.companyId == $scope.sd.companyId) && (salesData.salesPeriod == $scope.period.months[$scope.sd.month - 1].name + " " + $scope.sd.year));
+				return ((salesData.uploadedFor.companyId == $scope.sd.companyId) && (salesData.salesPeriod == $scope.period.months[$scope.sd.month - 1].name + " " + $scope.sd.year) && (salesData.status == "CHECKED"));
 			});
 		};
 
 		$scope.refreshList = function() {
 			$state.go($state.current, {}, {reload: true});
-		};
-
-		$scope.test = function() {
-			$log.debug($scope.sd);
 		};
 	});
 });
