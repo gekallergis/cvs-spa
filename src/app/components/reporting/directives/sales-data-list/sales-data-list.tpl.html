@@ -37,7 +37,7 @@
 	                        	<span class="label label-info" ng-switch-default>{{sales_data.status}}</span>
 	                        </td>
 		                    <td align="center">
-		                        <a target="_blank" ng-href="{{sales_data.filePath}}" class="btn btn-primary btn-xs" ng-class="{disabled: (sales_data.status == 'DELETED') || (sales_data.status == 'PROCESSING')}" download><i class="fa fa-download"></i> Download</a>
+		                        <a target="_blank" ng-href="/files/salesData/{{sales_data.salesDataId}}.txt" class="btn btn-primary btn-xs" ng-class="{disabled: (sales_data.status == 'DELETED') || (sales_data.status == 'PROCESSING')}" download><i class="fa fa-download"></i> Download</a>
 		                    </td>
 		                    <td align="center">
 		                        <a href-void class="btn btn-danger btn-xs" ng-class="{disabled: (sales_data.status == 'DELETED') || (sales_data.status == 'PROCESSING')}" data-ng-click="deleteSalesData(sales_data.salesDataId)"><i class="fa fa-times"></i> Delete</a>
