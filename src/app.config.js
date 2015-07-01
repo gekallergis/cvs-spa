@@ -5,6 +5,7 @@
 var appConfig = {};
 
 appConfig.service_endpoint = 'https://localhost/api/';
+// appConfig.service_endpoint = 'https://192.168.0.5/api/';
 
 appConfig.menu_speed = 200;
 
