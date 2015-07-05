@@ -172,84 +172,84 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 
 		return {
 			// Login, Register, Lock, Reset Password
-			login: function(email, password) { //OK
+			login: function(email, password) {
 				return _login(email, password);
 			},
-			logout: function() { //OK
+			logout: function() {
 				return _logout();
 			},
-			resetPassword: function(email) { //OK
+			resetPassword: function(email) {
 				return _resetPassword(email);
 			},
-			getCountries: function() { //OK
+			getCountries: function() {
 				return _getCountries();
 			},
-			register: function(companyInfo, employeeInfo) { //OK
+			register: function(companyInfo, employeeInfo) {
 				return _register(companyInfo, employeeInfo);
 			},
-			activate: function(activationKey) { //OK
+			activate: function(activationKey) {
 				return _activate(activationKey);
 			},
-			getLoggedInUser: function() { //OK
+			getLoggedInUser: function() {
 				return _loggedin_user;
 			},
-			getUserRoles: function() { //OK
+			getUserRoles: function() {
 				return _getUserRoles();
 			},
-			getUserRolesList: function() { //OK
+			getUserRolesList: function() {
 				return _user_roles_list;
 			},
-			authorize: function(id) { //OK
+			authorize: function(id) {
 				return _authorize(id);
 			},
 			// Profile
-			getProfiles: function() { //OK
+			getProfiles: function() {
 				return _getProfiles();
 			},
-			getProfileList: function(){ //OK
+			getProfileList: function(){
 				return _profile_list;
 			},
-			getUserProfile: function(id) { //OK
+			getUserProfile: function(id) {
 				return _getUserProfile(id);
 			},
-			getCurrentUser: function() { //OK
+			getCurrentUser: function() {
 				return _current_user;
 			},
-			addProfile: function(profile) { //OK
+			addProfile: function(profile) {
 				return _addProfile(profile);
 			},
-			editProfile: function(profile) { //OK
+			editProfile: function(profile) {
 				return _editProfile(profile);
 			},
-			deleteProfile: function(id) { //OK
+			deleteProfile: function(id) {
 				return _deleteProfile(id);
 			},
-			toggleStatus: function(id) { //OK
+			toggleStatus: function(id) {
 				return _toggleStatus(id);
 			},
 			// Company
-			getCompanyList: function(){ //OK
+			getCompanyList: function(){
 				return _company_list;
 			},
-			getCompanies: function() { //OK
+			getCompanies: function() {
 				return _getCompanies();
 			},
-			getCompanyProfile: function(id) { //OK
+			getCompanyProfile: function(id) {
 				return _getCompanyProfile(id);
 			},
-			getCurrentCompany: function() { //OK
+			getCurrentCompany: function() {
 				return _current_company;
 			},
-			addCompany: function(company) { //OK
+			addCompany: function(company) {
 				return _addCompany(company);
 			},
-			editCompany: function(company) { //OK
+			editCompany: function(company) {
 				return _editCompany(company);
 			},
-			attachParentCompany: function(attachment) { //OK
+			attachParentCompany: function(attachment) {
 				return _attachParentCompany(attachment);
 			},
-			deleteCompany: function(companyId) { //OK
+			deleteCompany: function(companyId) {
 				return _deleteCompany(companyId);
 			},
 			setBespokeCurrency: function(bespoke) {
@@ -258,17 +258,17 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 				deferred.resolve();
 				return deferred.promise;
 			},
-			attachManagingAccount: function(attachment) { //OK
+			attachManagingAccount: function(attachment) {
 				return _attachManagingAccount(attachment);
 			},
-			attachToCompany: function(attachment) { //OK
+			attachToCompany: function(attachment) {
 				return _attachToCompany(attachment);
 			},
-			addFreeProducts: function(products) { //OK
+			addFreeProducts: function(products) {
 				return _addFreeProducts(products);
 			},
 			// Countries
-			getCountryList: function() { //OK
+			getCountryList: function() {
 				return _country_list;
 			},
 		};
