@@ -39,8 +39,16 @@
     <div cvs-modal-window title="Generate Report" icon="cogs" action-title="Generate" submit-action="generateReport()" visible="modalVisibility">
         <div class="row">
             <div class="col-md-12">
+                <div class="alert fade in" ng-class="{'alert-danger': generation.message.type == 'error', 'alert-info': generation.message.type == 'info'}" ng-show="generation.message">
+                    <i class="fa-fw fa" ng-class="{'fa-times': generation.message.type == 'error', 'fa-check': generation.message.type == 'info'}"></i>
+                    {{generation.message.text}}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
                 <div class="form-group">
-                    <select class="form-control" id="sales_data" name="sales_data" ng-model="mw.data.country"
+                    <select class="form-control" id="sales_data" name="sales_data" ng-model="mw.salesData"
                         data-smart-validate-input data-required data-message-required="Select sales data to analyze">
                         <option value="" selected="" disabled="">Sales Data</option>
                         <option value="{{sales_data.salesDataId}}" ng-repeat="sales_data in sales_data.list" >{{sales_data.salesPeriod}} ({{sales_data.uploadedFor.name}}, {{sales_data.uploadedBy.firstName}} {{sales_data.uploadedBy.lastName}})</option>
@@ -54,8 +62,10 @@
                     <select class="form-control" id="currency" name="currency" ng-model="mw.currency"
                         data-smart-validate-input data-required data-message-required="Select currency for the report">
                         <option value="" selected="" disabled="">Currency</option>
-                        <option value="0">SEK</option>
                         <option value="1">EUR</option>
+                        <option value="2">NOK</option>
+                        <option value="3">DKK</option>
+                        <option value="4">SEK</option>
                     </select>
                 </div>
             </div>

@@ -139,6 +139,9 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 			},
 			getReports: function() {
 				return _makeRequest('report', 'GET', {});
+			},
+			generateReport: function(productId, companyId, salesDataId, config) {
+				return _makeRequest('report', 'PUT', {"productId": productId, "companyId": companyId, "salesDataId": salesDataId, "languageId": config.language, "currencyId": config.currency});	
 			}
 		};
     });

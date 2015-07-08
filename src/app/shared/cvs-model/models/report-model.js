@@ -24,11 +24,8 @@ define(['shared/cvs-model/module', 'lodash'], function (module, _) {
 				deferred.resolve();
 				return deferred.promise;
 			},
-			generateReport: function(productID, salesDataID, config) {
-				// Generate report through the API here!
-				var deferred = $q.defer();
-				deferred.resolve();
-				return deferred.promise;
+			generateReport: function(productId, companyId, salesDataId, config) {
+				return CVSService.generateReport(productId, companyId, salesDataId, config);
 			},
 		};
     });

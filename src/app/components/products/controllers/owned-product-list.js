@@ -9,11 +9,9 @@ define(['components/products/module', 'lodash'], function (module, _) {
 		$scope.mw = {};
 
 		var _filterSalesDataList = function(sales_data, companyId) {
-	    	$log.debug(sales_data);
 	    	var newSalesDataList = _.filter(sales_data, function(salesData) {
 	    		return (salesData.status == 'CHECKED') && (salesData.uploadedFor.companyId == companyId);
 	    	});
-	    	$log.debug(newSalesDataList);
 	    	return newSalesDataList;
 	    };
 		
@@ -31,11 +29,21 @@ define(['components/products/module', 'lodash'], function (module, _) {
 		};
 
 		$scope.generateReport = function() {
-			ReportModel.generateReport($scope.selected_product.productID, $scope.selected_product.companyID, {
+			ReportModel.generateReport($scope.selected_product.productID, $scope.selected_product.companyID, $scope.mw.salesData, {
 				"currency": $scope.mw.currency,
 				"language": $scope.mw.language
-			}).then(function(){
+			}).then(function(response){
+				$.smallBox({
+                    title: response.message,
+                    content: "[" + response.code + "]",
+                    color: "#739E73",
+					icon: "fa fa-check-square-o swing animated",
+                    timeout: 4000
+                });
 				$scope.refreshList();
+			}, function(errorResponse) {
+				$scope.generation = {};
+				$scope.generation.message = {text: errorResponse.message, type: "error"};
 			});
 		}
 	});
