@@ -10,7 +10,7 @@ define(['components/products/module', 'lodash'], function (module, _) {
 
 		var _filterSalesDataList = function(sales_data, companyId) {
 	    	var newSalesDataList = _.filter(sales_data, function(salesData) {
-	    		return (salesData.status == 'CHECKED') && (salesData.uploadedFor.companyId == companyId);
+	    		return (salesData.status == 'CHECKED') /* && (salesData.uploadedFor.companyId == companyId) */;
 	    	});
 	    	return newSalesDataList;
 	    };
