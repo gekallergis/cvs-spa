@@ -20,7 +20,7 @@
                             <th data-hide="phone"><i class="fa fa-fw fa-calendar text-muted hidden-md hidden-sm hidden-xs"></i>  Generated On</th>
                             <th data-hide="phone,tablet"><i class="fa fa-fw fa-cogs text-muted hidden-md hidden-sm hidden-xs"></i> Status</th>
                             <th data-hide="phone,tablet"><i class="fa fa-fw fa-download text-muted hidden-md hidden-sm hidden-xs"></i> Download</th>
-                            <th data-hide="phone,tablet"><i class="fa fa-fw fa-times text-muted hidden-md hidden-sm hidden-xs"></i> Delete</th>
+                            <!-- <th data-hide="phone,tablet"><i class="fa fa-fw fa-times text-muted hidden-md hidden-sm hidden-xs"></i> Delete</th> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -37,11 +37,13 @@
                                 <span class="label label-danger" ng-switch-when="ERROR">{{report.status}}</span>
                             </td>
                             <td align="center">
-                                <a target="_blank" ng-href="{{report.filePath}}" class="btn btn-primary btn-xs" ng-class="{disabled: (report.status != 'READY')}" download><i class="fa fa-download"></i> Download</a>
+                                <a target="_blank" ng-href="/files/reports/{{report.reportId}}.pdf" class="btn btn-primary btn-xs" ng-class="{disabled: (report.status != 'READY')}" download><i class="fa fa-download"></i> Download</a>
                             </td>
-                            <td align="center">
-                                <a href-void class="btn btn-danger btn-xs" ng-class="{disabled: (report.status == 'GENERATING') && (report.status != 'ERROR') }" data-ng-click="deleteReport(report.reportId)"><i class="fa fa-times"></i> Delete</a>
-                            </td>
+                            <!--
+                                <td align="center">
+                                    <a href-void class="btn btn-danger btn-xs" ng-class="{disabled: (report.status == 'GENERATING') && (report.status != 'ERROR') }" data-ng-click="deleteReport(report.reportId)"><i class="fa fa-times"></i> Delete</a>
+                                </td>
+                            -->
                         </tr>
                     </tbody>
                 </table>
